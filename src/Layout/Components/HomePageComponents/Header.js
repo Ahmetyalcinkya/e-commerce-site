@@ -29,13 +29,13 @@ const Header = () => {
               <RxSlash color="blue" />
               <NavLink to="/register">Register</NavLink>
             </div>
-            <div className="flex w-[9.875rem] justify-between px-8 items-center">
+            <div className="flex w-[9.875rem] justify-between px-8 items-center cursor-pointer">
               <AiOutlineSearch size={20} />
-              <div className="flex items-center">
+              <div className="flex items-center cursor-pointer">
                 <BsCart2 size={20} />
                 <p className="ml-1">2</p>
               </div>
-              <div className="flex items-center">
+              <div className="flex items-center cursor-pointer">
                 <AiOutlineHeart size={20} />
                 <p className="ml-1">2</p>
               </div>
