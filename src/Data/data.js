@@ -1,11 +1,13 @@
+import Pic1 from "../Assets/shop-hero-3-product-slide-2.jpg";
+
 export default [
   {
-    cover: "https://d2gg9evh47fn9z.cloudfront.net/1600px_COLOURBOX52721607.jpg",
+    cover: Pic1,
   },
   {
-    cover: "https://d2gg9evh47fn9z.cloudfront.net/1600px_COLOURBOX52721607.jpg",
+    cover: Pic1,
   },
   {
-    cover: "https://d2gg9evh47fn9z.cloudfront.net/1600px_COLOURBOX52721607.jpg",
+    cover: Pic1,
   },
 ];

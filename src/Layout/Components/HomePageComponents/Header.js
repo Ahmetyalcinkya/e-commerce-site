@@ -24,20 +24,24 @@ const Header = () => {
           </nav>
           <div className="flex">
             <div className="flex items-center w-[10.375rem] justify-around px-4">
-              <AiOutlineUser color="blue" size={20} />
-              <NavLink to="/login">Login</NavLink>
-              <RxSlash color="blue" />
-              <NavLink to="/register">Register</NavLink>
+              <AiOutlineUser color="#23A6F0" size={20} />
+              <NavLink to="/login" className="text-[#23A6F0] font-bold">
+                Login
+              </NavLink>
+              <RxSlash color="#23A6F0" />
+              <NavLink to="/register" className="text-[#23A6F0] font-bold">
+                Register
+              </NavLink>
             </div>
             <div className="flex w-[9.875rem] justify-between px-8 items-center cursor-pointer">
-              <AiOutlineSearch size={20} />
+              <AiOutlineSearch size={20} color="#23A6F0" />
               <div className="flex items-center cursor-pointer">
-                <BsCart2 size={20} />
-                <p className="ml-1">2</p>
+                <BsCart2 size={20} color="#23A6F0" />
+                <p className="ml-1 text-[#23A6F0]">2</p>
               </div>
               <div className="flex items-center cursor-pointer">
-                <AiOutlineHeart size={20} />
-                <p className="ml-1">2</p>
+                <AiOutlineHeart size={20} color="#23A6F0" />
+                <p className="ml-1 text-[#23A6F0]">2</p>
               </div>
             </div>
           </div>
