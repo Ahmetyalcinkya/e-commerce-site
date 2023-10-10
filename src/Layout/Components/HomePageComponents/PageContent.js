@@ -15,7 +15,20 @@ import Pic11 from "../../../Assets/product-cover-5.png";
 import Pic12 from "../../../Assets/product-cover-5 (1).png";
 import Pic13 from "../../../Assets/product-cover-5 (2).png";
 import Pic14 from "../../../Assets/product-cover-5 (3).png";
+import Pic15 from "../../../Assets/Vector.png";
+import Pic16 from "../../../Assets/Vector (1).png";
+import Pic17 from "../../../Assets/Vector (2).png";
+import Pic18 from "../../../Assets/Vector (3).png";
+import Pic19 from "../../../Assets/Vector (4).png";
+import Pic20 from "../../../Assets/Vector (5).png";
+import Pic21 from "../../../Assets/unsplash_hHdHCfAifHU.png";
+import Pic22 from "../../../Assets/unsplash_tVEqStC2uz8.png";
+import Pic23 from "../../../Assets/unsplash_dEGu-oCuB1Y.png";
 import { Icon } from "../../../Icons/icons";
+import SectionOnePictureCompound from "../../Compounds/HomePageCompounds/SectionOnePictureCompound";
+import SectionTwoPictureCompound from "../../Compounds/HomePageCompounds/SectionTwoPictureCompound";
+import SectionSixPictureCompound from "../../Compounds/HomePageCompounds/SectionSixPictureCompound";
+import SectionEightProductCard from "../../Compounds/HomePageCompounds/SectionEightProductCard";
 
 const PageContent = () => {
   return (
@@ -29,36 +42,10 @@ const PageContent = () => {
       </ScrollContainer>
       <section className="flex w-full h-[24.5rem] bg-[#FAFAFA] justify-center items-center">
         <div className="flex w-[67.75rem] h-[14.5rem] items-center justify-between">
-          <div className="custom-div">
-            <img src={Pic2} alt="" />
-            <div className="absolute top-8 left-4 flex flex-col items-start">
-              <p className="text-sm mb-4">Your Space</p>
-              <h6 className="mb-6 text-2xl font-bold w-24 text-left">
-                Unique Life
-              </h6>
-              <p className="text-sm mb-4">Explore Items</p>
-            </div>
-          </div>
-          <div className="custom-div">
-            <img src={Pic3} alt="" className="" />
-            <div className="absolute top-8 left-4 flex flex-col items-start">
-              <p className="text-sm mb-4">Ends Today</p>
-              <h6 className="mb-6 text-2xl font-bold w-24 text-left">
-                Elements Style
-              </h6>
-              <p className="text-sm mb-4">Explore Items</p>
-            </div>
-          </div>
-          <div className="custom-div">
-            <img src={Pic4} alt="" className="" />
-            <div className="absolute top-8 left-4 flex flex-col items-start">
-              <p className="text-sm mb-4">Ends Today</p>
-              <h6 className="mb-6 text-2xl font-bold w-24 text-left">
-                Elements Style
-              </h6>
-              <p className="text-sm mb-4">Explore Items</p>
-            </div>
-          </div>
+          {/* Map - key= index */}
+          <SectionOnePictureCompound image={Pic2} />
+          <SectionOnePictureCompound image={Pic3} />
+          <SectionOnePictureCompound image={Pic4} />
         </div>
       </section>
       <section className="w-full h-[56.25rem] mt-[6.25rem]">
@@ -90,86 +77,14 @@ const PageContent = () => {
             <hr className="mb-2" />
             <div className="w-[41.125rem] h-[45.5rem] flex flex-col justify-center">
               <div className="flex w-full h-[20.25rem] items-center">
-                <div className="custom-div">
-                  <img src={Pic2} alt="" />
-                  <div className="absolute top-8 left-4 flex flex-col items-start">
-                    <p className="text-sm mb-4">Graphic Design</p>
-                    <h6 className="mb-6 text-2xl font-bold w-24 text-left">
-                      English Department
-                    </h6>
-                    <p className="text-sm mb-4">
-                      $16.48{" "}
-                      <span className="text-[#23856D] font-bold">$6.48</span>
-                    </p>
-                  </div>
-                </div>
-                <div className="custom-div">
-                  <img src={Pic3} alt="" className="" />
-                  <div className="absolute top-8 left-4 flex flex-col items-start">
-                    <p className="text-sm mb-4">Graphic Design</p>
-                    <h6 className="mb-6 text-2xl font-bold w-24 text-left">
-                      English Department
-                    </h6>
-                    <p className="text-sm mb-4">
-                      $16.48{" "}
-                      <span className="text-[#23856D] font-bold">$6.48</span>
-                    </p>
-                  </div>
-                </div>
-                <div className="custom-div">
-                  <img src={Pic4} alt="" className="" />
-                  <div className="absolute top-8 left-4 flex flex-col items-start">
-                    <p className="text-sm mb-4">Graphic Design</p>
-                    <h6 className="mb-6 text-2xl font-bold w-24 text-left">
-                      English Department
-                    </h6>
-                    <p className="text-sm mb-4">
-                      $16.48{" "}
-                      <span className="text-[#23856D] font-bold">$6.48</span>
-                    </p>
-                  </div>
-                </div>
+                <SectionTwoPictureCompound image={Pic2} />
+                <SectionTwoPictureCompound image={Pic3} />
+                <SectionTwoPictureCompound image={Pic4} />
               </div>
               <div className="flex w-full h-[20.25rem] items-center">
-                <div className="custom-div">
-                  <img src={Pic2} alt="" />
-                  <div className="absolute top-8 left-4 flex flex-col items-start">
-                    <p className="text-sm mb-4">Graphic Design</p>
-                    <h6 className="mb-6 text-2xl font-bold w-24 text-left">
-                      English Department
-                    </h6>
-                    <p className="text-sm mb-4">
-                      $16.48{" "}
-                      <span className="text-[#23856D] font-bold">$6.48</span>
-                    </p>
-                  </div>
-                </div>
-                <div className="custom-div">
-                  <img src={Pic3} alt="" className="" />
-                  <div className="absolute top-8 left-4 flex flex-col items-start">
-                    <p className="text-sm mb-4">Graphic Design</p>
-                    <h6 className="mb-6 text-2xl font-bold w-24 text-left">
-                      English Department
-                    </h6>
-                    <p className="text-sm mb-4">
-                      $16.48{" "}
-                      <span className="text-[#23856D] font-bold">$6.48</span>
-                    </p>
-                  </div>
-                </div>
-                <div className="custom-div">
-                  <img src={Pic4} alt="" className="" />
-                  <div className="absolute top-8 left-4 flex flex-col items-start">
-                    <p className="text-sm mb-4">Graphic Design</p>
-                    <h6 className="mb-6 text-2xl font-bold w-24 text-left">
-                      English Department
-                    </h6>
-                    <p className="text-sm mb-4">
-                      $16.48{" "}
-                      <span className="text-[#23856D] font-bold">$6.48</span>
-                    </p>
-                  </div>
-                </div>
+                <SectionTwoPictureCompound image={Pic2} />
+                <SectionTwoPictureCompound image={Pic3} />
+                <SectionTwoPictureCompound image={Pic4} />
               </div>
             </div>
           </div>
@@ -289,86 +204,14 @@ const PageContent = () => {
             <hr className="mb-2" />
             <div className="w-[41.125rem] h-[45.5rem] flex flex-col justify-center">
               <div className="flex w-full h-[20.25rem] items-center">
-                <div className="custom-div">
-                  <img src={Pic2} alt="" />
-                  <div className="absolute top-8 left-4 flex flex-col items-start">
-                    <p className="text-sm mb-4">Graphic Design</p>
-                    <h6 className="mb-6 text-2xl font-bold w-24 text-left">
-                      English Department
-                    </h6>
-                    <p className="text-sm mb-4">
-                      $16.48{" "}
-                      <span className="text-[#23856D] font-bold">$6.48</span>
-                    </p>
-                  </div>
-                </div>
-                <div className="custom-div">
-                  <img src={Pic3} alt="" className="" />
-                  <div className="absolute top-8 left-4 flex flex-col items-start">
-                    <p className="text-sm mb-4">Graphic Design</p>
-                    <h6 className="mb-6 text-2xl font-bold w-24 text-left">
-                      English Department
-                    </h6>
-                    <p className="text-sm mb-4">
-                      $16.48{" "}
-                      <span className="text-[#23856D] font-bold">$6.48</span>
-                    </p>
-                  </div>
-                </div>
-                <div className="custom-div">
-                  <img src={Pic4} alt="" className="" />
-                  <div className="absolute top-8 left-4 flex flex-col items-start">
-                    <p className="text-sm mb-4">Graphic Design</p>
-                    <h6 className="mb-6 text-2xl font-bold w-24 text-left">
-                      English Department
-                    </h6>
-                    <p className="text-sm mb-4">
-                      $16.48{" "}
-                      <span className="text-[#23856D] font-bold">$6.48</span>
-                    </p>
-                  </div>
-                </div>
+                <SectionTwoPictureCompound image={Pic2} />
+                <SectionTwoPictureCompound image={Pic3} />
+                <SectionTwoPictureCompound image={Pic4} />
               </div>
               <div className="flex w-full h-[20.25rem] items-center">
-                <div className="custom-div">
-                  <img src={Pic2} alt="" />
-                  <div className="absolute top-8 left-4 flex flex-col items-start">
-                    <p className="text-sm mb-4">Graphic Design</p>
-                    <h6 className="mb-6 text-2xl font-bold w-24 text-left">
-                      English Department
-                    </h6>
-                    <p className="text-sm mb-4">
-                      $16.48{" "}
-                      <span className="text-[#23856D] font-bold">$6.48</span>
-                    </p>
-                  </div>
-                </div>
-                <div className="custom-div">
-                  <img src={Pic3} alt="" className="" />
-                  <div className="absolute top-8 left-4 flex flex-col items-start">
-                    <p className="text-sm mb-4">Graphic Design</p>
-                    <h6 className="mb-6 text-2xl font-bold w-24 text-left">
-                      English Department
-                    </h6>
-                    <p className="text-sm mb-4">
-                      $16.48{" "}
-                      <span className="text-[#23856D] font-bold">$6.48</span>
-                    </p>
-                  </div>
-                </div>
-                <div className="custom-div">
-                  <img src={Pic4} alt="" className="" />
-                  <div className="absolute top-8 left-4 flex flex-col items-start">
-                    <p className="text-sm mb-4">Graphic Design</p>
-                    <h6 className="mb-6 text-2xl font-bold w-24 text-left">
-                      English Department
-                    </h6>
-                    <p className="text-sm mb-4">
-                      $16.48{" "}
-                      <span className="text-[#23856D] font-bold">$6.48</span>
-                    </p>
-                  </div>
-                </div>
+                <SectionTwoPictureCompound image={Pic2} />
+                <SectionTwoPictureCompound image={Pic3} />
+                <SectionTwoPictureCompound image={Pic4} />
               </div>
             </div>
           </div>
@@ -428,52 +271,39 @@ const PageContent = () => {
             </h3>
             <hr className="mb-5" />
             <div className="w-[65rem] h-[27.5rem] flex justify-between items-center">
-              <div className="flex flex-col w-60">
-                <img className="w-60 h-[17.5rem]" src={Pic11} alt="" />
-                <div className="flex flex-col text-left">
-                  <h5>Graphic Design</h5>
-                  <a href="#">English Department</a>
-                  <h5>
-                    $16.48 <span>$6.48</span>
-                  </h5>
-                </div>
-              </div>
-              <div className="flex flex-col w-60">
-                <img className="w-60 h-[17.5rem]" src={Pic12} alt="" />
-                <div className="flex flex-col text-left">
-                  <h5>Graphic Design</h5>
-                  <a href="#">English Department</a>
-                  <h5>
-                    $16.48 <span>$6.48</span>
-                  </h5>
-                </div>
-              </div>
-              <div className="flex flex-col w-60">
-                <img className="w-60 h-[17.5rem]" src={Pic13} alt="" />
-                <div className="flex flex-col text-left">
-                  <h5>Graphic Design</h5>
-                  <a href="#">English Department</a>
-                  <h5>
-                    $16.48 <span>$6.48</span>
-                  </h5>
-                </div>
-              </div>
-              <div className="flex flex-col w-60">
-                <img className="w-60 h-[17.5rem]" src={Pic14} alt="" />
-                <div className="flex flex-col text-left">
-                  <h5>Graphic Design</h5>
-                  <a href="#">English Department</a>
-                  <h5>
-                    $16.48 <span>$6.48</span>
-                  </h5>
-                </div>
-              </div>
+              <SectionSixPictureCompound image={Pic11} />
+              <SectionSixPictureCompound image={Pic12} />
+              <SectionSixPictureCompound image={Pic13} />
+              <SectionSixPictureCompound image={Pic14} />
             </div>
           </div>
         </div>
       </section>
-      <section></section>
-      <section></section>
+      <section className="w-full h-[10.938rem] bg-[#FAFAFA]">
+        <div className="flex justify-between w-[65.625rem] m-auto items-center">
+          <img src={Pic15} alt="" className="w-[6.375rem] h-[2.125rem]" />
+          <img src={Pic16} alt="" className="w-[5.25rem] h-[3.75rem]" />
+          <img src={Pic17} alt="" className="w-[6.375rem] h-[4.688rem]" />
+          <img src={Pic18} alt="" className="w-[6.375rem] h-[2.625rem]" />
+          <img src={Pic19} alt="" className="w-[6.5rem] h-[3.75rem]" />
+          <img src={Pic20} alt="" className="w-[4.688rem] h-[4.375rem]" />
+        </div>
+      </section>
+      <section className="w-full h-[62.125rem]">
+        <div className="w-[65.625rem] h-full m-auto flex flex-col items-center justify-around">
+          <div className="w-[43.25rem] h-[5.25rem] flex flex-col justify-around mx-auto">
+            <h6 className="font-bold text-sm leading-6 text-[#23A6F0]">
+              Practice Advice
+            </h6>
+            <h2 className="font-bold text-4xl leading-10 ">Featured Posts</h2>
+          </div>
+          <div className="w-[65.313rem] h-[37.5rem] flex justify-between">
+            <SectionEightProductCard image={Pic21} />
+            <SectionEightProductCard image={Pic22} />
+            <SectionEightProductCard image={Pic23} />
+          </div>
+        </div>
+      </section>
     </div>
   );
 };
