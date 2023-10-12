@@ -69,19 +69,19 @@ const ProductListPageContent = () => {
       </div>
       <section className="flex flex-col items-center w-full h-[111.25rem] p-8">
         <div className="flex flex-col w-[70.25rem] h-[111.125rem] justify-around items-center">
-          <div className="flex">
+          <div className="flex gap-x-8">
             <ListCardCompound image={Pic2} />
             <ListCardCompound image={Pic2} />
             <ListCardCompound image={Pic2} />
             <ListCardCompound image={Pic2} />
           </div>
-          <div className="flex">
+          <div className="flex gap-x-8">
             <ListCardCompound image={Pic2} />
             <ListCardCompound image={Pic2} />
             <ListCardCompound image={Pic2} />
             <ListCardCompound image={Pic2} />
           </div>
-          <div className="flex">
+          <div className="flex gap-x-8">
             <ListCardCompound image={Pic2} />
             <ListCardCompound image={Pic2} />
             <ListCardCompound image={Pic2} />
