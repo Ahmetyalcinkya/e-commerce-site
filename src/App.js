@@ -1,7 +1,7 @@
 import { Switch } from "react-router-dom";
 import { Route } from "react-router-dom";
 import HomePage from "./Layout/Pages/HomePage";
-import ProductsPage from "./Layout/Pages/ProductsPage";
+import ProductListPage from "./Layout/Pages/ProductListPage";
 import AboutPage from "./Layout/Pages/AboutPage";
 import BlogPage from "./Layout/Pages/BlogPage";
 import ContactPage from "./Layout/Pages/ContactPage";
@@ -18,7 +18,7 @@ function App() {
           <HomePage />
         </Route>
         <Route path="/products">
-          <ProductsPage />
+          <ProductListPage />
         </Route>
         <Route path="/about">
           <AboutPage />

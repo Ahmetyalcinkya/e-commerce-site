@@ -33,12 +33,10 @@ import SectionEightProductCard from "../../Compounds/HomePageCompounds/SectionEi
 const PageContent = () => {
   return (
     <div>
-      <ScrollContainer className="scroll-container">
-        <div className="flex overflow-x gap-x-6 scroll-smooth">
-          {data.map((image, index) => (
-            <SliderCompound key={index} image={image} />
-          ))}
-        </div>
+      <ScrollContainer className="scroll-container flex overflow-x gap-x-6 scroll-smooth">
+        {data.map((image, index) => (
+          <SliderCompound key={index} image={image} />
+        ))}
       </ScrollContainer>
       <section className="flex w-full h-[24.5rem] bg-[#FAFAFA] justify-center items-center">
         <div className="flex w-[67.75rem] h-[14.5rem] items-center justify-between">
