@@ -12,7 +12,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App w-[90rem] m-auto">
+    <div className="App w-full m-auto">
       <Switch>
         <Route exact path="/">
           <HomePage />

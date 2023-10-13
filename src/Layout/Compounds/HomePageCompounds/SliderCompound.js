@@ -43,10 +43,10 @@ const SliderCompound = ({ image }) => {
   return (
     <div
       ref={sliderRef}
-      className="flex flex-col flex-shrink-0 relative justify-center items-center"
+      className="w-full flex flex-col flex-shrink-0 relative justify-center items-center"
     >
       <img
-        className="w-[90rem] h-[40rem] z-0"
+        className="w-full h-[40rem] z-0"
         src={image.cover}
         alt="slider-img"
       />

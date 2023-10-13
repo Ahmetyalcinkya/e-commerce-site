@@ -9,7 +9,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className="w-[90rem] h-[30rem] bg-[#252B42] flex flex-col items-center">
+    <div className="w-full h-[30rem] bg-[#252B42] flex flex-col items-center">
       <div className="flex w-[65.625rem] h-[8.875rem] py-10 justify-between">
         <div className="flex flex-col text-white text-left">
           <h3 className="font-bold text-2xl leading-8 tracking-wide">
