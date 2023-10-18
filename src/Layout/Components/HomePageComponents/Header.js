@@ -2,7 +2,9 @@ import React from "react";
 import { NavLink, Link } from "react-router-dom";
 import { AiOutlineUser, AiOutlineSearch, AiOutlineHeart } from "react-icons/ai";
 import { BsCart2 } from "react-icons/bs";
-import { RxSlash } from "react-icons/rx";
+import { CgFormatSlash } from "react-icons/cg";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   return (
@@ -24,12 +26,12 @@ const Header = () => {
             <NavLink to="/team">Team</NavLink>
           </nav>
           <div className="flex">
-            <div className="flex items-center w-[10.375rem] justify-around px-4">
-              <AiOutlineUser color="#23A6F0" size={20} />
+            <div className="flex items-center w-[10.375rem] justify-around px-4 gap-x-2">
+              <FontAwesomeIcon icon={faUser} color="#23A6F0" />
               <NavLink to="/login" className="text-[#23A6F0] font-bold">
                 Login
               </NavLink>
-              <RxSlash color="#23A6F0" />
+              <CgFormatSlash color="#23A6F0" />
               <NavLink to="/register" className="text-[#23A6F0] font-bold">
                 Register
               </NavLink>

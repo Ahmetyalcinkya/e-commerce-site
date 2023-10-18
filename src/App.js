@@ -14,7 +14,7 @@ import ProductsPage from "./Layout/Pages/ProductsPage";
 
 function App() {
   return (
-    <div className="App w-full m-auto">
+    <div className="App w-full m-auto font-montserrat">
       <Switch>
         <Route exact path="/">
           <HomePage />

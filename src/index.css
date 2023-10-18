@@ -8,3 +8,6 @@
 .icon-span {
   @apply bg-white hover:bg-gray-400 rounded-full border w-[3.125rem] h-[3.125rem] flex items-center justify-center ml-2;
 }
+.product-setting-btn {
+  @apply bg-none border px-2 py-1 rounded-full;
+}
