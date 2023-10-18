@@ -6,12 +6,8 @@ import ProductCardCompound from "../../Compounds/ProductListPageCompounds/Produc
 import { Icon } from "../../../Icons/icons";
 import ListCardCompound from "../../Compounds/ProductListPageCompounds/ListCardCompound";
 import Pic2 from "../../../Assets/product-cover-5 (4).png";
-import Pic3 from "../../../Assets/Vector.png";
-import Pic4 from "../../../Assets/Vector (1).png";
-import Pic5 from "../../../Assets/Vector (2).png";
-import Pic6 from "../../../Assets/Vector (3).png";
-import Pic7 from "../../../Assets/Vector (4).png";
-import Pic8 from "../../../Assets/Vector (5).png";
+import products from "../../../Data/products";
+import BrandsCompound from "../../Compounds/GlobalCompounds/BrandsCompound";
 
 const ProductListPageContent = () => {
   return (
@@ -33,11 +29,7 @@ const ProductListPageContent = () => {
         </div>
         <div className="w-[68rem] h-72 flex mx-auto justify-center">
           <div className="flex gap-x-4">
-            <ProductCardCompound image={Pic1} />
-            <ProductCardCompound image={Pic1} />
-            <ProductCardCompound image={Pic1} />
-            <ProductCardCompound image={Pic1} />
-            <ProductCardCompound image={Pic1} />
+            {new Array(5).fill(<ProductCardCompound image={Pic1} />)}
           </div>
         </div>
       </section>
@@ -68,25 +60,12 @@ const ProductListPageContent = () => {
         </div>
       </div>
       <section className="flex flex-col items-center w-full h-[111.25rem] p-8">
-        <div className="flex flex-col w-[70.25rem] h-[111.125rem] justify-around items-center">
-          <div className="flex gap-x-8">
-            <ListCardCompound image={Pic2} />
-            <ListCardCompound image={Pic2} />
-            <ListCardCompound image={Pic2} />
-            <ListCardCompound image={Pic2} />
-          </div>
-          <div className="flex gap-x-8">
-            <ListCardCompound image={Pic2} />
-            <ListCardCompound image={Pic2} />
-            <ListCardCompound image={Pic2} />
-            <ListCardCompound image={Pic2} />
-          </div>
-          <div className="flex gap-x-8">
-            <ListCardCompound image={Pic2} />
-            <ListCardCompound image={Pic2} />
-            <ListCardCompound image={Pic2} />
-            <ListCardCompound image={Pic2} />
-          </div>
+        <div className="flex flex-col flex-wrap w-[70.25rem] h-[111.125rem] justify-around items-center">
+          {new Array(3).fill(
+            products.map((product) => (
+              <ListCardCompound product={product} image={Pic2} />
+            ))
+          )}
         </div>
         <nav className="flex">
           <ul className="flex w-[19.75rem] h-20 items-center text-[#23A6F0]">
@@ -117,16 +96,7 @@ const ProductListPageContent = () => {
           </ul>
         </nav>
       </section>
-      <section className="w-full h-[10.938rem] bg-[#FAFAFA] flex items-center justify-center">
-        <div className="flex justify-between w-[65.625rem] m-auto items-center">
-          <img src={Pic3} alt="" className="w-[6.375rem] h-[2.125rem]" />
-          <img src={Pic4} alt="" className="w-[5.25rem] h-[3.75rem]" />
-          <img src={Pic5} alt="" className="w-[6.375rem] h-[4.688rem]" />
-          <img src={Pic6} alt="" className="w-[6.375rem] h-[2.625rem]" />
-          <img src={Pic7} alt="" className="w-[6.5rem] h-[3.75rem]" />
-          <img src={Pic8} alt="" className="w-[4.688rem] h-[4.375rem]" />
-        </div>
-      </section>
+      <BrandsCompound />
     </div>
   );
 };

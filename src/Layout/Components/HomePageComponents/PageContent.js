@@ -15,20 +15,15 @@ import Pic11 from "../../../Assets/product-cover-5.png";
 import Pic12 from "../../../Assets/product-cover-5 (1).png";
 import Pic13 from "../../../Assets/product-cover-5 (2).png";
 import Pic14 from "../../../Assets/product-cover-5 (3).png";
-import Pic15 from "../../../Assets/Vector.png";
-import Pic16 from "../../../Assets/Vector (1).png";
-import Pic17 from "../../../Assets/Vector (2).png";
-import Pic18 from "../../../Assets/Vector (3).png";
-import Pic19 from "../../../Assets/Vector (4).png";
-import Pic20 from "../../../Assets/Vector (5).png";
-import Pic21 from "../../../Assets/unsplash_hHdHCfAifHU.png";
-import Pic22 from "../../../Assets/unsplash_tVEqStC2uz8.png";
-import Pic23 from "../../../Assets/unsplash_dEGu-oCuB1Y.png";
+import Pic15 from "../../../Assets/unsplash_hHdHCfAifHU.png";
+import Pic16 from "../../../Assets/unsplash_tVEqStC2uz8.png";
+import Pic17 from "../../../Assets/unsplash_dEGu-oCuB1Y.png";
 import { Icon } from "../../../Icons/icons";
 import SectionOnePictureCompound from "../../Compounds/HomePageCompounds/SectionOnePictureCompound";
 import SectionTwoPictureCompound from "../../Compounds/HomePageCompounds/SectionTwoPictureCompound";
 import SectionSixPictureCompound from "../../Compounds/HomePageCompounds/SectionSixPictureCompound";
 import SectionEightProductCard from "../../Compounds/HomePageCompounds/SectionEightProductCard";
+import BrandsCompound from "../../Compounds/GlobalCompounds/BrandsCompound";
 
 const PageContent = () => {
   return (
@@ -277,16 +272,7 @@ const PageContent = () => {
           </div>
         </div>
       </section>
-      <section className="w-full h-[10.938rem] bg-[#FAFAFA]">
-        <div className="flex justify-between w-[65.625rem] m-auto items-center">
-          <img src={Pic15} alt="" className="w-[6.375rem] h-[2.125rem]" />
-          <img src={Pic16} alt="" className="w-[5.25rem] h-[3.75rem]" />
-          <img src={Pic17} alt="" className="w-[6.375rem] h-[4.688rem]" />
-          <img src={Pic18} alt="" className="w-[6.375rem] h-[2.625rem]" />
-          <img src={Pic19} alt="" className="w-[6.5rem] h-[3.75rem]" />
-          <img src={Pic20} alt="" className="w-[4.688rem] h-[4.375rem]" />
-        </div>
-      </section>
+      <BrandsCompound />
       <section className="w-full h-[62.125rem]">
         <div className="w-[65.625rem] h-full m-auto flex flex-col items-center justify-around">
           <div className="w-[43.25rem] h-[5.25rem] flex flex-col justify-around mx-auto">
@@ -296,9 +282,9 @@ const PageContent = () => {
             <h2 className="font-bold text-4xl leading-10 ">Featured Posts</h2>
           </div>
           <div className="w-[65.313rem] h-[37.5rem] flex justify-between">
-            <SectionEightProductCard image={Pic21} />
-            <SectionEightProductCard image={Pic22} />
-            <SectionEightProductCard image={Pic23} />
+            <SectionEightProductCard image={Pic15} />
+            <SectionEightProductCard image={Pic16} />
+            <SectionEightProductCard image={Pic17} />
           </div>
         </div>
       </section>

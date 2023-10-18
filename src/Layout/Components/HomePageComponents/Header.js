@@ -21,6 +21,7 @@ const Header = () => {
             <NavLink to="/about">About</NavLink>
             <NavLink to="/blog">Blog</NavLink>
             <NavLink to="/contact">Contact</NavLink>
+            <NavLink to="/team">Team</NavLink>
           </nav>
           <div className="flex">
             <div className="flex items-center w-[10.375rem] justify-around px-4">

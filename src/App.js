@@ -9,6 +9,8 @@ import LoginPage from "./Layout/Pages/LoginPages/LoginPage";
 import RegisterPage from "./Layout/Pages/LoginPages/RegisterPage";
 
 import "./App.css";
+import TeamPage from "./Layout/Pages/TeamPage";
+import ProductsPage from "./Layout/Pages/ProductsPage";
 
 function App() {
   return (
@@ -17,8 +19,11 @@ function App() {
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route path="/products">
+        <Route exact path="/products">
           <ProductListPage />
+        </Route>
+        <Route exact path="/product/:id">
+          <ProductsPage />
         </Route>
         <Route path="/about">
           <AboutPage />
@@ -26,13 +31,16 @@ function App() {
         <Route path="/blog">
           <BlogPage />
         </Route>
+        <Route path="/team">
+          <TeamPage />
+        </Route>
         <Route path="/contact">
           <ContactPage />
         </Route>
-        <Route path="/contact">
+        <Route path="/login">
           <LoginPage />
         </Route>
-        <Route path="/contact">
+        <Route path="/register">
           <RegisterPage />
         </Route>
       </Switch>
