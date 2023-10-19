@@ -11,3 +11,15 @@
 .product-setting-btn {
   @apply bg-none border px-2 py-1 rounded-full;
 }
+
+/* pricing page */
+
+.pricing-options-check-div {
+  @apply flex justify-between w-full h-8 items-center;
+}
+.pricing-options-h6 {
+  @apply font-bold text-sm leading-6 text-[#252B42] w-52 h-8 flex items-center;
+}
+.pricing-options-middle-h6 {
+  @apply font-bold text-sm leading-6 text-white w-52 h-8 flex items-center;
+}

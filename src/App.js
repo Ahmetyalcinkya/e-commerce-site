@@ -11,6 +11,7 @@ import RegisterPage from "./Layout/Pages/LoginPages/RegisterPage";
 import "./App.css";
 import TeamPage from "./Layout/Pages/TeamPage";
 import ProductsPage from "./Layout/Pages/ProductsPage";
+import PricingPage from "./Layout/Pages/PricingPage";
 
 function App() {
   return (
@@ -36,6 +37,9 @@ function App() {
         </Route>
         <Route path="/contact">
           <ContactPage />
+        </Route>
+        <Route path="/pricing">
+          <PricingPage />
         </Route>
         <Route path="/login">
           <LoginPage />

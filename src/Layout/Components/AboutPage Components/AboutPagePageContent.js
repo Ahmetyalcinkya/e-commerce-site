@@ -3,6 +3,7 @@ import Pic1 from "../../../Assets/none.png";
 import TeamMemberCompound from "../../Compounds/GlobalCompounds/TeamMemberCompound";
 import BrandsCompound from "../../Compounds/GlobalCompounds/BrandsCompound";
 import Pic2 from "../../../Assets/unsplash_vjMgqUkS8q8.png";
+import { Link } from "react-router-dom";
 
 const AboutPagePageContent = () => {
   return (
@@ -14,9 +15,12 @@ const AboutPagePageContent = () => {
           <h4 className="text-xl text-[#737373] w-[23.5rem] h-16">
             We know how large objects will act, but things on a small scale
           </h4>
-          <button className="w-48 h-14 flex justify-center items-center font-bold text-sm leading-5 text-white bg-[#23A6F0] rounded">
+          <Link
+            to="/pricing"
+            className="w-48 h-14 flex justify-center items-center font-bold text-sm leading-5 text-white bg-[#23A6F0] rounded"
+          >
             Get Quote Now
-          </button>
+          </Link>
         </div>
         <div>
           <img src={Pic1} alt="" />
@@ -127,9 +131,12 @@ const AboutPagePageContent = () => {
             The gradual accumulation of information about atomic and small-scale
             behavior during the first quarter of the 20th{" "}
           </p>
-          <button className="font-bold text-sm leading-6 text-[#FAFAFA] text-left w-32 h-12 py-4 px-10 border flex justify-center items-center rounded">
+          <Link
+            to="/contact"
+            className="font-bold text-sm leading-6 text-[#FAFAFA] text-left w-32 h-12 py-4 px-10 border flex justify-center items-center rounded"
+          >
             Button
-          </button>
+          </Link>
         </div>
       </div>
     </div>
