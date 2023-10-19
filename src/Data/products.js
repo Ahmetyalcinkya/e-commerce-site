@@ -4,9 +4,9 @@ import Pic3 from "../Assets/unsplash_QANOF9iJlFs.png";
 export default [
   {
     productId: 1,
-    productImg: { Pic1 },
-    productImg2: { Pic2 },
-    productImg3: { Pic3 },
+    productImg: Pic1,
+    productImg2: Pic2,
+    productImg3: Pic3,
     productHeader: "Graphic Design",
     productDescription: "English Department",
     productPrice: "$16.48",
