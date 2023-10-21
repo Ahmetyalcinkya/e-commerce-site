@@ -1,7 +1,17 @@
 import React from "react";
 import ControlledSwitches from "../../Compounds/GlobalCompounds/SwitchCompound";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCircleCheck } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronRight,
+  faCircleCheck,
+} from "@fortawesome/free-solid-svg-icons";
+import BrandsCompound from "../../Compounds/GlobalCompounds/BrandsCompound";
+import {
+  faFacebook,
+  faInstagram,
+  faLinkedin,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 
 const PricingPagePageContent = () => {
   return (
@@ -230,6 +240,134 @@ const PricingPagePageContent = () => {
             <button className="bg-[#23A6F0] text-white py-4 px-10 w-64 h-12 rounded-lg flex justify-center items-center font-bold text-sm leading-5">
               Try for free
             </button>
+          </div>
+        </div>
+      </div>
+      <div className="w-full h-96 flex flex-col justify-center bg-[#FAFAFA]">
+        <h4 className="text-xl leading-8 text-[#252B42]">
+          Trusted By Over 4000 Big Companies
+        </h4>
+        <BrandsCompound />
+      </div>
+      <div className="w-full h-[65rem] flex justify-center items-center">
+        <div className="w-[65.625rem] h-full flex flex-col justify-around items-center">
+          <div className="w-[38rem] h-32 flex flex-col justify-between">
+            <h2 className="font-bold text-4xl leading-[3rem] text-[#252B42]">
+              Pricing FAQs
+            </h2>
+            <h4 className="w-[34.5rem] h-16 text-xl text-[#737373] leading-8">
+              Problems trying to resolve the conflict between the two major
+              realms of Classical physics
+            </h4>
+          </div>
+          <div className="w-full h-[33.75rem] flex flex-col items-center justify-center">
+            <div className="w-[30.75rem] h-40 flex justify-center">
+              <div className="flex justify-between gap-x-2">
+                <FontAwesomeIcon icon={faChevronRight} color="#23A6F0" />
+                <div className="w-[27.5rem] h-28 flex flex-col justify-between">
+                  <h5 className="font-bold text-base leading-7 text-[#252B42] text-left">
+                    the quick fox jumps over the lazy dog
+                  </h5>
+                  <p className="text-sm leading-5 text-[#737373] text-left">
+                    Met minim Mollie non desert Alamo est sit cliquey dolor do
+                    met sent. RELIT official consequent door ENIM RELIT Mollie.
+                    Excitation venial consequent sent nostrum met.
+                  </p>
+                </div>
+              </div>
+              <div className="flex justify-between gap-x-2 ">
+                <FontAwesomeIcon icon={faChevronRight} color="#23A6F0" />
+                <div className="w-[27.5rem] h-28 flex flex-col justify-between">
+                  <h5 className="font-bold text-base leading-7 text-[#252B42] text-left">
+                    the quick fox jumps over the lazy dog
+                  </h5>
+                  <p className="text-sm leading-5 text-[#737373] text-left">
+                    Met minim Mollie non desert Alamo est sit cliquey dolor do
+                    met sent. RELIT official consequent door ENIM RELIT Mollie.
+                    Excitation venial consequent sent nostrum met.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="w-[30.75rem] h-40 flex justify-center">
+              <div className="flex justify-between gap-x-2">
+                <FontAwesomeIcon icon={faChevronRight} color="#23A6F0" />
+                <div className="w-[27.5rem] h-28 flex flex-col justify-between">
+                  <h5 className="font-bold text-base leading-7 text-[#252B42] text-left">
+                    the quick fox jumps over the lazy dog
+                  </h5>
+                  <p className="text-sm leading-5 text-[#737373] text-left">
+                    Met minim Mollie non desert Alamo est sit cliquey dolor do
+                    met sent. RELIT official consequent door ENIM RELIT Mollie.
+                    Excitation venial consequent sent nostrum met.
+                  </p>
+                </div>
+              </div>
+              <div className="flex justify-between gap-x-2 ">
+                <FontAwesomeIcon icon={faChevronRight} color="#23A6F0" />
+                <div className="w-[27.5rem] h-28 flex flex-col justify-between">
+                  <h5 className="font-bold text-base leading-7 text-[#252B42] text-left">
+                    the quick fox jumps over the lazy dog
+                  </h5>
+                  <p className="text-sm leading-5 text-[#737373] text-left">
+                    Met minim Mollie non desert Alamo est sit cliquey dolor do
+                    met sent. RELIT official consequent door ENIM RELIT Mollie.
+                    Excitation venial consequent sent nostrum met.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div className="w-[30.75rem] h-40 flex justify-center">
+              <div className="flex justify-between gap-x-2">
+                <FontAwesomeIcon icon={faChevronRight} color="#23A6F0" />
+                <div className="w-[27.5rem] h-28 flex flex-col justify-between">
+                  <h5 className="font-bold text-base leading-7 text-[#252B42] text-left">
+                    the quick fox jumps over the lazy dog
+                  </h5>
+                  <p className="text-sm leading-5 text-[#737373] text-left">
+                    Met minim Mollie non desert Alamo est sit cliquey dolor do
+                    met sent. RELIT official consequent door ENIM RELIT Mollie.
+                    Excitation venial consequent sent nostrum met.
+                  </p>
+                </div>
+              </div>
+              <div className="flex justify-between gap-x-2 ">
+                <FontAwesomeIcon icon={faChevronRight} color="#23A6F0" />
+                <div className="w-[27.5rem] h-28 flex flex-col justify-between">
+                  <h5 className="font-bold text-base leading-7 text-[#252B42] text-left">
+                    the quick fox jumps over the lazy dog
+                  </h5>
+                  <p className="text-sm leading-5 text-[#737373] text-left">
+                    Met minim Mollie non desert Alamo est sit cliquey dolor do
+                    met sent. RELIT official consequent door ENIM RELIT Mollie.
+                    Excitation venial consequent sent nostrum met.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <h4 className="text-xl leading-8 text-[#737373]">
+            Haven’t got your answer? Contact our support
+          </h4>
+        </div>
+      </div>
+      <div className="w-full h-[36.5rem] flex justify-center items-center">
+        <div className="w-[38rem] h-72 flex flex-col items-center justify-between">
+          <h2 className="font-bold text-4xl leading-[3rem] text-[#252B42]">
+            Start your 14 days free trial
+          </h2>
+          <p className="w-[25.75rem] h-10 text-sm leading-5 text-[#737373]">
+            Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
+            RELIT official consequent.
+          </p>
+          <button className="w-48 h-14 bg-[#23A6F0] flex justify-center items-center rounded-lg text-white font-bold text-sm leading-5">
+            Try it free now
+          </button>
+          <div className="w-60 h-12 flex justify-evenly items-center text-[#23A6F0]">
+            <FontAwesomeIcon icon={faTwitter} size="xl" />
+            <FontAwesomeIcon icon={faFacebook} size="xl" />
+            <FontAwesomeIcon icon={faInstagram} size="xl" />
+            <FontAwesomeIcon icon={faLinkedin} size="xl" />
           </div>
         </div>
       </div>
