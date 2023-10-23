@@ -12,21 +12,26 @@ import products from "../../../Data/products";
 import ListCardCompound from "../../Compounds/ProductListPageCompounds/ListCardCompound";
 import Pic2 from "../../../Assets/product-cover-5 (4).png";
 import ProductListCardCompound from "../../Compounds/ProductPageCompounds/ListCardCompound copy";
+import { ProductsCarousel } from "../../Compounds/HomePageCompounds/ProductsSliderCarousel";
 
 const ProductsPagePageContent = ({ Myproducts }) => {
   return (
     <div className="flex flex-col">
       <div className="w-full h-[37.5rem] bg-secondary row-centered">
         <div className="w-[65.75rem] h-[34.5rem] flex justify-between">
-          <div className="flex flex-col w-[32rem] h-[34.5rem] justify-between">
-            <img
-              src={Myproducts?.productImg}
-              alt=""
-              className="w-full h-[28rem]"
-            />
+          <div className="flex flex-col w-[32rem] gap-y-4 h-[34.5rem] justify-between">
+            <ProductsCarousel Myproducts={Myproducts} />
             <div className="flex w-56 justify-between">
-              <img src={Myproducts?.productImg2} alt="" className="w-24 h-20" />
-              <img src={Myproducts?.productImg} alt="" className="w-24 h-20" />
+              <img
+                src={Myproducts?.productImg[1]}
+                alt=""
+                className="w-24 h-20"
+              />
+              <img
+                src={Myproducts?.productImg[2]}
+                alt=""
+                className="w-24 h-20"
+              />
             </div>
           </div>
           <div className="w-[32rem] h-[29.5rem] flex flex-col text-left justify-around">
@@ -89,7 +94,7 @@ const ProductsPagePageContent = ({ Myproducts }) => {
         </div>
         <hr />
         <div className="w-[65.75rem] h-[31.25rem] pt-6 pb-12 flex justify-between items-center">
-          <img src={Myproducts.productImg3} alt="" className="w-80 h-96" />
+          <img src={Myproducts.productImg[2]} alt="" className="w-80 h-96" />
           <div className="w-80 h-96 flex flex-col justify-around">
             <h3 className="font-bold text-2xl leading-8 text-left">
               the quick fox jumps over{" "}

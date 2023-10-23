@@ -4,7 +4,7 @@ import { AiOutlineSearch, AiOutlineHeart } from "react-icons/ai";
 import { BsCart2 } from "react-icons/bs";
 import { CgFormatSlash } from "react-icons/cg";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faUser } from "@fortawesome/free-solid-svg-icons";
+import { faBars, faUser } from "@fortawesome/free-solid-svg-icons";
 
 const Header = () => {
   return (
@@ -13,8 +13,11 @@ const Header = () => {
         <Link to="/" className="flex ml-[8.5rem] w-44 h-14 items-center logo">
           Bandage
         </Link>
+        <span className="block sm:hidden">
+          <FontAwesomeIcon icon={faBars} size="xl" />
+        </span>
         <div className="flex w-[68.25rem] mr-[8.5rem] justify-around h-14 items-center">
-          <nav className="flex w-[22.5rem] justify-between">
+          <nav className="top-full w-full px-4 flex flex-col sm:w-[22.5rem] sm:flex-row justify-between">
             <NavLink to="/">Home</NavLink>
             <NavLink to="/products">Shop</NavLink>
             <NavLink to="/about">About</NavLink>

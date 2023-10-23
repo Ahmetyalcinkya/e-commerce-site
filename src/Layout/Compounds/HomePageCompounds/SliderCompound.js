@@ -24,10 +24,10 @@ const SliderCompound = ({ image }) => {
       };
 
       scrollHandle();
-      sliderRef.current.addEventListener("scroll", scrollHandle());
+      sliderRef.current.addEventListener("click", scrollHandle());
 
       return () => {
-        sliderRef?.current?.removeEventListener("scroll", scrollHandle());
+        sliderRef?.current?.removeEventListener("click", scrollHandle());
       };
     }
   }, [sliderRef]);

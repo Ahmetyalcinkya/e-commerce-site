@@ -24,15 +24,12 @@ import SectionTwoPictureCompound from "../../Compounds/HomePageCompounds/Section
 import SectionSixPictureCompound from "../../Compounds/HomePageCompounds/SectionSixPictureCompound";
 import SectionEightProductCard from "../../Compounds/HomePageCompounds/SectionEightProductCard";
 import BrandsCompound from "../../Compounds/GlobalCompounds/BrandsCompound";
+import { CarouselWithContent } from "../../Compounds/HomePageCompounds/SliderCarousel";
 
 const PageContent = () => {
   return (
     <div>
-      <ScrollContainer className="scroll-container flex overflow-x gap-x-6 scroll-smooth">
-        {data.map((image, index) => (
-          <SliderCompound key={index} image={image} />
-        ))}
-      </ScrollContainer>
+      <CarouselWithContent />
       <section className="flex w-full h-[24.5rem] bg-secondary justify-center items-center">
         <div className="flex w-[67.75rem] h-[14.5rem] items-center justify-between">
           {/* Map - key= index */}

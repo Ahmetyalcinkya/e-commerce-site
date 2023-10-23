@@ -4,9 +4,7 @@ import Pic3 from "../Assets/unsplash_QANOF9iJlFs.png";
 export default [
   {
     productId: 1,
-    productImg: Pic1,
-    productImg2: Pic2,
-    productImg3: Pic3,
+    productImg: [Pic1, Pic2, Pic3],
     productHeader: "Graphic Design",
     productDescription: "English Department",
     productPrice: "$16.48",
@@ -15,9 +13,7 @@ export default [
   },
   {
     productId: 2,
-    productImg: Pic1,
-    productImg2: Pic2,
-    productImg3: Pic3,
+    productImg: [Pic1, Pic2, Pic3],
     productHeader: "Graphic Design",
     productDescription: "English Department",
     productPrice: "$16.48",
@@ -26,9 +22,7 @@ export default [
   },
   {
     productId: 3,
-    productImg: Pic1,
-    productImg2: Pic2,
-    productImg3: Pic3,
+    productImg: [Pic1, Pic2, Pic3],
     productHeader: "Graphic Design",
     productDescription: "English Department",
     productPrice: "$16.48",
@@ -37,9 +31,7 @@ export default [
   },
   {
     productId: 4,
-    productImg: Pic1,
-    productImg2: Pic2,
-    productImg3: Pic3,
+    productImg: [Pic1, Pic2, Pic3],
     productHeader: "Graphic Design",
     productDescription: "English Department",
     productPrice: "$16.48",
