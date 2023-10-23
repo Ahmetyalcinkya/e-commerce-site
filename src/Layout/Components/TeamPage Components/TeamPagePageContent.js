@@ -9,7 +9,7 @@ import StartTrialCompound from "../../Compounds/PricingPageCompounds/StartTrialC
 
 const TeamPagePageContent = () => {
   return (
-    <div className="flex flex-col w-full justify-center items-center">
+    <div className="w-full column-centered">
       <div className="w-[90rem] h-[33.25rem] flex justify-evenly">
         <img src={Pic1} alt="" />
         <div className="flex flex-col justify-between">
@@ -22,7 +22,7 @@ const TeamPagePageContent = () => {
         </div>
       </div>
       <div className="w-full h-[110rem] flex flex-col justify-around items-center">
-        <h2 className="font-bold text-4xl leading-[3rem] text-[#252B42]">
+        <h2 className="font-bold text-4xl leading-[3rem] text-quaternary">
           Meet Our Team
         </h2>
         <TeamMemberCompound />

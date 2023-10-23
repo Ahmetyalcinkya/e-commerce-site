@@ -16,13 +16,13 @@ const TeamMemberCompound = () => {
           key={index}
         >
           <img src={teamMember?.teamImg} alt="" className="w-80 h-60" />
-          <h5 className="font-bold text-base leading-6 text-[#252B42]">
+          <h5 className="font-bold text-base leading-6 text-quaternary">
             {teamMember?.username}
           </h5>
-          <h6 className="font-bold text-base leading-6 text-[#737373]">
+          <h6 className="font-bold text-base leading-6 text-secondary">
             {teamMember?.profession}
           </h6>
-          <div className="flex w-28 h-6 justify-between text-[#23A6F0]">
+          <div className="flex w-28 h-6 justify-between primary">
             <FontAwesomeIcon icon={faFacebook} size="xl" />
             <FontAwesomeIcon icon={faInstagram} size="xl" />
             <FontAwesomeIcon icon={faTwitter} size="xl" />

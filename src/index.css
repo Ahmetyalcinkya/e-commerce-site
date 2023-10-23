@@ -2,6 +2,61 @@
 @tailwind components;
 @tailwind utilities;
 
+/* custom */
+
+.primary {
+  @apply text-[#23A6F0];
+}
+.text-secondary {
+  @apply text-[#737373];
+}
+.text-tertiary {
+  @apply text-[#23856D];
+}
+.text-quaternary {
+  @apply text-[#252B42];
+}
+.text-fifth {
+  @apply text-[#BDBDBD];
+}
+.text-sixth {
+  @apply text-[#E74040];
+}
+.text-seventh {
+  @apply text-[#8EC2F2];
+}
+.logo {
+  @apply font-bold text-2xl leading-8;
+}
+.banner-icon {
+  @apply flex items-center cursor-pointer;
+}
+.bg-primary {
+  @apply bg-[#23A6F0];
+}
+.bg-secondary {
+  @apply bg-[#FAFAFA];
+}
+.bg-tertiary {
+  @apply bg-[#252B42];
+}
+.bg-quaternary {
+  @apply bg-[#23856D];
+}
+.bg-fifth {
+  @apply bg-[#B2E3FF];
+}
+.column-centered {
+  @apply flex flex-col justify-center items-center;
+}
+.row-centered {
+  @apply flex justify-center items-center;
+}
+
+/* HOME PAGE */
+
+/* home page header */
+
 .custom-div {
   @apply w-80 h-60 bg-white relative;
 }
@@ -10,6 +65,43 @@
 }
 .product-setting-btn {
   @apply bg-none border px-2 py-1 rounded-full;
+}
+
+/* home page content */
+
+.best-seller-small {
+  @apply flex w-full h-[20.25rem] items-center;
+}
+
+/* home page footer */
+
+.footer-div {
+  @apply flex flex-col text-left w-[10rem] h-[10.625rem] justify-between;
+}
+.footer-header {
+  @apply font-bold text-base leading-6;
+}
+
+/* PRODUCTLIST PAGE */
+
+/* productlist page header */
+.product-banner-icon {
+  @apply text-white w-[1.625rem] h-[1.625rem];
+}
+
+/* productlist page content */
+
+/* productlist page footer */
+
+/* PRODUCTS PAGE */
+
+/* products page content */
+
+.right-dir {
+  @apply flex gap-x-2 items-center;
+}
+.products-h6 {
+  @apply text-sm font-bold leading-6;
 }
 
 /* pricing page */

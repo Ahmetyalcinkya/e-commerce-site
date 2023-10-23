@@ -12,8 +12,8 @@ import Header from "../HomePageComponents/Header";
 const ProductListHeader = () => {
   return (
     <div>
-      <div className="w-full h-[3.625rem] bg-[#23856D] flex justify-center items-center">
-        <div className="flex w-[70.5rem] h-[2.875rem] justify-center items-center">
+      <div className="w-full h-[3.625rem] bg-quaternary row-centered">
+        <div className="w-[70.5rem] h-[2.875rem] row-centered">
           <div className="flex">
             <div className="flex w-[7.5rem] h-9 justify-between items-center">
               <Icon name="phone" size={16} />
@@ -26,7 +26,7 @@ const ProductListHeader = () => {
               </h6>
             </div>
           </div>
-          <div className="flex w-[21.25rem] h-[2.75rem] items-center justify-center">
+          <div className="w-[21.25rem] h-[2.75rem] row-centered">
             <h6 className="font-bold text-sm text-white">
               Follow Us and get a chance to win 80% off
             </h6>
@@ -34,16 +34,16 @@ const ProductListHeader = () => {
           <div className="w-[14.75rem] flex h-11 items-center justify-around">
             <h6 className="font-bold text-sm text-white">Follow Us :</h6>
             <div className="flex w-[7.5rem] h-7 justify-between">
-              <span className="text-white w-[1.625rem] h-[1.625rem]">
+              <span className="product-banner-icon">
                 <FontAwesomeIcon icon={faInstagram} size="lg" />
               </span>
-              <span className="text-white w-[1.625rem] h-[1.625rem]">
+              <span className="product-banner-icon">
                 <FontAwesomeIcon icon={faYoutube} size="lg" />
               </span>
-              <span className="text-white w-[1.625rem] h-[1.625rem]">
+              <span className="product-banner-icon">
                 <FontAwesomeIcon icon={faFacebook} size="lg" />
               </span>
-              <span className="text-white w-[1.625rem] h-[1.625rem]">
+              <span className="product-banner-icon">
                 <FontAwesomeIcon icon={faTwitter} size="lg" />
               </span>
             </div>

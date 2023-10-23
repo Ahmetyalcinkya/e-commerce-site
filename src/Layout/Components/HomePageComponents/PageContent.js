@@ -33,7 +33,7 @@ const PageContent = () => {
           <SliderCompound key={index} image={image} />
         ))}
       </ScrollContainer>
-      <section className="flex w-full h-[24.5rem] bg-[#FAFAFA] justify-center items-center">
+      <section className="flex w-full h-[24.5rem] bg-secondary justify-center items-center">
         <div className="flex w-[67.75rem] h-[14.5rem] items-center justify-between">
           {/* Map - key= index */}
           <SectionOnePictureCompound image={Pic2} />
@@ -69,12 +69,12 @@ const PageContent = () => {
             </div>
             <hr className="mb-2" />
             <div className="w-[41.125rem] h-[45.5rem] flex flex-col justify-center">
-              <div className="flex w-full h-[20.25rem] items-center">
+              <div className="best-seller-small">
                 <SectionTwoPictureCompound image={Pic2} />
                 <SectionTwoPictureCompound image={Pic3} />
                 <SectionTwoPictureCompound image={Pic4} />
               </div>
-              <div className="flex w-full h-[20.25rem] items-center">
+              <div className="best-seller-small">
                 <SectionTwoPictureCompound image={Pic2} />
                 <SectionTwoPictureCompound image={Pic3} />
                 <SectionTwoPictureCompound image={Pic4} />
@@ -84,16 +84,16 @@ const PageContent = () => {
         </div>
       </section>
       <section className="w-full ">
-        <div className="flex justify-center items-center">
+        <div className="row-centered">
           <img className="w-[45rem] h-[49rem]" src={Pic6} alt="" />
-          <div className="w-[25rem] h-[49rem] bg-[#FAFAFA] flex justify-center items-center">
+          <div className="w-[25rem] h-[49rem] bg-[#FAFAFA] row-centered">
             <div className="w-[21.75rem] h-[32.875rem] flex flex-col justify-between items-center">
               <h3 className="text-2xl font-bold">MOST POPULAR</h3>
               <p className="w-[17.5rem] h-16 leading-tight tracking-widest text-sm font-normal">
                 We focus on ergonomics and meeting you where you work. It's only
                 a keystroke away.
               </p>
-              <div className="w-[21.75rem] h-[18.75rem] flex justify-center items-center">
+              <div className="w-[21.75rem] h-[18.75rem] row-centered">
                 <img src={Pic7} alt="" />
               </div>
               <a href="#" className="font-bold leading-tight tracking-wider">
@@ -107,7 +107,7 @@ const PageContent = () => {
           </div>
         </div>
         <div className="flex w-full justify-center h-[6.938rem] my-5">
-          <div className="flex w-[16.563rem] h-[6.938rem] justify-center items-center">
+          <div className="row-centered w-[16.563rem] h-[6.938rem]">
             <div className="flex items-center w-[12.5rem] h-16">
               <div>
                 <Icon name="one" size={25} />
@@ -122,7 +122,7 @@ const PageContent = () => {
               </div>
             </div>
           </div>
-          <div className="flex w-[16.563rem] h-[6.938rem] justify-center items-center">
+          <div className="row-centered w-[16.563rem] h-[6.938rem]">
             <div className="flex items-center w-[12.5rem] h-16">
               <div>
                 <Icon name="two" size={25} />
@@ -137,7 +137,7 @@ const PageContent = () => {
               </div>
             </div>
           </div>
-          <div className="flex w-[16.563rem] h-[6.938rem] justify-center items-center">
+          <div className="row-centered w-[16.563rem] h-[6.938rem]">
             <div className="flex items-center w-[12.5rem] h-16">
               <div>
                 <Icon name="three" size={25} />
@@ -152,7 +152,7 @@ const PageContent = () => {
               </div>
             </div>
           </div>
-          <div className="flex w-[16.563rem] h-[6.938rem] justify-center items-center">
+          <div className="row-centered w-[16.563rem] h-[6.938rem]">
             <div className="flex items-center w-[12.5rem] h-16">
               <div>
                 <Icon name="four" size={25} />
@@ -196,12 +196,12 @@ const PageContent = () => {
             </div>
             <hr className="mb-2" />
             <div className="w-[41.125rem] h-[45.5rem] flex flex-col justify-center">
-              <div className="flex w-full h-[20.25rem] items-center">
+              <div className="best-seller-small">
                 <SectionTwoPictureCompound image={Pic2} />
                 <SectionTwoPictureCompound image={Pic3} />
                 <SectionTwoPictureCompound image={Pic4} />
               </div>
-              <div className="flex w-full h-[20.25rem] items-center">
+              <div className="best-seller-small">
                 <SectionTwoPictureCompound image={Pic2} />
                 <SectionTwoPictureCompound image={Pic3} />
                 <SectionTwoPictureCompound image={Pic4} />
@@ -214,7 +214,7 @@ const PageContent = () => {
               <h6 className="font-bold text-sm leading-6 tracking-wider">
                 FURNITURE
               </h6>
-              <h6 className="font-bold text-sm leading-6 tracking-wider	text-[#737373] text-left">
+              <h6 className="font-bold text-sm leading-6 tracking-wider	text-secondary text-left">
                 5 Items
               </h6>
             </div>
@@ -222,21 +222,21 @@ const PageContent = () => {
         </div>
       </section>
       <section className="w-full h-[55rem] flex justify-center py-24">
-        <div className="w-[25rem]  bg-[#FAFAFA] flex justify-center items-center">
+        <div className="w-[25rem] bg-secondary row-centered ">
           <div className="w-[21.75rem] h-[32.875rem] flex flex-col justify-between items-center">
             <h3 className="text-2xl font-bold">MOST POPULAR</h3>
             <p className="w-[17.5rem] h-16 leading-tight tracking-widest text-sm font-normal">
               We focus on ergonomics and meeting you where you work. It's only a
               keystroke away.
             </p>
-            <div className="w-[21.75rem] h-[18.75rem] flex justify-center items-center">
+            <div className="w-[21.75rem] h-[18.75rem] row-centered">
               <img src={Pic10} alt="" />
             </div>
             <a href="#" className="font-bold leading-tight tracking-wider">
               English Department
             </a>
-            <h6 className="font-bold text-sm leading-6 tracking-widest text-[#737373] flex">
-              <span className="flex flex-col justify-center items-center mr-1">
+            <h6 className="font-bold text-sm leading-6 tracking-widest text-secondary flex">
+              <span className="column-centered mr-1">
                 <Icon name="downArrow" size={12} />
                 <Icon name="vector" size={16} />
               </span>
@@ -244,7 +244,7 @@ const PageContent = () => {
             </h6>
             <h5 className="font-bold">
               $16.48
-              <span className="ml-1 text-[#23856D] font-bold">$6.48</span>
+              <span className="ml-1 text-tertiary font-bold">$6.48</span>
             </h5>
             <div className="flex">
               <button className="w-4 h-4 bg-[#23A6F0] rounded-full mr-2"></button>
@@ -256,7 +256,7 @@ const PageContent = () => {
         </div>
         <img src={Pic9} alt="" />
       </section>
-      <section className="w-full h-[38.75rem] bg-[#FAFAFA] flex flex-col items-center">
+      <section className="w-full h-[38.75rem] bg-secondary flex flex-col items-center">
         <div className="w-[70.25rem] h-full flex justify-center py-10">
           <div className="w-[65rem] flex flex-col">
             <h3 className="font-bold text-2xl leading-8 tracking-wider text-left pb-5">
@@ -276,10 +276,10 @@ const PageContent = () => {
       <section className="w-full h-[62.125rem]">
         <div className="w-[65.625rem] h-full m-auto flex flex-col items-center justify-around">
           <div className="w-[43.25rem] h-[5.25rem] flex flex-col justify-around mx-auto">
-            <h6 className="font-bold text-sm leading-6 text-[#23A6F0]">
+            <h6 className="font-bold text-sm leading-6 primary">
               Practice Advice
             </h6>
-            <h2 className="font-bold text-4xl leading-10 ">Featured Posts</h2>
+            <h2 className="font-bold text-4xl leading-10">Featured Posts</h2>
           </div>
           <div className="w-[65.313rem] h-[37.5rem] flex justify-between">
             <SectionEightProductCard image={Pic15} />

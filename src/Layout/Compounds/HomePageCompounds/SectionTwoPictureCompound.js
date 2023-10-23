@@ -10,7 +10,7 @@ const SectionTwoPictureCompound = ({ image }) => {
           English Department
         </h6>
         <p className="text-sm mb-4">
-          $16.48 <span className="text-[#23856D] font-bold">$6.48</span>
+          $16.48 <span className="text-tertiary font-bold">$6.48</span>
         </p>
       </div>
     </div>

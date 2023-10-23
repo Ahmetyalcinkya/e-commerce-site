@@ -43,7 +43,7 @@ const SliderCompound = ({ image }) => {
   return (
     <div
       ref={sliderRef}
-      className="w-full flex flex-col flex-shrink-0 relative justify-center items-center"
+      className="w-full flex-shrink-0 relative column-centered"
     >
       <img
         className="w-full h-[40rem] z-0"
@@ -73,7 +73,7 @@ const SliderCompound = ({ image }) => {
 
       {/* ÇALIŞMADI!!! */}
 
-      <div className="flex z-20 flex-col w-[43.75rem] m-auto px-10 h-80 items-center justify-center absolute text-white">
+      <div className="z-20 w-[43.75rem] m-auto px-10 h-80 column-centered absolute text-white">
         <h1 className="text-[3.625rem] font-bold leading-[5rem] w-[41.125rem]">
           GROCERIES DELIVERY
         </h1>

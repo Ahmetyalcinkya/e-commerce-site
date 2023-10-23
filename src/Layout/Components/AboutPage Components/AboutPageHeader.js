@@ -8,7 +8,7 @@ const AboutPageHeader = () => {
   return (
     <div className="flex justify-center items-center">
       <div className="w-[65.625rem] h-24 flex justify-between items-center">
-        <Link to="/" className="font-bold text-2xl leading-8">
+        <Link to="/" className="logo">
           Bandage
         </Link>
         <nav className="w-[51rem] h-16 flex justify-between items-center">

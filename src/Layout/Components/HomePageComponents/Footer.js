@@ -9,7 +9,7 @@ import {
 
 const Footer = () => {
   return (
-    <div className="w-full h-[30rem] bg-[#252B42] flex flex-col items-center">
+    <div className="w-full h-[30rem] bg-tertiary flex flex-col items-center">
       <div className="flex w-[65.625rem] h-[8.875rem] py-10 justify-between">
         <div className="flex flex-col text-white text-left">
           <h3 className="font-bold text-2xl leading-8 tracking-wide">
@@ -19,14 +19,14 @@ const Footer = () => {
             the quick fox jumps over the lazy dog
           </p>
         </div>
-        <button className="text-white py-4 px-10 bg-[#23A6F0] rounded">
+        <button className="text-white py-4 px-10 bg-primary rounded">
           Contact Us
         </button>
       </div>
-      <div className="h-72 w-full flex justify-center items-center text-white">
+      <div className="h-72 w-full row-centered text-white">
         <div className="w-[65rem] h-[10.625rem] flex justify-between">
-          <div className="flex flex-col text-left w-[9.25rem] h-[10.625rem] justify-between">
-            <h5 className="font-bold text-base leading-6">Company</h5>
+          <div className="footer-div">
+            <h5 className="footer-header">Company</h5>
             <div className="flex flex-col gap-y-2.5">
               <a href="#">About Us</a>
               <a href="#">Carrier</a>
@@ -34,8 +34,8 @@ const Footer = () => {
               <a href="#">Blog</a>
             </div>
           </div>
-          <div className="flex flex-col text-left w-[9.25rem] h-[10.625rem] justify-between">
-            <h5 className="font-bold text-base leading-6">Legal</h5>
+          <div className="footer-div">
+            <h5 className="footer-header">Legal</h5>
             <div className="flex flex-col gap-y-2.5">
               <a href="#">About Us</a>
               <a href="#">Carrier</a>
@@ -43,8 +43,8 @@ const Footer = () => {
               <a href="#">Blog</a>
             </div>
           </div>
-          <div className="flex flex-col text-left w-[9.25rem] h-[10.625rem] justify-between">
-            <h5 className="font-bold text-base leading-6">Features</h5>
+          <div className="footer-div">
+            <h5 className="footer-header">Features</h5>
             <div className="flex flex-col gap-y-2.5">
               <a href="#">Business Marketing</a>
               <a href="#">User Analytic</a>
@@ -52,8 +52,8 @@ const Footer = () => {
               <a href="#">Unlimited Support</a>
             </div>
           </div>
-          <div className="flex flex-col text-left w-[9.25rem] h-[10.625rem] justify-between">
-            <h5 className="font-bold text-base leading-6">Resources</h5>
+          <div className="footer-div">
+            <h5 className="footer-header">Resources</h5>
             <div className="flex flex-col gap-y-2.5">
               <a href="#">IOS & Android</a>
               <a href="#">Watch a Demo</a>
@@ -61,8 +61,8 @@ const Footer = () => {
               <a href="#">API</a>
             </div>
           </div>
-          <div className="flex flex-col text-left w-80 h-[9.5rem] justify-between">
-            <h5 className="font-bold text-base leading-6">Get In Touch</h5>
+          <div className="flex flex-col text-left w-72 h-[9.5rem] justify-between">
+            <h5 className="footer-header">Get In Touch</h5>
             <div className="flex flex-col gap-y-2.5">
               <div className="flex">
                 <span className="w-8 h-8">

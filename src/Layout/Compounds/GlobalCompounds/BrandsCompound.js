@@ -8,7 +8,7 @@ import Pic6 from "../../../Assets/Vector (5).png";
 
 const BrandsCompound = () => {
   return (
-    <section className="w-full h-[10.938rem] bg-[#FAFAFA] flex items-center justify-center">
+    <section className="w-full h-[10.938rem] bg-secondary flex items-center justify-center">
       <div className="flex justify-between w-[65.625rem] m-auto items-center">
         <img src={Pic1} alt="" className="w-[6.375rem] h-[2.125rem]" />
         <img src={Pic2} alt="" className="w-[5.25rem] h-[3.75rem]" />

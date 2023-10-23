@@ -8,16 +8,16 @@ const PricingPageHeader = () => {
     <div className="w-full h-[22rem] flex flex-col justify-between items-center">
       <AboutPageHeader />
       <div className="w-[26.75rem] h-44 flex flex-col justify-between items-center">
-        <h5 className="font-bold text-base text-[#737373] leading-6">
+        <h5 className="font-bold text-base text-secondary leading-6">
           PRICING
         </h5>
-        <h1 className="font-bold text-5xl text-[#252B42]">Simple Pricing</h1>
+        <h1 className="font-bold text-5xl text-quaternary">Simple Pricing</h1>
         <div className="flex items-center gap-x-4 w-32 h-12">
-          <a href="#" className="text-[#252B42]">
+          <a href="#" className="text-quaternary">
             Home
           </a>
           <FontAwesomeIcon icon={faChevronRight} />
-          <a href="#" className="text-[#BDBDBD]">
+          <a href="#" className="text-fifth">
             Shop
           </a>
         </div>

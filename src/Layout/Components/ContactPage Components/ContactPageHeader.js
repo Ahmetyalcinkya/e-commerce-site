@@ -15,24 +15,24 @@ const ContactPageHeader = () => {
       <AboutPageHeader />
       <div className="w-[65.625rem] h-[46.5rem] flex justify-between items-center">
         <div className="w-[37.5rem] h-[32.5rem] flex flex-col text-left justify-between">
-          <h5 className="font-bold text-base leading-6 text-[#252B42]">
+          <h5 className="font-bold text-base leading-6 text-quaternary">
             CONTACT US
           </h5>
-          <h1 className="w-96 h-40 font-bold text-6xl leading-[5rem] text-[#252B42]">
+          <h1 className="w-96 h-40 font-bold text-6xl leading-[5rem] text-quaternary">
             Get in touch today!
           </h1>
-          <h4 className="text-xl leading-8 text-[#737373] w-[23.5rem] h-[3.75rem]">
+          <h4 className="text-xl leading-8 text-secondary w-[23.5rem] h-[3.75rem]">
             We know how large objects will act, but things on a small scale{" "}
           </h4>
           <div className="w-60 h-20 flex flex-col justify-between">
-            <h3 className="font-bold text-2xl leading-8 text-[#252B42]">
+            <h3 className="font-bold text-2xl leading-8 text-quaternary">
               Phone ; +451 215 215
             </h3>
-            <h3 className="font-bold text-2xl leading-8 text-[#252B42]">
+            <h3 className="font-bold text-2xl leading-8 text-quaternary">
               Fax : +451 215 215
             </h3>
           </div>
-          <div className="w-60 h-20 flex justify-around items-center text-[#252B42]">
+          <div className="w-60 h-20 flex justify-around items-center text-quaternary">
             <FontAwesomeIcon icon={faTwitter} size="xl" />
             <FontAwesomeIcon icon={faFacebook} size="xl" />
             <FontAwesomeIcon icon={faInstagram} size="xl" />

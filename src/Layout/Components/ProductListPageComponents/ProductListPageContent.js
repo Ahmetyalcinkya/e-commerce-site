@@ -13,11 +13,11 @@ const ProductListPageContent = () => {
   return (
     <div>
       <section className="flex flex-col bg-[#FAFAFA] w-full">
-        <div className="flex h-24 justify-center items-center">
+        <div className="h-24 row-centered">
           <div className="flex w-[65.625rem] h-[2.75rem] justify-between items-center">
-            <h3 className="text-bold text-2xl text-[#252B42]">Shop</h3>
+            <h3 className="text-bold text-2xl text-quaternary">Shop</h3>
             <div className="flex items-center gap-x-4">
-              <a href="#" className="text-[#252B42]">
+              <a href="#" className="text-quaternary">
                 Home
               </a>
               <FontAwesomeIcon icon={faChevronRight} />
@@ -33,27 +33,27 @@ const ProductListPageContent = () => {
           </div>
         </div>
       </section>
-      <div className="flex w-full h-24 justify-center items-center">
+      <div className="w-full h-24 row-centered">
         <div className="w-[65.625rem] h-full flex items-center justify-between">
           <h6 className="font-bold text-sm text-[#737373]">
             Showing all 12 results
           </h6>
           <div className="flex items-center gap-x-4">
-            <h6 className="font-bold text-sm text-[#737373]">Views:</h6>
+            <h6 className="font-bold text-sm text-secondary">Views:</h6>
             <div className="flex gap-x-4">
-              <button className="w-12 h-12 flex justify-center items-center border">
+              <button className="w-12 h-12 row-centered border">
                 <Icon name="list1" />
               </button>
-              <button className="w-12 h-12 flex justify-center items-center border">
+              <button className="w-12 h-12 row-centered border">
                 <Icon name="list2" />
               </button>
             </div>
           </div>
           <div className="flex gap-x-4">
-            <button className="w-[8.75rem] h-[3.125rem] text-[#737373] bg-[#DDDDDD] rounded">
+            <button className="w-[8.75rem] h-[3.125rem] text-secondary bg-[#DDDDDD] rounded">
               Popularity
             </button>
-            <button className="w-24 h-[3.125rem] text-white bg-[#23A6F0] rounded">
+            <button className="w-24 h-[3.125rem] text-white bg-primary rounded">
               Filter
             </button>
           </div>
@@ -68,25 +68,25 @@ const ProductListPageContent = () => {
           )}
         </div>
         <nav className="flex">
-          <ul className="flex w-[19.75rem] h-20 items-center text-[#23A6F0]">
+          <ul className="flex w-[19.75rem] h-20 items-center primary">
             <button className="w-20 h-20 border rounded-l-lg">
               <a href="#">Previous</a>
             </button>
             <a
               href="#"
-              className="w-14 h-full hover:bg-[#23A6F0] flex justify-center items-center border hover:text-white cursor-pointer"
+              className="w-14 h-full hover:bg-primary row-centered border hover:text-white cursor-pointer"
             >
               1
             </a>
             <a
               href="#"
-              className="w-14 h-full hover:bg-[#23A6F0] flex justify-center items-center border hover:text-white cursor-pointer"
+              className="w-14 h-full hover:bg-primary row-centered border hover:text-white cursor-pointer"
             >
               2
             </a>
             <a
               href="#"
-              className="w-14 h-full hover:bg-[#23A6F0] flex justify-center items-center border hover:text-white cursor-pointer"
+              className="w-14 h-full hover:bg-primary row-centered border hover:text-white cursor-pointer"
             >
               3
             </a>

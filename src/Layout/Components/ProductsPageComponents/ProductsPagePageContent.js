@@ -16,7 +16,7 @@ import ProductListCardCompound from "../../Compounds/ProductPageCompounds/ListCa
 const ProductsPagePageContent = ({ Myproducts }) => {
   return (
     <div className="flex flex-col">
-      <div className="w-full h-[37.5rem] bg-[#FAFAFA] flex justify-center items-center">
+      <div className="w-full h-[37.5rem] bg-secondary row-centered">
         <div className="w-[65.75rem] h-[34.5rem] flex justify-between">
           <div className="flex flex-col w-[32rem] h-[34.5rem] justify-between">
             <img
@@ -33,7 +33,7 @@ const ProductsPagePageContent = ({ Myproducts }) => {
             <h4 className="font-normal text-xl leading-8">
               {Myproducts.productHeader}
             </h4>
-            <div className="flex gap-x-2 items-center">
+            <div className="right-dir">
               <FontAwesomeIcon icon={faStar} color="#F3CD03" />
               <FontAwesomeIcon icon={faStar} color="#F3CD03" />
               <FontAwesomeIcon icon={faStar} color="#F3CD03" />
@@ -48,7 +48,7 @@ const ProductsPagePageContent = ({ Myproducts }) => {
               <h6 className="font-bold text-sm leading-7 mr-2">
                 Availability :{" "}
               </h6>
-              <h6 className="text-[#23A6F0] font-bold text-sm leading-7">
+              <h6 className="text-primary font-bold text-sm leading-7">
                 {Myproducts.productSituation}
               </h6>
             </div>
@@ -63,7 +63,7 @@ const ProductsPagePageContent = ({ Myproducts }) => {
               <button className="w-8 h-8 bg-[#252B42] rounded-full mr-2"></button>
             </div>
             <div className="flex w-[18.75rem] h-11 justify-between items-center">
-              <button className="bg-[#23A6F0] py-2.5 px-5 rounded text-white">
+              <button className="bg-primary py-2.5 px-5 rounded text-white">
                 Select Options
               </button>
               <button className="product-setting-btn">
@@ -110,53 +110,53 @@ const ProductsPagePageContent = ({ Myproducts }) => {
               the quick fox jumps over{" "}
             </h3>
             <div className="h-32 flex flex-col justify-around">
-              <div className="flex gap-x-2 items-center">
+              <div className="right-dir">
                 <FontAwesomeIcon icon={faChevronRight} />
-                <h6 className="text-sm font-bold leading-6">
+                <h6 className="products-h6">
                   the quick fox jumps over the lazy dog
                 </h6>
               </div>
-              <div className="flex gap-x-2 items-center">
+              <div className="right-dir">
                 <FontAwesomeIcon icon={faChevronRight} />
-                <h6 className="text-sm font-bold leading-6">
+                <h6 className="products-h6">
                   the quick fox jumps over the lazy dog
                 </h6>
               </div>
-              <div className="flex gap-x-2 items-center">
+              <div className="right-dir">
                 <FontAwesomeIcon icon={faChevronRight} />
-                <h6 className="text-sm font-bold leading-6">
+                <h6 className="products-h6">
                   the quick fox jumps over the lazy dog
                 </h6>
               </div>
-              <div className="flex gap-x-2 items-center">
+              <div className="right-dir">
                 <FontAwesomeIcon icon={faChevronRight} />
-                <h6 className="text-sm font-bold leading-6">
+                <h6 className="products-h6">
                   the quick fox jumps over the lazy dog
                 </h6>
               </div>
             </div>
             <div className="h-32 flex flex-col justify-around">
-              <div className="flex gap-x-2 items-center">
+              <div className="right-dir">
                 <FontAwesomeIcon icon={faChevronRight} />
-                <h6 className="text-sm font-bold leading-6">
+                <h6 className="products-h6">
                   the quick fox jumps over the lazy dog
                 </h6>
               </div>
-              <div className="flex gap-x-2 items-center">
+              <div className="right-dir">
                 <FontAwesomeIcon icon={faChevronRight} />
-                <h6 className="text-sm font-bold leading-6">
+                <h6 className="products-h6">
                   the quick fox jumps over the lazy dog
                 </h6>
               </div>
-              <div className="flex gap-x-2 items-center">
+              <div className="right-dir">
                 <FontAwesomeIcon icon={faChevronRight} />
-                <h6 className="text-sm font-bold leading-6">
+                <h6 className="products-h6">
                   the quick fox jumps over the lazy dog
                 </h6>
               </div>
-              <div className="flex gap-x-2 items-center">
+              <div className="right-dir">
                 <FontAwesomeIcon icon={faChevronRight} />
-                <h6 className="text-sm font-bold leading-6">
+                <h6 className="products-h6">
                   the quick fox jumps over the lazy dog
                 </h6>
               </div>
@@ -164,7 +164,7 @@ const ProductsPagePageContent = ({ Myproducts }) => {
           </div>
         </div>
       </div>
-      <div className="w-full h-[68rem] bg-[#FAFAFA] flex justify-center items-center">
+      <div className="w-full h-[68rem] bg-secondary row-centered">
         <div className="w-[65.625rem] flex flex-col justify-center text-left">
           <h3 className="font-bold text-2xl">BESTSELLER PRODUCTS</h3>
           <hr className="m-2 w-full" />

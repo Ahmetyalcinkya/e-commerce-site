@@ -7,14 +7,14 @@ const ProductsPageHeader = () => {
   return (
     <div className="flex flex-col">
       <ProductListHeader />
-      <div className="w-full h-24 bg-[#FAFAFA] flex justify-center items-center">
+      <div className="w-full h-24 bg-secondary flex justify-center items-center">
         <div className="flex w-[65.625rem] h-[2.75rem] justify-start">
           <div className="flex items-center gap-x-4">
-            <a href="#" className="text-[#252B42]">
+            <a href="#" className="text-quaternary">
               Home
             </a>
             <FontAwesomeIcon icon={faChevronRight} />
-            <a href="#" className="text-[#BDBDBD]">
+            <a href="#" className="text-fifth">
               Shop
             </a>
           </div>
