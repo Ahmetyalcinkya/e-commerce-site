@@ -5,7 +5,7 @@ import Footer from "../Components/HomePageComponents/Footer";
 
 const HomePage = () => {
   return (
-    <div>
+    <div className="flex flex-col">
       <Header />
       <PageContent />
       <Footer />

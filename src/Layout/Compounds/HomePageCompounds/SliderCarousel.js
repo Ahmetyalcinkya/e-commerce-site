@@ -8,7 +8,7 @@ export function CarouselWithContent() {
       <div className="relative h-full w-full">
         <img src={Pic1} alt="image 1" className="h-full w-full object-cover" />
         <div className="absolute inset-0 grid h-full w-full place-items-center ">
-          <div className="flex flex-col justify-around items-center w-3/4 text-center md:w-2/4">
+          <div className="w-64 flex flex-col justify-around items-center iphone:w-3/4 text-center md:w-2/4">
             <Typography
               variant="h1"
               color="white"
@@ -19,7 +19,7 @@ export function CarouselWithContent() {
             <Typography
               variant="lead"
               color="white"
-              className="opacity-80 w-[33.5rem] font-montserrat"
+              className="opacity-80 w-72 iphone:w-[33.5rem] font-montserrat"
             >
               We know how large objects will act, but things on a small scale
               just do not act that way.
@@ -27,7 +27,7 @@ export function CarouselWithContent() {
             <div className="flex justify-center gap-2">
               <Link
                 to="/products"
-                className=" flex p-2 bg-blue-500 w-[12.75rem] h-16 m-auto rounded-lg justify-center items-center text-white font-bold text-base leading-8 tracking-wider my-4"
+                className="w-[12.25rem] flex p-2 bg-blue-500 iphone:w-[12.75rem] h-16 m-auto rounded-lg justify-center items-center text-white font-bold text-base leading-8 tracking-wider my-4"
               >
                 Start Now
               </Link>
@@ -38,7 +38,7 @@ export function CarouselWithContent() {
       <div className="relative h-full w-full">
         <img src={Pic1} alt="image 1" className="h-full w-full object-cover" />
         <div className="absolute inset-0 grid h-full w-full place-items-center ">
-          <div className="flex flex-col justify-around items-center w-3/4 text-center md:w-2/4">
+          <div className="w-64 flex flex-col justify-around items-center iphone:w-3/4 text-center md:w-2/4">
             <Typography
               variant="h1"
               color="white"
@@ -49,7 +49,7 @@ export function CarouselWithContent() {
             <Typography
               variant="lead"
               color="white"
-              className="opacity-80 w-[33.5rem] font-montserrat"
+              className="opacity-80 w-72 iphone:w-[33.5rem] font-montserrat"
             >
               We know how large objects will act, but things on a small scale
               just do not act that way.
@@ -57,7 +57,7 @@ export function CarouselWithContent() {
             <div className="flex justify-center gap-2">
               <Link
                 to="/products"
-                className=" flex p-2 bg-blue-500 w-[12.75rem] h-16 m-auto rounded-lg justify-center items-center text-white font-bold text-base leading-8 tracking-wider my-4"
+                className="w-[12.25rem] flex p-2 bg-blue-500 iphone:w-[12.75rem] h-16 m-auto rounded-lg justify-center items-center text-white font-bold text-base leading-8 tracking-wider my-4"
               >
                 Start Now
               </Link>
@@ -68,7 +68,7 @@ export function CarouselWithContent() {
       <div className="relative h-full w-full">
         <img src={Pic1} alt="image 1" className="h-full w-full object-cover" />
         <div className="absolute inset-0 grid h-full w-full place-items-center ">
-          <div className="flex flex-col justify-around items-center w-3/4 text-center md:w-2/4">
+          <div className="w-64 flex flex-col justify-around items-center iphone:w-3/4 text-center md:w-2/4">
             <Typography
               variant="h1"
               color="white"
@@ -79,7 +79,7 @@ export function CarouselWithContent() {
             <Typography
               variant="lead"
               color="white"
-              className="opacity-80 w-[33.5rem] font-montserrat"
+              className="opacity-80 w-72 iphone:w-[33.5rem] font-montserrat"
             >
               We know how large objects will act, but things on a small scale
               just do not act that way.
@@ -87,7 +87,7 @@ export function CarouselWithContent() {
             <div className="flex justify-center gap-2">
               <Link
                 to="/products"
-                className=" flex p-2 bg-blue-500 w-[12.75rem] h-16 m-auto rounded-lg justify-center items-center text-white font-bold text-base leading-8 tracking-wider my-4"
+                className="w-[12.25rem] flex p-2 bg-blue-500 iphone:w-[12.75rem] h-16 m-auto rounded-lg justify-center items-center text-white font-bold text-base leading-8 tracking-wider my-4"
               >
                 Start Now
               </Link>

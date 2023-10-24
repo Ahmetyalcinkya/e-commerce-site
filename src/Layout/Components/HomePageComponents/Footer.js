@@ -9,8 +9,8 @@ import {
 
 const Footer = () => {
   return (
-    <div className="w-full h-[30rem] bg-tertiary flex flex-col items-center">
-      <div className="flex w-[65.625rem] h-[8.875rem] py-10 justify-between">
+    <div className="w-full h-[98rem] iphone:h-[30rem] bg-tertiary flex flex-col items-center justify-around gap-y-16 iphone:gap-y-0">
+      <div className="flex w-60 flex-col h-60 py-0 justify-around items-start iphone:flex-row iphone:w-[65.625rem] iphone:h-[8.875rem] iphone:py-10 iphone:justify-between">
         <div className="flex flex-col text-white text-left">
           <h3 className="font-bold text-2xl leading-8 tracking-wide">
             Consulting Agency For Your Business
@@ -23,8 +23,8 @@ const Footer = () => {
           Contact Us
         </button>
       </div>
-      <div className="h-72 w-full row-centered text-white">
-        <div className="w-[65rem] h-[10.625rem] flex justify-between">
+      <div className="iphone:h-72 w-full flex-col row-centered text-white">
+        <div className="items-start w-60 iphone:w-[65rem] iphone:h-[10.625rem] flex flex-col iphone:flex-row justify-between  gap-y-8 iphone:gap-y-0">
           <div className="footer-div">
             <h5 className="footer-header">Company</h5>
             <div className="flex flex-col gap-y-2.5">
@@ -61,7 +61,7 @@ const Footer = () => {
               <a href="#">API</a>
             </div>
           </div>
-          <div className="flex flex-col text-left w-72 h-[9.5rem] justify-between">
+          <div className="flex flex-col text-left w-full iphone:w-72 h-[9.5rem] justify-between">
             <h5 className="footer-header">Get In Touch</h5>
             <div className="flex flex-col gap-y-2.5">
               <div className="flex">
@@ -86,7 +86,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="flex w-[65.625rem] h-[4.75rem] items-center justify-between">
+      <div className="flex flex-col iphone:flex-row w-60 h-32 iphone:w-[65.625rem] iphone:h-[4.75rem] items-center justify-between mt-16 iphone:mt-0 text-left">
         <h6 className="font-bold text-sm leading-8 tracking-wider text-white">
           Made With Love By Finland All Right Reserved
         </h6>

@@ -3,7 +3,7 @@ import { Icon } from "../../../Icons/icons";
 
 const SectionEightProductCard = ({ image }) => {
   return (
-    <div className="flex flex-col w-[20.5rem] h-[37.5rem] gap-y-4 border">
+    <div className="flex flex-col w-full iphone:w-[20.5rem] h-[37.5rem] gap-y-4 border">
       <img className="h-[18.75rem]" src={image} alt="" />
       <div className="flex flex-col gap-y-4 p-4">
         <div className="flex w-40 h-6 justify-between">
