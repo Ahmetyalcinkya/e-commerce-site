@@ -9,7 +9,7 @@ module.exports = withMT({
   ],
   theme: {
     screens: {
-      iphone: "376px",
+      iphone: "520px",
     },
     extend: {
       fontFamily: {

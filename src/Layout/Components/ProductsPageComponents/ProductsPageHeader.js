@@ -8,7 +8,7 @@ const ProductsPageHeader = () => {
     <div className="flex flex-col">
       <ProductListHeader />
       <div className="w-full h-24 bg-secondary flex justify-center items-center">
-        <div className="flex w-[65.625rem] h-[2.75rem] justify-start">
+        <div className="flex iphone:w-[65.625rem] h-[2.75rem] justify-start">
           <div className="flex items-center gap-x-4">
             <a href="#" className="text-quaternary">
               Home
