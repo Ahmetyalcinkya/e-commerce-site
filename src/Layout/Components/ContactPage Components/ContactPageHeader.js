@@ -13,15 +13,15 @@ const ContactPageHeader = () => {
   return (
     <div className="w-full flex flex-col justify-between items-center">
       <AboutPageHeader />
-      <div className="w-[65.625rem] h-[46.5rem] flex justify-between items-center">
-        <div className="w-[37.5rem] h-[32.5rem] flex flex-col text-left justify-between">
-          <h5 className="font-bold text-base leading-6 text-quaternary">
+      <div className="w-full flex-col iphone:flex-row h-[67.5rem] iphone:w-[65.625rem] iphone:h-[46.5rem] flex justify-between items-center">
+        <div className="w-full h-[37rem] iphone:w-[37.5rem] iphone:h-[32.5rem] flex flex-col text-left justify-between items-center">
+          <h5 className="font-bold text-center iphone:text-left text-base leading-6 text-quaternary">
             CONTACT US
           </h5>
-          <h1 className="w-96 h-40 font-bold text-6xl leading-[5rem] text-quaternary">
+          <h1 className="w-full iphone:w-96 h-40 text-center iphone:text-left font-bold text-6xl leading-[5rem] text-quaternary">
             Get in touch today!
           </h1>
-          <h4 className="text-xl leading-8 text-secondary w-[23.5rem] h-[3.75rem]">
+          <h4 className="text-xl leading-8 text-center iphone:text-left text-secondary w-[17.5rem] iphone:w-[23.5rem] iphone:h-[3.75rem]">
             We know how large objects will act, but things on a small scale{" "}
           </h4>
           <div className="w-60 h-20 flex flex-col justify-between">

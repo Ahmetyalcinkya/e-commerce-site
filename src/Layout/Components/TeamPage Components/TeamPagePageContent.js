@@ -10,18 +10,18 @@ import StartTrialCompound from "../../Compounds/PricingPageCompounds/StartTrialC
 const TeamPagePageContent = () => {
   return (
     <div className="w-full column-centered">
-      <div className="w-[90rem] h-[33.25rem] flex justify-evenly">
+      <div className="w-full flex-col iphone:flex-row iphone:w-[90rem] iphone:h-[33.25rem] flex justify-evenly">
         <img src={Pic1} alt="" />
-        <div className="flex flex-col justify-between">
-          <img src={Pic2} alt="" />
-          <img src={Pic3} alt="" />
+        <div className="w-full flex flex-row iphone:flex-col justify-between">
+          <img src={Pic2} alt="" className="w-1/2 p-1 iphone:w-full" />
+          <img src={Pic3} alt="" className="w-1/2 p-1 iphone:w-full" />
         </div>
-        <div className="flex flex-col justify-between">
-          <img src={Pic4} alt="" />
-          <img src={Pic5} alt="" />
+        <div className="w-full flex flex-row iphone:flex-col justify-between">
+          <img src={Pic4} alt="" className="w-1/2 p-1 iphone:w-full" />
+          <img src={Pic5} alt="" className="w-1/2 p-1 iphone:w-full" />
         </div>
       </div>
-      <div className="w-full h-[110rem] flex flex-col justify-around items-center">
+      <div className="w-full h-[262rem] iphone:h-[110rem] flex flex-col justify-around items-center">
         <h2 className="font-bold text-4xl leading-[3rem] text-quaternary">
           Meet Our Team
         </h2>

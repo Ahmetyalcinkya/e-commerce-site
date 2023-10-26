@@ -9,7 +9,7 @@ import {
 
 const TeamMemberCompound = () => {
   return (
-    <div className="w-[64.5rem] h-96 flex justify-between">
+    <div className="w-full iphone:w-[64.5rem] h-[80rem] iphone:h-96 flex flex-col iphone:flex-row justify-around items-center iphone:justify-between">
       {team.map((teamMember, index) => (
         <div
           className="flex flex-col justify-between items-center w-80 h-96"

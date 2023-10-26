@@ -7,7 +7,7 @@ const TeamPageHeader = () => {
   return (
     <div className="w-full h-96 column-centered">
       <AboutPageHeader />
-      <div className="w-[54.5rem] h-72 column-centered">
+      <div className="w-full h-[12.5rem] iphone:w-[54.5rem] iphone:h-72 column-centered">
         <h5 className="font-bold text-base leading-6 text-secondary">
           WHAT WE DO
         </h5>

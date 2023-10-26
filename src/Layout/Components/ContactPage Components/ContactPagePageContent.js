@@ -9,14 +9,14 @@ import Pic1 from "../../../Assets/Arrow 2 (1).png";
 const ContactPagePageContent = () => {
   return (
     <div className="flex flex-col">
-      <div className="w-full h-[51rem] flex flex-col justify-around items-center">
-        <div className="w-[39.5rem] h-32 flex flex-col justify-between items-center text-quaternary">
+      <div className="w-full h-[96rem] iphone:h-[51rem] flex flex-col justify-around items-center">
+        <div className="w-full h-[11.5rem] iphone:w-[39.5rem] iphone:h-32 flex flex-col justify-between items-center text-quaternary">
           <h6 className="font-bold text-sm leading-6">VISIT OUR OFFICE</h6>
-          <h2 className="w-[33rem] h-24 font-bold text-4xl leading-[3rem]">
+          <h2 className="w-[18.5rem] h-[9.5rem] iphone:w-[33rem] iphone:h-24 font-bold text-4xl leading-[3rem]">
             We help small businesses with big ideas
           </h2>
         </div>
-        <div className="w-[62rem] h-[25rem] flex justify-evenly items-center">
+        <div className="w-full h-[70rem] flex-col iphone:flex-row iphone:w-[62rem] iphone:h-[25rem] flex justify-evenly items-center">
           <div className="w-[20.5rem] h-[21.5rem] flex flex-col justify-around items-center border border-[#23A6F0] rounded-2xl">
             <FontAwesomeIcon
               icon={faPhone}
