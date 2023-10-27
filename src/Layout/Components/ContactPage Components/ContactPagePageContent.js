@@ -77,7 +77,7 @@ const ContactPagePageContent = () => {
       </div>
       <div className="w-full h-[21.75rem] column-centered">
         <img src={Pic1} alt="" />
-        <div className="w-[38rem] h-48 flex flex-col items-center justify-around">
+        <div className="w-full iphone:w-[38rem] h-48 flex flex-col items-center justify-around">
           <h5 className="font-bold text-base leading-6 text-quaternary">
             WE Can't WAIT TO MEET YOU
           </h5>

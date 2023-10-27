@@ -8,7 +8,7 @@ import { Icon } from "../../../../Icons/icons";
 
 const ProductCards1 = () => {
   return (
-    <section className="w-full h-[142.25rem] iphone:h-[56.25rem] mt-[6.25rem] overflow-y-scroll">
+    <section className="w-full h-[190rem] iphone:h-[56.25rem] mt-[6.25rem] ">
       <div className="flex flex-col w-full iphone:flex-row iphone:w-[67.375rem] m-auto justify-between">
         <img src={Pic5} alt="" className="px-2 iphone:px-0" />
         <div className="w-full h-[120rem] iphone:w-[41.125rem] iphone:h-[50rem]">

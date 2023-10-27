@@ -45,7 +45,7 @@ const ProductCards2 = () => {
             </div>
           </div>
         </div>
-        <div className="relative">
+        <div className="relative flex flex-col w-full iphone:flex-row iphone:w-[67.375rem] m-auto justify-between">
           <img src={Pic4} alt="" />
           <div className="absolute top-5 left-5 flex flex-col">
             <h6 className="font-bold text-sm leading-6 tracking-wider">

@@ -12,7 +12,7 @@ const MostPopularProducts1 = () => {
           src={Pic1}
           alt=""
         />
-        <div className="w-[25rem] h-[49rem] bg-[#FAFAFA] row-centered">
+        <div className="w-full iphone:w-[25rem] h-[49rem] bg-[#FAFAFA] row-centered">
           <div className="w-[21.75rem] h-[32.875rem] flex flex-col justify-between items-center">
             <h3 className="text-2xl font-bold">MOST POPULAR</h3>
             <p className="w-[17.5rem] h-16 leading-tight tracking-widest text-sm font-normal">

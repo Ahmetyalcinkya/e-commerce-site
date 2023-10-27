@@ -41,7 +41,7 @@ function App() {
         <Route path="/pricing">
           <PricingPage />
         </Route>
-        <Route path="/login">
+        <Route path="/signup">
           <LoginPage />
         </Route>
         <Route path="/register">

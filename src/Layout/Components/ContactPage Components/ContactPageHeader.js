@@ -8,13 +8,14 @@ import {
   faLinkedin,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import Header from "../HomePageComponents/Header";
 
 const ContactPageHeader = () => {
   return (
     <div className="w-full flex flex-col justify-between items-center">
-      <AboutPageHeader />
+      <Header />
       <div className="w-full flex-col iphone:flex-row h-[67.5rem] iphone:w-[65.625rem] iphone:h-[46.5rem] flex justify-between items-center">
-        <div className="w-full h-[37rem] iphone:w-[37.5rem] iphone:h-[32.5rem] flex flex-col text-left justify-between items-center">
+        <div className="w-full h-[37rem] iphone:w-[37.5rem] iphone:h-[32.5rem] flex flex-col text-left justify-between items-center iphone:items-start">
           <h5 className="font-bold text-center iphone:text-left text-base leading-6 text-quaternary">
             CONTACT US
           </h5>

@@ -6,7 +6,7 @@ import SectionEightProductCard from "../../../Compounds/HomePageCompounds/Sectio
 
 const FeaturedPosts = () => {
   return (
-    <section className="w-full h-[141rem] iphone:h-[62.125rem] ">
+    <section className="w-full h-[141rem] iphone:h-[62.125rem] py-10 px-10 iphone:px-0 iphone:py-0">
       <div className="w-full iphone:w-[65.625rem] h-full m-auto flex flex-col items-center iphone:justify-around">
         <div className="w-full iphone:w-[43.25rem] h-[5.25rem] flex flex-col justify-around mx-auto">
           <h6 className="font-bold text-sm leading-6 primary">
