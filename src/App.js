@@ -41,10 +41,10 @@ function App() {
         <Route path="/pricing">
           <PricingPage />
         </Route>
-        <Route path="/signup">
+        <Route path="/login">
           <LoginPage />
         </Route>
-        <Route path="/register">
+        <Route path="/signup">
           <RegisterPage />
         </Route>
       </Switch>

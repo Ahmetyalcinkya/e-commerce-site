@@ -28,11 +28,11 @@ const Header = () => {
         <div className="flex w-full iphone:w-auto">
           <div className="hidden iphone:flex items-center w-[10.375rem] justify-around px-4 gap-x-2">
             <FontAwesomeIcon icon={faUser} color="#23A6F0" />
-            <NavLink to="/signup" className="primary font-bold">
+            <NavLink to="/login" className="primary font-bold">
               Login
             </NavLink>
             <CgFormatSlash color="#23A6F0" />
-            <NavLink to="/register" className="primary font-bold">
+            <NavLink to="/signup" className="primary font-bold">
               Register
             </NavLink>
           </div>

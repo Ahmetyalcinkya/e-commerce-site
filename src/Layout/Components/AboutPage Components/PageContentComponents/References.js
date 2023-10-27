@@ -4,7 +4,7 @@ import Pic2 from "../../../../Assets/unsplash_vjMgqUkS8q8.png";
 
 const References = () => {
   return (
-    <div className="w-full h-[40rem] bg-[#2A7CC7] relative row-centered">
+    <div className="w-full px-20 iphone:px-0 h-[40rem] bg-[#2A7CC7] relative row-centered">
       <img
         src={Pic2}
         alt=""

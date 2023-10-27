@@ -8,8 +8,8 @@ import React from "react";
 
 const ProductListFooter = () => {
   return (
-    <div className="flex h-[98rem] iphone:h-[30rem] flex-col items-center justify-between pt-10 gap-y-16 iphone:gap-y-0">
-      <div className="flex w-60 h-60 justify-between items-center iphone:w-[65.625rem] iphone:h-14">
+    <div className="flex h-[80rem] iphone:h-[30rem] flex-col items-center justify-between pt-10 gap-y-16 iphone:gap-y-0">
+      <div className="flex w-60 h-20 justify-between items-center iphone:w-[65.625rem] iphone:h-14">
         <h3 className="font-bold text-2xl">Bandage</h3>
         <div className="flex w-28 h-6 justify-around">
           <FontAwesomeIcon icon={faFacebook} size="xl" color="#23A6F0" />
@@ -78,7 +78,7 @@ const ProductListFooter = () => {
         </div>
       </div>
       <footer className="w-full bg-secondary h-20 flex justify-center items-center">
-        <div className="w-[65.625rem] flex justify-start">
+        <div className="w-full iphone:w-[65.625rem] flex justify-start">
           <h6 className="text-secondary font-bold text-sm">
             Made With Love By Finland All Right Reserved
           </h6>
