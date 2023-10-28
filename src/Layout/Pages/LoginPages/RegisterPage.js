@@ -20,7 +20,7 @@ const RegisterPage = () => {
 
   //  kullanıcı seçimi
 
-  const [selectedUser, setSelectedUser] = useState("customer");
+  const [selectedUser, setSelectedUser] = useState("3");
 
   const changeUser = (e) => {
     const selectedValue = e.target.value;
@@ -28,7 +28,7 @@ const RegisterPage = () => {
   };
 
   const history = useHistory();
-  const [roles, setRoles] = useState({});
+  const [roles, setRoles] = useState(null);
   const [data, getRoles, loading, err] = useAxios({
     reqType: "get",
     endpoint: "roles",
@@ -60,13 +60,12 @@ const RegisterPage = () => {
       })
       .catch((err) => console.log(err));
   }, []);
-  // roller alındı select kısmına yazılacak!!
 
   return (
     <div>
       <AboutPageHeader />
       <form
-        className="h-[45rem] flex flex-col items-center justify-start p-5"
+        className=" flex flex-col items-center justify-between p-5"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="login-div">
@@ -74,7 +73,7 @@ const RegisterPage = () => {
             <span className="px-6 text-xl">İsim :</span>
             <input
               className="login-input"
-              placeholder="İsim giriniz..."
+              placeholder="İsim ve soyisim giriniz..."
               {...register("name", {
                 required: "İsim alanı doldurulmak zorundadır.",
                 minLength: {
@@ -84,18 +83,16 @@ const RegisterPage = () => {
               })}
             />
             {errors.name && (
-              <span className="text-red-900 text-center">
-                * {errors.name.message}
-              </span>
+              <span className="login-span">* {errors.name.message}</span>
             )}
           </label>
         </div>
         <div className="login-div">
           <label className="login-label">
             <span className="px-6 text-xl">Email :</span>
-
             <input
               className="login-input"
+              placeholder="E-mail adresinizi giriniz..."
               {...register("email", {
                 required: "Email alanı doldurulmak zorundadır.",
                 pattern: {
@@ -105,9 +102,7 @@ const RegisterPage = () => {
               })}
             />
             {errors.email && (
-              <span className="text-red-900 text-center">
-                * {errors.email.message}
-              </span>
+              <span className="login-span">* {errors.email.message}</span>
             )}
           </label>
         </div>
@@ -116,6 +111,7 @@ const RegisterPage = () => {
             <span className="px-6 text-xl">Password :</span>
             <input
               className="login-input"
+              placeholder="Şifrenizi giriniz..."
               {...register("password", {
                 required: "Lütfen şifrenizi giriniz.",
                 pattern: {
@@ -127,58 +123,92 @@ const RegisterPage = () => {
               })}
             />
             {errors.password && (
-              <span className="text-red-900 text-center">
-                * {errors.password.message}
-              </span>
+              <span className="login-span">* {errors.password.message}</span>
             )}
           </label>
         </div>
         <div className="login-div flex items-center justify-around">
           <span className="px-6 text-xl">Kullanıcı seçiniz :</span>
-
           <select
-            className="border w-32 h-10 rounded-3xl p-2"
+            className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-32 p-2.5"
             {...register("role_id")}
             value={selectedUser}
             onChange={changeUser}
           >
-            <option value="customer">Customer</option>
-            <option value="admin">Admin</option>
-            <option value="store">Store</option>
+            {roles?.map((role) => (
+              <option key={role.id} value={role.id}>
+                {role.name}
+              </option>
+            ))}
           </select>
         </div>
-        {selectedUser === "store" && (
-          <div className="login-div">
-            <label className="login-label">
-              <span className="px-6 text-xl">Name :</span>
-              <input
-                className="login-input"
-                {...register("store.name", {
-                  required: true,
-                })}
-              />
-            </label>
-            <label className="login-label">
-              <span className="px-6 text-xl">Tax ID :</span>
-              <input
-                className="login-input"
-                {...register("store.tax_no", {
-                  required: true,
-                })}
-              />
-            </label>
-            <label className="login-label">
-              <span className="px-6 text-xl">Bank Account :</span>
-              <input
-                className="login-input"
-                {...register("store.bank_account", {
-                  required: true,
-                })}
-              />
-            </label>
+        {selectedUser === "2" && (
+          <div>
+            <div className="login-div">
+              <label className="login-label">
+                <span className="px-6 text-xl">Name :</span>
+                <input
+                  className="login-input"
+                  placeholder="Mağaza ismini giriniz..."
+                  {...register("store.name", {
+                    required: "Mağaza ismini giriniz.",
+                  })}
+                />
+                {/* {errors.store.name && (
+                <span className="login-span">
+                  * {errors.store.name.message}
+                </span>
+              )} */}
+              </label>
+            </div>
+            <div className="login-div">
+              <label className="login-label">
+                <span className="px-6 text-xl">Tax ID :</span>
+                <input
+                  className="login-input"
+                  placeholder="TXXXXVXXXXXX"
+                  {...register("store.tax_no", {
+                    required: "Vergi numaranızı giriniz.",
+                    pattern: {
+                      value: /[1-9](\d{9})([0,2,4,6,8]{1})/,
+                      message: "Geçerli bir vergi numarası giriniz.",
+                    },
+                  })}
+                />
+                {/* {errors.store.tax_no && (
+                <span className="login-span">
+                  * {errors.store.tax_no.message}
+                </span>
+              )} */}
+              </label>
+            </div>
+            <div className="login-div">
+              <label className="login-label">
+                <span className="px-6 text-xl">Bank Account :</span>
+                <input
+                  className="login-input"
+                  placeholder="TRXXXXXXXXXXXXXXXXXXXXXXXX"
+                  {...register("store.bank_account", {
+                    required: "Iban adresinizi giriniz.",
+                    pattern: {
+                      value:
+                        /TR[a-zA-Z0-9]{2}\s?([0-9]{4}\s?){1}([0-9]{1})([a-zA-Z0-9]{3}\s?)([a-zA-Z0-9]{4}\s?){3}([a-zA-Z0-9]{2})\s?/,
+                      message: "Geçerli bir iban adresi giriniz.",
+                    },
+                  })}
+                />
+                {/* {errors.store.bank_account && (
+                <span className="login-span">
+                  * {errors.store.bank_account.message}
+                </span>
+              )} */}
+              </label>
+            </div>
           </div>
         )}
-        <button className="border w-32 h-10 rounded-3xl p-2">Submit</button>
+        <button className="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
+          Submit
+        </button>
       </form>
       <AboutPageFooter />
     </div>
