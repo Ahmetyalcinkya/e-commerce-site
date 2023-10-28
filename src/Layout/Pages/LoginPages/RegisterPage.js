@@ -8,6 +8,8 @@ import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
 import AboutPageHeader from "../../Components/AboutPage Components/AboutPageHeader";
 import AboutPageFooter from "../../Components/AboutPage Components/AboutPageFooter";
+import { Spinner } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 
 const RegisterPage = () => {
   const {
@@ -36,20 +38,21 @@ const RegisterPage = () => {
 
   const onSubmit = (formData) => {
     console.log(formData);
-
-    AxiosWithAuth()
-      .post("signup", formData)
-      .then((res) => {
-        toast.success(
-          "You need to click link in email to activate your account!"
-        );
-        history.goBack();
-        console.log(res.data);
-      })
-      .catch((err) => {
-        console.log(err.response.data);
-        toast.error("An error was encountered while logging in!");
-      });
+    setTimeout(() => {
+      AxiosWithAuth()
+        .post("signup", formData)
+        .then((res) => {
+          toast.success(
+            "You need to click link in email to activate your account!"
+          );
+          history.goBack();
+          console.log(res.data);
+        })
+        .catch((err) => {
+          console.log(err.response.data);
+          toast.error("An error was encountered while logging in!");
+        });
+    }, 2000);
   };
 
   useEffect(() => {
@@ -64,16 +67,27 @@ const RegisterPage = () => {
   return (
     <div>
       <AboutPageHeader />
+      <div className="pt-10 flex flex-col justify-around items-center h-24 bg-secondary">
+        <h1 className="font-bold text-4xl leading-[3rem] text-quaternary">
+          Sign Up
+        </h1>
+        <p>
+          Already a member ?{" "}
+          <Link to="/login" className="primary">
+            Log in
+          </Link>
+        </p>
+      </div>
       <form
-        className=" flex flex-col items-center justify-between p-5"
+        className="bg-secondary flex flex-col items-center justify-between p-5"
         onSubmit={handleSubmit(onSubmit)}
       >
         <div className="login-div">
           <label className="login-label">
-            <span className="px-6 text-xl">İsim :</span>
+            İsim :
             <input
               className="login-input"
-              placeholder="İsim ve soyisim giriniz..."
+              placeholder="İsminizi giriniz..."
               {...register("name", {
                 required: "İsim alanı doldurulmak zorundadır.",
                 minLength: {
@@ -89,7 +103,7 @@ const RegisterPage = () => {
         </div>
         <div className="login-div">
           <label className="login-label">
-            <span className="px-6 text-xl">Email :</span>
+            Email :
             <input
               className="login-input"
               placeholder="E-mail adresinizi giriniz..."
@@ -108,9 +122,11 @@ const RegisterPage = () => {
         </div>
         <div className="login-div">
           <label className="login-label">
-            <span className="px-6 text-xl">Password :</span>
+            Password :
             <input
               className="login-input"
+              type="password"
+              name="password"
               placeholder="Şifrenizi giriniz..."
               {...register("password", {
                 required: "Lütfen şifrenizi giriniz.",
@@ -127,12 +143,28 @@ const RegisterPage = () => {
             )}
           </label>
         </div>
+        <div className="login-div">
+          <label className="login-label">
+            Validate Password :
+            <input
+              className="login-input"
+              type="password"
+              name="confirmPassword"
+              placeholder="Şifrenizi giriniz..."
+              // {...register("password", {
+              //   required: "Lütfen şifrenizi giriniz.",
+              // })}
+            />
+            {/* {errors.password && (
+              <span className="login-span">* {errors.password.message}</span>
+            )} */}
+          </label>
+        </div>
         <div className="login-div flex items-center justify-around">
-          <span className="px-6 text-xl">Kullanıcı seçiniz :</span>
+          Kullanıcı seçiniz :
           <select
             className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-32 p-2.5"
             {...register("role_id")}
-            value={selectedUser}
             onChange={changeUser}
           >
             {roles?.map((role) => (
@@ -146,7 +178,7 @@ const RegisterPage = () => {
           <div>
             <div className="login-div">
               <label className="login-label">
-                <span className="px-6 text-xl">Name :</span>
+                Name :
                 <input
                   className="login-input"
                   placeholder="Mağaza ismini giriniz..."
@@ -163,7 +195,7 @@ const RegisterPage = () => {
             </div>
             <div className="login-div">
               <label className="login-label">
-                <span className="px-6 text-xl">Tax ID :</span>
+                Tax ID :
                 <input
                   className="login-input"
                   placeholder="TXXXXVXXXXXX"
@@ -184,7 +216,7 @@ const RegisterPage = () => {
             </div>
             <div className="login-div">
               <label className="login-label">
-                <span className="px-6 text-xl">Bank Account :</span>
+                Bank Account :
                 <input
                   className="login-input"
                   placeholder="TRXXXXXXXXXXXXXXXXXXXXXXXX"
@@ -206,8 +238,11 @@ const RegisterPage = () => {
             </div>
           </div>
         )}
-        <button className="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2">
-          Submit
+        <button
+          className="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
+          disabled={loading}
+        >
+          {loading === true ? <Spinner /> : "Submit"}
         </button>
       </form>
       <AboutPageFooter />
