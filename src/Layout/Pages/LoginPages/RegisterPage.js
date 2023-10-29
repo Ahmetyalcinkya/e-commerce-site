@@ -10,6 +10,8 @@ import AboutPageHeader from "../../Components/AboutPage Components/AboutPageHead
 import AboutPageFooter from "../../Components/AboutPage Components/AboutPageFooter";
 import { Spinner } from "@material-tailwind/react";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchRoles } from "../../../redux/features/thunk/fetchRoles";
 
 const RegisterPage = () => {
   const {
@@ -21,7 +23,6 @@ const RegisterPage = () => {
   });
 
   //  kullanıcı seçimi
-
   const [selectedUser, setSelectedUser] = useState("3");
 
   const changeUser = (e) => {
@@ -29,15 +30,16 @@ const RegisterPage = () => {
     setSelectedUser(selectedValue);
   };
 
+  //  spinner loading durumu
+  const [load, setLoad] = useState(false);
+
   const history = useHistory();
-  const [roles, setRoles] = useState(null);
-  const [data, getRoles, loading, err] = useAxios({
-    reqType: "get",
-    endpoint: "roles",
-  });
+
+  const dispatch = useDispatch();
 
   const onSubmit = (formData) => {
     console.log(formData);
+    setLoad(true);
     setTimeout(() => {
       AxiosWithAuth()
         .post("signup", formData)
@@ -52,17 +54,19 @@ const RegisterPage = () => {
           console.log(err.response.data);
           toast.error("An error was encountered while logging in!");
         });
+      setLoad(false);
     }, 2000);
   };
 
   useEffect(() => {
-    getRoles()
-      .then((res) => {
-        console.log(res);
-        setRoles(res);
-      })
-      .catch((err) => console.log(err));
+    dispatch(fetchRoles());
   }, []);
+
+  const roles = useSelector((state) => state.global.roles);
+
+  console.log(useSelector((state) => state.global));
+
+  console.log(roles);
 
   return (
     <div>
@@ -187,10 +191,10 @@ const RegisterPage = () => {
                   })}
                 />
                 {/* {errors.store.name && (
-                <span className="login-span">
-                  * {errors.store.name.message}
-                </span>
-              )} */}
+                  <span className="login-span">
+                    * {errors.store.name.message}
+                  </span>
+                )} */}
               </label>
             </div>
             <div className="login-div">
@@ -208,10 +212,10 @@ const RegisterPage = () => {
                   })}
                 />
                 {/* {errors.store.tax_no && (
-                <span className="login-span">
-                  * {errors.store.tax_no.message}
-                </span>
-              )} */}
+                  <span className="login-span">
+                    * {errors.store.tax_no.message}
+                  </span>
+                )} */}
               </label>
             </div>
             <div className="login-div">
@@ -230,19 +234,19 @@ const RegisterPage = () => {
                   })}
                 />
                 {/* {errors.store.bank_account && (
-                <span className="login-span">
-                  * {errors.store.bank_account.message}
-                </span>
-              )} */}
+                  <span className="login-span">
+                    * {errors.store.bank_account.message}
+                  </span>
+                )} */}
               </label>
             </div>
           </div>
         )}
         <button
           className="text-blue-700 hover:text-white border border-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2"
-          disabled={loading}
+          disabled={load}
         >
-          {loading === true ? <Spinner /> : "Submit"}
+          {load === true ? <Spinner /> : "Submit"}
         </button>
       </form>
       <AboutPageFooter />
