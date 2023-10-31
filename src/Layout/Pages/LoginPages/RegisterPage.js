@@ -2,7 +2,6 @@ import React from "react";
 import { useEffect } from "react";
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import { useAxios } from "../../../hooks/useAxios";
 import { AxiosWithAuth } from "../../../utilities/axiosWithAuth";
 import { toast } from "react-toastify";
 import { useForm } from "react-hook-form";
@@ -18,7 +17,18 @@ const RegisterPage = () => {
     register,
     handleSubmit,
     formState: { errors },
+    watch,
   } = useForm({
+    defaultValues: {
+      name: "",
+      email: "",
+      password: "",
+      store: {
+        name: "",
+        tax_no: "",
+        bank_account: "",
+      },
+    },
     mode: "all",
   });
 
@@ -38,17 +48,35 @@ const RegisterPage = () => {
   const dispatch = useDispatch();
 
   const onSubmit = (formData) => {
-    console.log(formData);
+    let data = {};
+
+    if (formData.role_id !== "2") {
+      data = {
+        name: formData.name,
+        email: formData.email,
+        password: formData.password,
+      };
+    } else {
+      data = {
+        name: formData.name,
+        email: formData.email,
+        password: formData.password,
+        store: {
+          name: formData.store.name,
+          tax_no: formData.store.tax_no,
+          bank_account: formData.store.bank_account,
+        },
+      };
+    }
     setLoad(true);
     setTimeout(() => {
       AxiosWithAuth()
-        .post("signup", formData)
+        .post("signup", data)
         .then((res) => {
           toast.success(
             "You need to click link in email to activate your account!"
           );
           history.goBack();
-          console.log(res.data);
         })
         .catch((err) => {
           console.log(err.response.data);
@@ -63,10 +91,6 @@ const RegisterPage = () => {
   }, []);
 
   const roles = useSelector((state) => state.global.roles);
-
-  console.log(useSelector((state) => state.global));
-
-  console.log(roles);
 
   return (
     <div>
@@ -131,9 +155,14 @@ const RegisterPage = () => {
               className="login-input"
               type="password"
               name="password"
+              id="password"
               placeholder="Şifrenizi giriniz..."
               {...register("password", {
                 required: "Lütfen şifrenizi giriniz.",
+                minLength: {
+                  value: 8,
+                  message: "Şifreniz minimum 8 karakter olmalıdır.",
+                },
                 pattern: {
                   value:
                     /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[ -/:-@\[-`{-~]).{6,64}$/,
@@ -142,7 +171,7 @@ const RegisterPage = () => {
                 },
               })}
             />
-            {errors.password && (
+            {errors?.password && (
               <span className="login-span">* {errors.password.message}</span>
             )}
           </label>
@@ -152,16 +181,20 @@ const RegisterPage = () => {
             Validate Password :
             <input
               className="login-input"
-              type="password"
-              name="confirmPassword"
-              placeholder="Şifrenizi giriniz..."
-              // {...register("password", {
-              //   required: "Lütfen şifrenizi giriniz.",
-              // })}
+              type={"password"}
+              placeholder="Şifrenizi tekrar giriniz..."
+              {...register("confirmPassword", {
+                required: "Lütfen şifrenizi tekrar giriniz.",
+                validate: (value) => {
+                  return value === watch("password") || "Şifreler eşleşmedi.";
+                },
+              })}
             />
-            {/* {errors.password && (
-              <span className="login-span">* {errors.password.message}</span>
-            )} */}
+            {errors?.confirmPassword && (
+              <span className="login-span">
+                * {errors.confirmPassword?.message}
+              </span>
+            )}
           </label>
         </div>
         <div className="login-div flex items-center justify-around">
@@ -190,11 +223,11 @@ const RegisterPage = () => {
                     required: "Mağaza ismini giriniz.",
                   })}
                 />
-                {/* {errors.store.name && (
+                {errors.store?.name && (
                   <span className="login-span">
-                    * {errors.store.name.message}
+                    * {errors.store?.name.message}
                   </span>
-                )} */}
+                )}
               </label>
             </div>
             <div className="login-div">
@@ -211,11 +244,11 @@ const RegisterPage = () => {
                     },
                   })}
                 />
-                {/* {errors.store.tax_no && (
+                {errors.store?.tax_no && (
                   <span className="login-span">
-                    * {errors.store.tax_no.message}
+                    * {errors.store?.tax_no?.message}
                   </span>
-                )} */}
+                )}
               </label>
             </div>
             <div className="login-div">
@@ -233,11 +266,11 @@ const RegisterPage = () => {
                     },
                   })}
                 />
-                {/* {errors.store.bank_account && (
+                {errors.store?.bank_account && (
                   <span className="login-span">
-                    * {errors.store.bank_account.message}
+                    * {errors.store?.bank_account?.message}
                   </span>
-                )} */}
+                )}
               </label>
             </div>
           </div>
