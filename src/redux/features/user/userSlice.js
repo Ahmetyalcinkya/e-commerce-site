@@ -1,15 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { fetchStates } from "../product/productSlice";
 
 const initialState = {
-  name: "",
-  email: "",
-  password: "",
-  role_id: "",
-  store: {
+  user: {
     name: "",
-    tax_no: "",
-    bank_account: "",
+    email: "",
+    role_id: "",
+    // store: {
+    //   name: "",
+    //   tax_no: "",
+    //   bank_account: "",
+    // },
   },
+  fetchStates: fetchStates.not_fetched,
 };
 
 export const userSlice = createSlice({
@@ -17,11 +20,14 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     setUser: (state, action) => {
-      state = action.payload;
+      return { ...state, user: { ...action.payload } };
+    },
+    changeFetchState: (state, action) => {
+      state.fetchStates = action.payload;
     },
   },
 });
 
-export const { setUser } = userSlice.actions;
+export const { setUser, changeFetchState } = userSlice.actions;
 
 export default userSlice.reducer;

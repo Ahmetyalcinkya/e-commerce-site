@@ -22,6 +22,7 @@ const RegisterPage = () => {
     defaultValues: {
       name: "",
       email: "",
+      role_id: "",
       password: "",
       store: {
         name: "",
@@ -45,8 +46,6 @@ const RegisterPage = () => {
 
   const history = useHistory();
 
-  const dispatch = useDispatch();
-
   const onSubmit = (formData) => {
     let data = {};
 
@@ -54,12 +53,14 @@ const RegisterPage = () => {
       data = {
         name: formData.name,
         email: formData.email,
+        role_id: formData.role_id,
         password: formData.password,
       };
     } else {
       data = {
         name: formData.name,
         email: formData.email,
+        role_id: formData.role_id,
         password: formData.password,
         store: {
           name: formData.store.name,
@@ -86,8 +87,11 @@ const RegisterPage = () => {
     }, 2000);
   };
 
+  const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchRoles());
+    console.log(fetchRoles());
   }, []);
 
   const roles = useSelector((state) => state.global.roles);
