@@ -14,10 +14,8 @@ const ResponsiveDropdown = () => {
     <div className="text-right">
       <Menu as="div" className="relative inline-block text-left">
         <div>
-          <Menu.Button>
-            <button className="iphone:hidden" onClick={toggleMenu}>
-              <FontAwesomeIcon icon={faBars} size="xl" id="menu-icon" />
-            </button>
+          <Menu.Button className="iphone:hidden" onClick={toggleMenu}>
+            <FontAwesomeIcon icon={faBars} size="xl" id="menu-icon" />
           </Menu.Button>
         </div>
         <Transition

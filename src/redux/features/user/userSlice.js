@@ -6,11 +6,6 @@ const initialState = {
     name: "",
     email: "",
     role_id: "",
-    // store: {
-    //   name: "",
-    //   tax_no: "",
-    //   bank_account: "",
-    // },
   },
   fetchStates: fetchStates.not_fetched,
 };

@@ -81,7 +81,7 @@ const RegisterPage = () => {
         })
         .catch((err) => {
           console.log(err.response.data);
-          toast.error("An error was encountered while logging in!");
+          toast.error("Something went wrong! Try again please.");
         });
       setLoad(false);
     }, 2000);
