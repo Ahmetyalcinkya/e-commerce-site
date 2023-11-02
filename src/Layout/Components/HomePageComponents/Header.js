@@ -9,6 +9,7 @@ import ResponsiveDropdown from "../../Compounds/GlobalCompounds/ResponsiveDropdo
 import { MD5 } from "crypto-js";
 import { useSelector } from "react-redux";
 import { fetchStates } from "../../../redux/features/product/productSlice";
+import HeaderDropdown from "./HeaderDropdown";
 
 const Header = () => {
   const userNotFetched = useSelector(
@@ -33,7 +34,10 @@ const Header = () => {
       <div className="flex items-center flex-col-reverse iphone:flex-row justify-around w-24 h-14 iphone:w-[68.25rem] iphone:mr-[8.5rem] ">
         <nav className="hidden items-center iphone:flex iphone:w-[22.5rem] iphone:justify-between">
           <NavLink to="/">Home</NavLink>
-          <NavLink to="/products">Shop</NavLink>
+          <NavLink to="/products" className=" w-16 flex justify-between">
+            Shop
+            <HeaderDropdown />
+          </NavLink>
           <NavLink to="/about">About</NavLink>
           <NavLink to="/blog">Blog</NavLink>
           <NavLink to="/contact">Contact</NavLink>
