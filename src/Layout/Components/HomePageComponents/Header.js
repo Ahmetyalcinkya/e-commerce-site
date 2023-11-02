@@ -40,7 +40,16 @@ const Header = () => {
           <NavLink to="/team">Team</NavLink>
         </nav>
         <div className="flex w-full iphone:w-auto">
-          {userNotFetched && (
+          {userFetched ? (
+            <div className="hidden iphone:flex items-center w-[15rem] justify-around px-4 gap-x-2">
+              <img
+                className="rounded-full w-12 h-12"
+                src={`https://www.gravatar.com/avatar/${MD5(userGravatar)}`}
+                alt=""
+              />
+              <div className="w-full">{userGravatarName}</div>
+            </div>
+          ) : (
             <div className="hidden iphone:flex items-center w-[10.375rem] justify-around px-4 gap-x-2">
               <FontAwesomeIcon icon={faUser} color="#23A6F0" />
               <NavLink to="/login" className="primary font-bold">
@@ -52,16 +61,7 @@ const Header = () => {
               </NavLink>
             </div>
           )}
-          {userFetched && (
-            <div className="hidden iphone:flex items-center w-[15rem] justify-around px-4 gap-x-2">
-              <img
-                className="rounded-full w-12 h-12"
-                src={`https://www.gravatar.com/avatar/${MD5(userGravatar)}`}
-                alt=""
-              />
-              <div className="w-full">{userGravatarName}</div>
-            </div>
-          )}
+
           <div className="flex w-full iphone:w-[9.875rem] justify-around iphone:justify-around items-center cursor-pointer">
             <div className="">
               <AiOutlineSearch size={28} color="#23A6F0" />

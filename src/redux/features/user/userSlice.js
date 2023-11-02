@@ -5,7 +5,7 @@ const initialState = {
   user: {
     name: "",
     email: "",
-    role_id: "",
+    role_id: "1",
   },
   fetchStates: fetchStates.not_fetched,
 };

@@ -12,8 +12,21 @@ import "./App.css";
 import TeamPage from "./Layout/Pages/TeamPage";
 import ProductsPage from "./Layout/Pages/ProductsPage";
 import PricingPage from "./Layout/Pages/PricingPage";
+import { useEffect } from "react";
+import { fetchUserLogin } from "./redux/features/thunk/fetchUserLogin";
+import { renewAPI } from "./utilities/axiosWithAuth";
+import { useDispatch } from "react-redux";
 
 function App() {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    const token = localStorage.getItem("token");
+    if (token) {
+      dispatch(fetchUserLogin());
+    }
+  }, []);
+
   return (
     <div className="App w-full m-auto font-montserrat">
       <Switch>
