@@ -1,10 +1,11 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const ProductCardCompound = ({ image }) => {
+const CategoryCardCompound = ({ category }) => {
   return (
-    <div className="relative">
+    <Link to={`/shopping/${category.code}`} className="relative">
       <img
-        src={image}
+        src={category.img}
         alt=""
         className="w-[19rem] h-[19rem] iphone:w-[13rem] iphone:h-[14rem]"
       />
@@ -12,8 +13,8 @@ const ProductCardCompound = ({ image }) => {
         <h5 className="font-bold text-base">CLOTHS</h5>
         <p className="text-sm ">5 Items</p>
       </div>
-    </div>
+    </Link>
   );
 };
 
-export default ProductCardCompound;
+export default CategoryCardCompound;

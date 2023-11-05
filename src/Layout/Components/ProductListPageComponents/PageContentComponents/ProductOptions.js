@@ -1,5 +1,7 @@
 import React from "react";
 import { Icon } from "../../../../Icons/icons";
+import FilterDropdown from "../../../Compounds/ProductListPageCompounds/FilterDropdown";
+import ProductSearch from "../../../Compounds/ProductListPageCompounds/ProductSearch";
 
 const ProductOptions = () => {
   return (
@@ -19,10 +21,9 @@ const ProductOptions = () => {
             </button>
           </div>
         </div>
-        <div className="flex gap-x-4">
-          <button className="w-[8.75rem] h-[3.125rem] text-secondary bg-[#DDDDDD] rounded">
-            Popularity
-          </button>
+        <div className="flex gap-x-4 items-center">
+          <ProductSearch />
+          <FilterDropdown />
           <button className="w-24 h-[3.125rem] text-white bg-primary rounded">
             Filter
           </button>

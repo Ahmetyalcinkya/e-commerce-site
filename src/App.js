@@ -16,6 +16,7 @@ import { useEffect } from "react";
 import { fetchUserLogin } from "./redux/features/thunk/fetchUserLogin";
 import { useDispatch } from "react-redux";
 import { fetchCategory } from "./redux/features/thunk/fetchCategory";
+import { fetchProducts } from "./redux/features/thunk/fetchProducts";
 
 function App() {
   const dispatch = useDispatch();
@@ -25,8 +26,11 @@ function App() {
     if (token) {
       dispatch(fetchUserLogin());
     }
-    dispatch(fetchCategory());
   }, []);
+
+  useEffect(() => {
+    dispatch(fetchProducts());
+  });
 
   return (
     <div className="App w-full m-auto font-montserrat">
@@ -34,10 +38,10 @@ function App() {
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route exact path="/products">
+        <Route exact path="/shopping/:category?">
           <ProductListPage />
         </Route>
-        <Route exact path="/product/:id">
+        <Route exact path="/shopping/:id">
           <ProductsPage />
         </Route>
         <Route path="/about">

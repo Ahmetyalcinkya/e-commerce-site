@@ -1,18 +1,38 @@
 import React from "react";
 import ListCardCompound from "../../../Compounds/ProductListPageCompounds/ListCardCompound";
-import Pic2 from "../../../../Assets/product-cover-5 (4).png";
-import products from "../../../../Data/products";
+import { useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 
 const ProductsSection = () => {
+  const productList = useSelector((state) => state.product.productList);
+  const categories = useSelector((state) => state.global.categories);
+
+  const { category } = useParams();
+
+  const categoryID = categories.find((c) => c.code === category)?.id;
+
+  const categorilize = productList?.products?.filter(
+    (p) => p.category_id === categoryID
+  );
+
+  console.log(categorilize);
+
   return (
-    <section className="flex flex-col items-center w-full h-[370rem] iphone:h-[111.25rem] p-8">
-      <div className="flex flex-col flex-wrap iphone:w-[70.25rem] iphone:h-[111.125rem] justify-around items-center">
-        {new Array(3).fill(
-          products.map((product) => (
-            <ListCardCompound product={product} image={Pic2} />
-          ))
-        )}
-      </div>
+    <section className="flex flex-col items-center w-full h-[370rem] iphone:h-[220.25rem] p-8">
+      {/* product düzenlendiğinde h-[110.25rem] */}
+      {categoryID ? (
+        <div className="flex flex-wrap iphone:w-[70.25rem] justify-around items-center">
+          {categorilize?.map((product, index) => (
+            <ListCardCompound key={index} product={product} />
+          ))}
+        </div>
+      ) : (
+        <div className="flex flex-wrap iphone:w-[70.25rem] justify-around items-center">
+          {productList?.products?.map((product) => (
+            <ListCardCompound product={product} />
+          ))}
+        </div>
+      )}
       <nav className="flex">
         <ul className="flex w-[19.75rem] h-20 items-center primary">
           <button className="w-20 h-20 border rounded-l-lg">
