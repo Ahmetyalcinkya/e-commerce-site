@@ -48,7 +48,7 @@ const useQueryParams = () => {
       search: createQueryString(queryObj),
     });
   };
-  return { queryParams, setQueryParams };
+  return [queryParams, setQueryParams];
 };
 
 export default useQueryParams;

@@ -11,7 +11,7 @@ const filteredParamsInitial = { filter: "", sort: "" };
 
 const ProductOptions = () => {
   const { category } = useParams();
-  const { queryParams, setQueryParams } = useQueryParams();
+  const [queryParams, setQueryParams] = useQueryParams();
   const dispatch = useDispatch();
 
   const [filteredParams, setFilteredParams] = useState(filteredParamsInitial);
@@ -40,9 +40,9 @@ const ProductOptions = () => {
     console.log(queryParams);
   };
 
-  // useEffect(() => {
-  //   dispatch(fetchProducts({ ...queryParams, category }));
-  // }, [queryParams]);
+  useEffect(() => {
+    dispatch(fetchProducts({ ...queryParams, category }));
+  }, [queryParams]);
 
   return (
     <div className="w-full h-56 iphone:h-24 row-centered">

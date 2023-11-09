@@ -12,12 +12,9 @@ const ProductsSection = () => {
   const { queryParams } = useQueryParams();
   const dispatch = useDispatch();
 
-  const search = queryParams?.search;
-  const querySort = queryParams?.sort;
-
   useEffect(() => {
     dispatch(fetchProducts());
-  }, [category, search, querySort]);
+  }, [queryParams]);
 
   return (
     <section className="flex flex-col items-center w-full h-[370rem] iphone:h-[220.25rem] p-8">
