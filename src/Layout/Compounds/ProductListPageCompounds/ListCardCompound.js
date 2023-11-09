@@ -6,16 +6,13 @@ const ListCardCompound = ({ product }) => {
     <div className="flex gap-x-8">
       <Link
         to={`shopping/${product.id}`}
-        className="flex flex-col w-60 h-[30rem] justify-around items-center"
+        className="flex flex-col w-60 h-[30rem] justify-around items-center my-4"
       >
-        {/* <img src={image} alt="" /> */}
+        <img src={product?.images[0]?.url} alt="" />
         <h5 className="text-base font-bold text-quaternary">{product?.name}</h5>
-        <a
-          href="#"
-          className="font-bold leading-tight tracking-wider text-secondary"
-        >
+        <p className="font-bold leading-tight tracking-wider text-secondary line-clamp-1">
           {product?.description}
-        </a>
+        </p>
         <h5 className="font-bold">
           {product?.price}
           {/* <span className="ml-1 text-tertiary font-bold">

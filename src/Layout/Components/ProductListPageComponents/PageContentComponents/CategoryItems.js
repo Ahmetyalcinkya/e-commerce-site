@@ -1,18 +1,11 @@
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useEffect } from "react";
-import CategoryCardCompound from "../../../Compounds/ProductListPageCompounds/CategoryCardCompound";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { fetchCategory } from "../../../../redux/features/thunk/fetchCategory";
+import CategoryCardCompound from "../../../Compounds/ProductListPageCompounds/CategoryCardCompound";
 
 const CategoryItems = () => {
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(fetchCategory());
-  }, []);
-
   const categories = useSelector((state) => state.global.categories);
 
   const rating = [...categories];

@@ -87,14 +87,12 @@ const RegisterPage = () => {
     }, 2000);
   };
 
+  const roles = useSelector((state) => state.global.roles);
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchRoles());
-    console.log(fetchRoles());
+    roles.length === 0 && dispatch(fetchRoles());
   }, []);
-
-  const roles = useSelector((state) => state.global.roles);
 
   return (
     <div>

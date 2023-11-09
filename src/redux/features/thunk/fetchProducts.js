@@ -1,11 +1,10 @@
 import { AxiosWithAuth } from "../../../utilities/axiosWithAuth";
 import { setProducts } from "../product/productSlice";
 
-export const fetchProducts = () => (dispatch) => {
+export const fetchProducts = (params) => (dispatch) => {
   AxiosWithAuth()
-    .get("products")
+    .get("products", { params })
     .then((res) => {
-      console.log(res);
       dispatch(setProducts(res.data));
     })
     .catch((err) => console.log(err));

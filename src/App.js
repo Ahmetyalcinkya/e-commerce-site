@@ -1,22 +1,21 @@
-import { Switch } from "react-router-dom";
-import { Route } from "react-router-dom";
-import HomePage from "./Layout/Pages/HomePage";
-import ProductListPage from "./Layout/Pages/ProductListPage";
+import { Route, Switch } from "react-router-dom";
 import AboutPage from "./Layout/Pages/AboutPage";
 import BlogPage from "./Layout/Pages/BlogPage";
 import ContactPage from "./Layout/Pages/ContactPage";
+import HomePage from "./Layout/Pages/HomePage";
 import LoginPage from "./Layout/Pages/LoginPages/LoginPage";
 import RegisterPage from "./Layout/Pages/LoginPages/RegisterPage";
+import ProductListPage from "./Layout/Pages/ProductListPage";
 
-import "./App.css";
-import TeamPage from "./Layout/Pages/TeamPage";
-import ProductsPage from "./Layout/Pages/ProductsPage";
-import PricingPage from "./Layout/Pages/PricingPage";
 import { useEffect } from "react";
-import { fetchUserLogin } from "./redux/features/thunk/fetchUserLogin";
 import { useDispatch } from "react-redux";
+import "./App.css";
+import PricingPage from "./Layout/Pages/PricingPage";
+import ProductsPage from "./Layout/Pages/ProductsPage";
+import TeamPage from "./Layout/Pages/TeamPage";
 import { fetchCategory } from "./redux/features/thunk/fetchCategory";
 import { fetchProducts } from "./redux/features/thunk/fetchProducts";
+import { fetchUserLogin } from "./redux/features/thunk/fetchUserLogin";
 
 function App() {
   const dispatch = useDispatch();
@@ -26,6 +25,9 @@ function App() {
     if (token) {
       dispatch(fetchUserLogin());
     }
+  }, []);
+  useEffect(() => {
+    dispatch(fetchCategory());
   }, []);
 
   useEffect(() => {

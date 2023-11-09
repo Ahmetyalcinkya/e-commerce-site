@@ -1,9 +1,19 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const CategoryCardCompound = ({ category }) => {
+  const { search } = useLocation();
+
+  const textReplace = (text) => {
+    return text.replace(/:/g, "-");
+  };
+
   return (
-    <Link to={`/shopping/${category.code}`} className="relative">
+    <Link
+      to={`/shopping/${textReplace(category.code)}${search}`}
+      className="relative"
+    >
       <img
         src={category.img}
         alt=""

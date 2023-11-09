@@ -12,10 +12,6 @@ import { fetchStates } from "../../../redux/features/product/productSlice";
 import HeaderDropdown from "./HeaderDropdown";
 
 const Header = () => {
-  const userNotFetched = useSelector(
-    (state) => state.user.fetchStates === fetchStates.not_fetched
-  );
-
   const userFetched = useSelector(
     (state) => state.user.fetchStates === fetchStates.fetched
   );

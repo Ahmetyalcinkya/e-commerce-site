@@ -1,62 +1,29 @@
 import { faFilter } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Listbox, Transition } from "@headlessui/react";
-import React, { useState } from "react";
-import { Fragment } from "react";
-import { useSelector } from "react-redux";
+import React, { Fragment, useState } from "react";
 
 const options = [
-  { name: "Default", id: 1 },
-  { name: "Best to Worst", id: 2 },
-  { name: "Worst to Best", id: 3 },
-  { name: "Price", id: 4 },
-  { name: "Rating", id: 5 },
+  { name: "Best to Worst", sort: "rating:desc" },
+  { name: "Worst to Best", sort: "rating:asc" },
+  { name: "Highest Price", sort: "price:desc" },
+  { name: "Lowest Price", sort: "price:asc" },
 ];
 
-const FilterDropdown = () => {
-  const productList = useSelector((state) => state.product.productList);
-
+const FilterDropdown = ({ filterHandler }) => {
   const [selected, setSelected] = useState(options[0]);
 
-  const [products, setProducts] = useState(productList);
-
-  // Sorting functions
-  const best = [...productList.products];
-
-  const bestSortedProducts = best.sort((a, b) => {
-    return b.sell_count - a.sell_count;
-  });
-  const sortedPrice = best.sort((a, b) => {
-    return b.price - a.price;
-  });
-  const sortedRatings = best.sort((a, b) => {
-    return b.rating - a.rating;
-  });
-  console.log(bestSortedProducts.reverse());
-
-  const productChangeHandler = () => {
-    if (selected.id === 1) {
-      return setProducts(productList);
-    } else if (selected.id === 2) {
-      // best-to-worst
-      return setProducts(bestSortedProducts);
-    } else if (selected.id === 3) {
-      // worst-to-best
-      return setProducts(bestSortedProducts.reverse());
-    } else if (selected.id === 4) {
-      // price
-      return setProducts(sortedPrice);
-    } else if (selected.id === 5) {
-      // rating
-      return setProducts(sortedRatings);
-    }
+  const multipleFunc = (value) => {
+    const selectedOption = value;
+    filterHandler(selectedOption);
+    setSelected(selectedOption);
   };
 
   return (
-    <Listbox value={selected} onChange={setSelected}>
+    <Listbox value={selected} onChange={multipleFunc}>
       <div className="relative w-40 mt-1">
         <Listbox.Button className="w-36 flex justify-between items-center">
-          {selected.name} <FontAwesomeIcon icon={faFilter} />
+          {selected.name} <FontAwesomeIcon icon={faFilter} color="#23A6F0" />
         </Listbox.Button>
         <Transition
           as={Fragment}
