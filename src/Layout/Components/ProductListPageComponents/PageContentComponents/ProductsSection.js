@@ -9,12 +9,17 @@ const ProductsSection = () => {
   const { products } = useSelector((state) => state.product.productList);
   const categories = useSelector((state) => state.global.categories);
   const { category } = useParams();
+  const { gender } = useParams();
   const { queryParams } = useQueryParams();
   const dispatch = useDispatch();
 
+  // const firstOfGender = gender?.slice(0, 1);
+  const categoryCode = gender + ":" + category;
+  const categoryId = categories?.find((c) => c.code == categoryCode)?.id;
+
   useEffect(() => {
-    dispatch(fetchProducts());
-  }, [queryParams]);
+    dispatch(fetchProducts({ ...queryParams, categoryId }));
+  }, [queryParams, categoryId]);
 
   return (
     <section className="flex flex-col items-center w-full h-[370rem] iphone:h-[220.25rem] p-8">

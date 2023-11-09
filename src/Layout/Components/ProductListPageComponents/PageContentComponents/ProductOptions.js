@@ -20,8 +20,6 @@ const ProductOptions = () => {
     setFilteredParams({ ...filteredParams, filter: e.target.value });
   };
 
-  console.log(filteredParams);
-
   const filterHandler = (value) => {
     if (value.name === "Best to Worst") {
       setFilteredParams({ ...filteredParams, sort: value.sort });
@@ -37,13 +35,11 @@ const ProductOptions = () => {
   const submitHandler = (e) => {
     e.preventDefault();
     setQueryParams(filteredParams);
-    console.log(queryParams);
   };
 
   useEffect(() => {
     dispatch(fetchProducts({ ...queryParams, category }));
-  }, [queryParams]);
-
+  }, [queryParams, category]);
   return (
     <div className="w-full h-56 iphone:h-24 row-centered">
       <div className="iphone:w-[65.625rem] flex-col iphone:flex-row justify-around h-full flex items-center iphone:justify-between">

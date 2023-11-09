@@ -32,7 +32,17 @@ const HeaderDropdown = () => {
                   <Menu.Item key={category.id}>
                     {({ active }) => (
                       <Link
-                        to={`/shopping/${category.code}`}
+                        to={`/shopping/${
+                          category.code.includes("k:")
+                            ? `k/${category.code.slice(
+                                2,
+                                category.code.length
+                              )}`
+                            : `e/${category.code.slice(
+                                2,
+                                category.code.length
+                              )}`
+                        }`}
                         className={`${
                           active ? "bg-violet-500 text-black" : "text-gray-900"
                         } group flex w-full items-center rounded-md px-2 py-2 text-sm hover:bg-gray-600 hover:text-white transition-colors`}
@@ -52,7 +62,17 @@ const HeaderDropdown = () => {
                   <Menu.Item key={category.id}>
                     {({ active }) => (
                       <Link
-                        to={`/shopping/${category.code}`}
+                        to={`/shopping/${
+                          category.code.includes("k:")
+                            ? `k/${category.code.slice(
+                                2,
+                                category.code.length
+                              )}`
+                            : `e/${category.code.slice(
+                                2,
+                                category.code.length
+                              )}`
+                        }`}
                         className={`${
                           active ? "bg-violet-500 text-black" : "text-gray-400"
                         } group flex w-full items-center rounded-md px-2 py-2 text-sm hover:bg-gray-600 hover:text-white`}

@@ -11,7 +11,11 @@ const CategoryCardCompound = ({ category }) => {
 
   return (
     <Link
-      to={`/shopping/${textReplace(category.code)}${search}`}
+      to={`/shopping/${
+        category.code.includes("k:")
+          ? `k/${category.code.slice(2, category.code.length)}`
+          : `e/${category.code.slice(2, category.code.length)}`
+      }${search}`}
       className="relative"
     >
       <img

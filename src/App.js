@@ -8,7 +8,7 @@ import RegisterPage from "./Layout/Pages/LoginPages/RegisterPage";
 import ProductListPage from "./Layout/Pages/ProductListPage";
 
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./App.css";
 import PricingPage from "./Layout/Pages/PricingPage";
 import ProductsPage from "./Layout/Pages/ProductsPage";
@@ -19,6 +19,7 @@ import { fetchUserLogin } from "./redux/features/thunk/fetchUserLogin";
 
 function App() {
   const dispatch = useDispatch();
+  const { products } = useSelector((state) => state.product.productList);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
@@ -31,7 +32,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    dispatch(fetchProducts());
+    products?.length === 0 && dispatch(fetchProducts());
   });
 
   return (
@@ -40,7 +41,7 @@ function App() {
         <Route exact path="/">
           <HomePage />
         </Route>
-        <Route exact path="/shopping/:category?">
+        <Route exact path="/shopping/:gender?/:category?">
           <ProductListPage />
         </Route>
         <Route exact path="/shopping/:id">
