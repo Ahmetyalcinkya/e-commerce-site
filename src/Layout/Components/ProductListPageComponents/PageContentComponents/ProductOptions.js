@@ -38,7 +38,7 @@ const ProductOptions = () => {
     setQueryParams(filteredParams);
   };
 
-  const categoryCode = gender[0] + ":" + category;
+  const categoryCode = gender?.charAt(0) + ":" + category;
   const categoryId = categories?.find((c) => c.code == categoryCode)?.id;
 
   console.log("categoryCode: ", categoryCode);
