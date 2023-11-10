@@ -34,11 +34,11 @@ const HeaderDropdown = () => {
                       <Link
                         to={`/shopping/${
                           category.code.includes("k:")
-                            ? `k/${category.code.slice(
+                            ? `kadin/${category.code.slice(
                                 2,
                                 category.code.length
                               )}`
-                            : `e/${category.code.slice(
+                            : `erkek/${category.code.slice(
                                 2,
                                 category.code.length
                               )}`

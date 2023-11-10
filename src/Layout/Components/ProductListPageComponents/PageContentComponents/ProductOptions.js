@@ -10,8 +10,7 @@ import { fetchProducts } from "../../../../redux/features/thunk/fetchProducts";
 const filteredParamsInitial = { filter: "", sort: "" };
 
 const ProductOptions = () => {
-  const { gender } = useParams();
-  const { category } = useParams();
+  const { gender, category } = useParams();
   const [queryParams, setQueryParams] = useQueryParams();
   const dispatch = useDispatch();
   const categories = useSelector((state) => state.global.categories);
@@ -39,11 +38,14 @@ const ProductOptions = () => {
     setQueryParams(filteredParams);
   };
 
-  const categoryCode = gender + ":" + category;
+  const categoryCode = gender[0] + ":" + category;
   const categoryId = categories?.find((c) => c.code == categoryCode)?.id;
 
+  console.log("categoryCode: ", categoryCode);
+  console.log("categoryId: ", categoryId);
+
   useEffect(() => {
-    dispatch(fetchProducts({ ...queryParams, categoryId }));
+    dispatch(fetchProducts({ ...queryParams, category: categoryId }));
   }, [queryParams, categoryId]);
   return (
     <div className="w-full h-56 iphone:h-24 row-centered">

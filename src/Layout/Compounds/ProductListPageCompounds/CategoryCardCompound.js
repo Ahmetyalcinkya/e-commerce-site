@@ -13,8 +13,8 @@ const CategoryCardCompound = ({ category }) => {
     <Link
       to={`/shopping/${
         category.code.includes("k:")
-          ? `k/${category.code.slice(2, category.code.length)}`
-          : `e/${category.code.slice(2, category.code.length)}`
+          ? `kadin/${category.code.slice(2, category.code.length)}`
+          : `erkek/${category.code.slice(2, category.code.length)}`
       }${search}`}
       className="relative"
     >

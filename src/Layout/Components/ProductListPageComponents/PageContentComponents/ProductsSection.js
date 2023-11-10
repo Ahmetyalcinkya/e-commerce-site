@@ -1,11 +1,8 @@
-import React, { useEffect, useState } from "react";
-import ListCardCompound from "../../../Compounds/ProductListPageCompounds/ListCardCompound";
-import { useDispatch, useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import useQueryParams from "../../../../hooks/useQueryParams";
-import { fetchProducts } from "../../../../redux/features/thunk/fetchProducts";
 import { Spinner } from "@material-tailwind/react";
+import React from "react";
+import { useSelector } from "react-redux";
 import { fetchStates } from "../../../../redux/features/product/productSlice";
+import ListCardCompound from "../../../Compounds/ProductListPageCompounds/ListCardCompound";
 
 const ProductsSection = () => {
   const { products } = useSelector((state) => state.product.productList);
