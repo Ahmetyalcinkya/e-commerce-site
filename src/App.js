@@ -33,7 +33,7 @@ function App() {
 
   useEffect(() => {
     products?.length === 0 && dispatch(fetchProducts());
-  });
+  }, []);
 
   return (
     <div className="App w-full m-auto font-montserrat">

@@ -12,7 +12,7 @@ const initialState = {
   totalProductCount: "",
   pageCount: 0,
   activePage: "",
-  fetchState: fetchStates.not_fetched,
+  fetchStates: fetchStates.not_fetched,
 };
 
 export const productSlice = createSlice({
@@ -25,9 +25,13 @@ export const productSlice = createSlice({
     addPageCount: (state) => {
       state.pageCount += 1;
     },
+    changeFetchState: (state, action) => {
+      state.fetchStates = action.payload;
+    },
   },
 });
 
-export const { setProducts, addPageCount } = productSlice.actions;
+export const { setProducts, addPageCount, changeFetchState } =
+  productSlice.actions;
 
 export default productSlice.reducer;
