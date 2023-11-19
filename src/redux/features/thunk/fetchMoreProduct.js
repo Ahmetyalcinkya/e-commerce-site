@@ -1,20 +1,22 @@
 import { AxiosWithAuth } from "../../../utilities/axiosWithAuth";
 import {
+  addProducts,
   changeFetchState,
   fetchStates,
-  setProducts,
+  setTotalProductCount,
 } from "../product/productSlice";
 
-export const fetchProducts = (params) => (dispatch) => {
+export const fetchMoreProducts = (params) => (dispatch) => {
   dispatch(changeFetchState(fetchStates.fetching));
   AxiosWithAuth()
     .get("products", { params })
     .then((res) => {
-      dispatch(setProducts(res.data.products));
+      dispatch(addProducts(res.data.products));
+      dispatch(setTotalProductCount(res.data.total));
       dispatch(changeFetchState(fetchStates.fetched));
     })
     .catch((err) => {
-      console.log(err);
       dispatch(changeFetchState(fetchStates.fetch_failed));
+      console.log(err);
     });
 };

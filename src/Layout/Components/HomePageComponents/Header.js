@@ -20,7 +20,7 @@ const Header = () => {
   const userGravatarName = useSelector((state) => state.user.user.name);
 
   return (
-    <header className="flex w-full px-10 py-4 iphone:p-0 m-auto justify-between iphone:w-[82.625rem] iphone:h-[5.688rem] items-center">
+    <header className="flex w-full px-10 py-4 iphone:p-0 m-auto justify-between iphone:w-[75.313rem] iphone:h-[5.688rem] items-center">
       <Link
         to="/"
         className="flex logo w-28 h-8 iphone:ml-[8.5rem] iphone:w-44 iphone:h-14 iphone:items-center"

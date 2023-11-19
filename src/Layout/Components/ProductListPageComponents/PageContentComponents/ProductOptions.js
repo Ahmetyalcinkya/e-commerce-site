@@ -41,9 +41,6 @@ const ProductOptions = () => {
   const categoryCode = gender?.charAt(0) + ":" + category;
   const categoryId = categories?.find((c) => c.code == categoryCode)?.id;
 
-  console.log("categoryCode: ", categoryCode);
-  console.log("categoryId: ", categoryId);
-
   useEffect(() => {
     dispatch(fetchProducts({ ...queryParams, category: categoryId }));
   }, [queryParams, categoryId]);

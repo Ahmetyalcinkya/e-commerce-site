@@ -20,7 +20,19 @@ export const productSlice = createSlice({
   initialState,
   reducers: {
     setProducts: (state, action) => {
-      state.productList = action.payload;
+      return {
+        ...state,
+        productList: [...action.payload],
+      };
+    },
+    addProducts: (state, action) => {
+      return {
+        ...state,
+        productList: [...state.productList, ...action.payload],
+      };
+    },
+    setTotalProductCount: (state, action) => {
+      return { ...state, totalProductCount: action.payload };
     },
     addPageCount: (state) => {
       state.pageCount += 1;
@@ -31,7 +43,12 @@ export const productSlice = createSlice({
   },
 });
 
-export const { setProducts, addPageCount, changeFetchState } =
-  productSlice.actions;
+export const {
+  setProducts,
+  addProducts,
+  setTotalProductCount,
+  addPageCount,
+  changeFetchState,
+} = productSlice.actions;
 
 export default productSlice.reducer;
