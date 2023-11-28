@@ -26,7 +26,7 @@ export function CarouselWithContent() {
             </Typography>
             <div className="flex justify-center gap-2">
               <Link
-                to="/products"
+                to="/shopping"
                 className="w-[12.25rem] flex p-2 bg-blue-500 iphone:w-[12.75rem] h-16 m-auto rounded-lg justify-center items-center text-white font-bold text-base leading-8 tracking-wider my-4"
               >
                 Start Now
@@ -56,7 +56,7 @@ export function CarouselWithContent() {
             </Typography>
             <div className="flex justify-center gap-2">
               <Link
-                to="/products"
+                to="/shopping"
                 className="w-[12.25rem] flex p-2 bg-blue-500 iphone:w-[12.75rem] h-16 m-auto rounded-lg justify-center items-center text-white font-bold text-base leading-8 tracking-wider my-4"
               >
                 Start Now
@@ -86,7 +86,7 @@ export function CarouselWithContent() {
             </Typography>
             <div className="flex justify-center gap-2">
               <Link
-                to="/products"
+                to="/shopping"
                 className="w-[12.25rem] flex p-2 bg-blue-500 iphone:w-[12.75rem] h-16 m-auto rounded-lg justify-center items-center text-white font-bold text-base leading-8 tracking-wider my-4"
               >
                 Start Now

@@ -1,15 +1,22 @@
-import React from "react";
-import products from "../../Data/products";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { AxiosWithAuth } from "../../utilities/axiosWithAuth";
+import ProductsPageFooter from "../Components/ProductsPageComponents/ProductsPageFooter";
 import ProductsPageHeader from "../Components/ProductsPageComponents/ProductsPageHeader";
 import ProductsPagePageContent from "../Components/ProductsPageComponents/ProductsPagePageContent";
-import ProductsPageFooter from "../Components/ProductsPageComponents/ProductsPageFooter";
 
 const ProductsPage = () => {
-  const { id } = useParams();
-  const Myproducts = products.find(
-    (product) => product.productId === Number(id)
-  );
+  const { productId } = useParams();
+
+  const [Myproducts, setMyproducts] = useState();
+
+  useEffect(() => {
+    AxiosWithAuth()
+      .get(`products/${productId}`)
+      .then((res) => setMyproducts(res.data));
+  }, [productId]);
+
+  console.log(Myproducts);
   return (
     <div>
       <ProductsPageHeader />

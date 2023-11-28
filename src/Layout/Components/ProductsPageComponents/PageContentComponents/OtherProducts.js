@@ -1,11 +1,13 @@
 import React from "react";
-import products from "../../../../Data/products";
-import ProductListCardCompound from "../../../Compounds/ProductPageCompounds/ListCardCompound copy";
-import Pic2 from "../../../../Assets/product-cover-5 (4).png";
+import { useSelector } from "react-redux";
+import ListCardCompound from "../../../Compounds/ProductListPageCompounds/ListCardCompound";
 
 const OtherProducts = () => {
+  const products = useSelector((state) => state.product.productList);
+
+  console.log(products);
   return (
-    <div className="w-full iphone:h-[68rem] bg-secondary row-centered">
+    <div className="w-full iphone:h-[68rem] bg-secondary column-centered">
       <div className="w-full iphone:w-[65.625rem] h-[260rem] iphone:h-full flex flex-col justify-around iphone:justify-center text-left">
         <div className="w-full h-20 flex flex-col justify-around">
           <h3 className="font-bold text-2xl text-center iphone:text-left">
@@ -14,11 +16,9 @@ const OtherProducts = () => {
           <hr className="m-2 w-full" />
         </div>
         <div className="flex flex-col iphone:flex-row flex-wrap w-full justify-around items-center">
-          {new Array(2).fill(
-            products.map((product) => (
-              <ProductListCardCompound product={product} image={Pic2} />
-            ))
-          )}
+          {products?.slice(0, 8).map((product, index) => (
+            <ListCardCompound key={index} product={product} />
+          ))}
         </div>
       </div>
     </div>

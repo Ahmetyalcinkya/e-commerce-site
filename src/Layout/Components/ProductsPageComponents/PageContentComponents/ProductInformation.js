@@ -15,15 +15,14 @@ const ProductInformation = ({ Myproducts }) => {
         <div className="flex flex-col w-full px-6 iphone:px-0 iphone:w-[32rem] gap-y-4 h-[34.5rem] justify-between">
           <ProductsCarousel Myproducts={Myproducts} />
           <div className="flex w-56 justify-between">
-            <img src={Myproducts?.productImg[1]} alt="" className="w-24 h-20" />
-            <img src={Myproducts?.productImg[2]} alt="" className="w-24 h-20" />
+            {Myproducts?.images.map((image, index) => (
+              <img src={image.url} key={index} className="w-24 h-20" />
+            ))}
           </div>
         </div>
         <div className="w-full iphone:w-[32rem] h-[29.5rem] flex flex-col px-10 iphone:px-0 text-left justify-around">
-          <h4 className="font-normal text-xl leading-8">
-            {Myproducts.productHeader}
-          </h4>
-          <div className="right-dir">
+          <h4 className="font-normal text-xl leading-8">{Myproducts?.name}</h4>
+          <div className="right-dir cursor-pointer">
             <FontAwesomeIcon icon={faStar} color="#F3CD03" />
             <FontAwesomeIcon icon={faStar} color="#F3CD03" />
             <FontAwesomeIcon icon={faStar} color="#F3CD03" />
@@ -32,18 +31,18 @@ const ProductInformation = ({ Myproducts }) => {
             <p className="font-bold text-sm">10 Reviews</p>
           </div>
           <h3 className="font-bold text-2xl leading-8 text-[#252B42]">
-            {Myproducts.productPrice}
+            {Myproducts?.price}
           </h3>
           <div className="flex">
-            <h6 className="font-bold text-sm leading-7 mr-2">
+            <h6 className="font-bold text-sm leading-7 mr-2 flex w-36 justify-between">
               Availability :{" "}
-            </h6>
-            <h6 className="text-primary font-bold text-sm leading-7">
-              {Myproducts.productSituation}
+              <h6 className="text-[#23A6F0]">
+                {Myproducts?.stock > 0 ? "In Stock" : "Not In Stock"}
+              </h6>
             </h6>
           </div>
           <p className="text-sm leading-6 text-[#858585]">
-            {Myproducts.productDescription}
+            {Myproducts?.description}
           </p>
           <hr />
           <div className="flex">

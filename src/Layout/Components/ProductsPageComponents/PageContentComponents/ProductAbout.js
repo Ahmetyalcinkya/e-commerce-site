@@ -14,7 +14,11 @@ const ProductAbout = ({ Myproducts }) => {
       </div>
       <hr />
       <div className="w-full flex-col h-[79.75rem] iphone:flex-row iphone:w-[65.75rem] iphone:h-[31.25rem] pt-6 pb-12 flex justify-between items-center">
-        <img src={Myproducts.productImg[2]} alt="" className="w-80 h-96" />
+        <img
+          src={Myproducts?.images[0].url}
+          alt=""
+          className="w-80 h-96 object-cover"
+        />
         <div className="w-80 h-96 flex flex-col justify-around">
           <h3 className="font-bold text-2xl leading-8 text-left">
             the quick fox jumps over{" "}

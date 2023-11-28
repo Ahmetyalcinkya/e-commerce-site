@@ -44,7 +44,7 @@ function App() {
         <Route exact path="/shopping/:gender?/:category?">
           <ProductListPage />
         </Route>
-        <Route exact path="/shopping/:id">
+        <Route exact path="/product/:productId/:productNameSlug">
           <ProductsPage />
         </Route>
         <Route path="/about">
