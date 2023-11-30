@@ -6,7 +6,7 @@ const OtherProducts = () => {
   const products = useSelector((state) => state.product.productList);
 
   return (
-    <div className="w-full iphone:h-[68rem] bg-secondary column-centered">
+    <div className="w-full iphone:h-[77rem] bg-secondary column-centered">
       <div className="w-full iphone:w-[65.625rem] h-[260rem] iphone:h-full flex flex-col justify-around iphone:justify-center text-left">
         <div className="w-full h-20 flex flex-col justify-around">
           <h3 className="font-bold text-2xl text-center iphone:text-left">

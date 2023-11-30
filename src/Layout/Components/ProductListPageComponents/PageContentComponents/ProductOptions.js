@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useParams } from "react-router-dom";
 import { Icon } from "../../../../Icons/icons";
+import useQueryParams from "../../../../hooks/useQueryParams";
+import { fetchProducts } from "../../../../redux/features/thunk/fetchProducts";
 import FilterDropdown from "../../../Compounds/ProductListPageCompounds/FilterDropdown";
 import ProductSearch from "../../../Compounds/ProductListPageCompounds/ProductSearch";
-import useQueryParams from "../../../../hooks/useQueryParams";
-import { useParams } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "../../../../redux/features/thunk/fetchProducts";
 
 const filteredParamsInitial = { filter: "", sort: "" };
 
-const ProductOptions = () => {
+const ProductOptions = ({ setView }) => {
   const { gender, category } = useParams();
   const [queryParams, setQueryParams] = useQueryParams();
   const dispatch = useDispatch();
@@ -53,10 +53,16 @@ const ProductOptions = () => {
         <div className="flex items-center gap-x-4">
           <h6 className="font-bold text-sm text-secondary">Views:</h6>
           <div className="flex gap-x-4">
-            <button className="w-12 h-12 row-centered border">
+            <button
+              onClick={() => setView(true)}
+              className="w-12 h-12 row-centered border rounded-md hover:bg-[#252B42] hover:text-white hover:border-white transition-colors duration-500"
+            >
               <Icon name="list1" />
             </button>
-            <button className="w-12 h-12 row-centered border">
+            <button
+              onClick={() => setView(false)}
+              className="w-12 h-12 row-centered border rounded-md hover:bg-[#252B42] hover:text-white hover:border-white transition-colors duration-500"
+            >
               <Icon name="list2" />
             </button>
           </div>

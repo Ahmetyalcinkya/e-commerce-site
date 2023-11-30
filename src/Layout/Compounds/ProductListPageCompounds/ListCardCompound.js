@@ -3,14 +3,14 @@ import { Link } from "react-router-dom";
 
 const ListCardCompound = ({ product }) => {
   return (
-    <div className="flex gap-x-8 flex-col w-60 border-2 rounded-lg shadow-xl hover:scale-105 duration-150 my-4">
+    <div className="flex gap-x-8 flex-col w-60 border-2 rounded-xl shadow-xl hover:scale-105 duration-200 my-4">
       <Link
         to={`/product/${product.id}/${product.name
           .toLowerCase()
           .replaceAll(" ", "-")}`}
         className="flex flex-col h-[30rem] justify-around items-center p-2"
       >
-        <img src={product?.images[0]?.url} alt="" />
+        <img src={product?.images[0]?.url} alt="" className="rounded-xl" />
         <h5 className="text-base font-bold text-quaternary">{product?.name}</h5>
         <p className="font-bold leading-tight tracking-wider text-secondary line-clamp-1">
           {product?.description}
@@ -24,14 +24,17 @@ const ListCardCompound = ({ product }) => {
         </div>
       </Link>
       <div className="w-full flex justify-between gap-x-0.5 h-10 items-center">
-        <Link
-          to={`/product/${product.id}/${product.name
-            .toLowerCase()
-            .replaceAll(" ", "-")}`}
-          className="flex-1 rounded-bl-xl p-1 text-white bg-[#252B42]/95 font-bold h-full flex justify-center items-center hover:bg-[#23A6F0]/95 transition-colors"
-        >
-          Ürüne Git
-        </Link>
+        <select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-bl-lg focus:ring-blue-500 focus:border-blue-500 block w-28 p-2.5 h-full">
+          {/* size options will be added */}
+          <option value="" selected disabled>
+            Size
+          </option>
+          <option>XS</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
         <button className="flex-1 rounded-br-xl p-1 text-white bg-[#23A6F0]/95 font-bold h-full hover:bg-[#252B42]/95 transition-colors">
           Sepete Ekle
         </button>

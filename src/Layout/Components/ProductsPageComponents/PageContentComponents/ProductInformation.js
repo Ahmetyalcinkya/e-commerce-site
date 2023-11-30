@@ -16,11 +16,11 @@ const ProductInformation = ({ Myproducts }) => {
           <ProductsCarousel Myproducts={Myproducts} />
           <div className="flex w-56 justify-between">
             {Myproducts?.images.map((image, index) => (
-              <img src={image.url} key={index} className="w-24 h-20" />
+              <img src={image.url} key={index} className="w-20 h-20" />
             ))}
           </div>
         </div>
-        <div className="w-full iphone:w-[32rem] h-[29.5rem] flex flex-col px-10 iphone:px-0 text-left justify-around">
+        <div className="w-full iphone:w-[32rem] h-[28rem] flex flex-col px-10 iphone:px-4 text-left justify-between">
           <h4 className="font-normal text-xl leading-8">{Myproducts?.name}</h4>
           <div className="right-dir cursor-pointer">
             <FontAwesomeIcon icon={faStar} color="#F3CD03" />
@@ -33,14 +33,12 @@ const ProductInformation = ({ Myproducts }) => {
           <h3 className="font-bold text-2xl leading-8 text-[#252B42] flex">
             {Myproducts?.price} <h3 className="pl-1">₺</h3>
           </h3>
-          <div className="flex">
-            <h6 className="font-bold text-sm leading-7 mr-2 flex w-36 justify-between">
-              Availability :{" "}
-              <h6 className="text-[#23A6F0]">
-                {Myproducts?.stock > 0 ? "In Stock" : "Not In Stock"}
-              </h6>
+          <h6 className="font-bold text-sm leading-7 flex w-40 justify-between">
+            Availability :{" "}
+            <h6 className="text-[#23A6F0]">
+              {Myproducts?.stock > 0 ? "In Stock" : "Not In Stock"}
             </h6>
-          </div>
+          </h6>
           <p className="text-sm leading-6 text-[#858585]">
             {Myproducts?.description}
           </p>

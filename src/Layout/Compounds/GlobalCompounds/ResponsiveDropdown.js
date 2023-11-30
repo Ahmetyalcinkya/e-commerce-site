@@ -49,7 +49,7 @@ const ResponsiveDropdown = () => {
                     className={`${
                       active && "bg-gray-700 text-white"
                     } group flex items-center rounded-md px-2 py-2 text-sm`}
-                    href="/products"
+                    href="/shopping"
                   >
                     Shop
                   </a>

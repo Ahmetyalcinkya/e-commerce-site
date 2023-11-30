@@ -6,8 +6,9 @@ import useQueryParams from "../../../../hooks/useQueryParams";
 import { fetchMoreProducts } from "../../../../redux/features/thunk/fetchMoreProduct";
 import ListCardCompound from "../../../Compounds/ProductListPageCompounds/ListCardCompound";
 import { fetchProducts } from "../../../../redux/features/thunk/fetchProducts";
+import ListCardListView from "../../../Compounds/ProductListPageCompounds/ListCardListView";
 
-const ProductsSection = () => {
+const ProductsSection = ({ view }) => {
   const { totalProductCount } = useSelector((state) => state.product);
   const products = useSelector((state) => state.product.productList);
 
@@ -59,9 +60,13 @@ const ProductsSection = () => {
         endMessage={<p>Hepsini gördün</p>}
         className="flex flex-wrap iphone:w-[70.25rem] justify-around items-center"
       >
-        {products?.map((product, index) => (
-          <ListCardCompound key={index} product={product} />
-        ))}
+        {view == true
+          ? products?.map((product, index) => (
+              <ListCardCompound key={index} product={product} />
+            ))
+          : products?.map((product, index) => (
+              <ListCardListView key={index} product={product} />
+            ))}
       </InfiniteScroll>
     </section>
   );
