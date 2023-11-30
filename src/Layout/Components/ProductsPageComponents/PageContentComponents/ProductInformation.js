@@ -30,8 +30,8 @@ const ProductInformation = ({ Myproducts }) => {
             <FontAwesomeIcon icon={faStar} color="#F3CD03" />
             <p className="font-bold text-sm">10 Reviews</p>
           </div>
-          <h3 className="font-bold text-2xl leading-8 text-[#252B42]">
-            {Myproducts?.price}
+          <h3 className="font-bold text-2xl leading-8 text-[#252B42] flex">
+            {Myproducts?.price} <h3 className="pl-1">₺</h3>
           </h3>
           <div className="flex">
             <h6 className="font-bold text-sm leading-7 mr-2 flex w-36 justify-between">

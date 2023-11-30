@@ -5,7 +5,6 @@ import ListCardCompound from "../../../Compounds/ProductListPageCompounds/ListCa
 const OtherProducts = () => {
   const products = useSelector((state) => state.product.productList);
 
-  console.log(products);
   return (
     <div className="w-full iphone:h-[68rem] bg-secondary column-centered">
       <div className="w-full iphone:w-[65.625rem] h-[260rem] iphone:h-full flex flex-col justify-around iphone:justify-center text-left">

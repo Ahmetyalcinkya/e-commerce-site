@@ -16,7 +16,6 @@ const ProductsPage = () => {
       .then((res) => setMyproducts(res.data));
   }, [productId]);
 
-  console.log(Myproducts);
   return (
     <div>
       <ProductsPageHeader />
