@@ -1,7 +1,15 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { setCart } from "../../../redux/features/shoppingCart/shoppingCartSlice";
 
 const ListCardCompound = ({ product }) => {
+  const dispatch = useDispatch();
+
+  const addToCart = () => {
+    dispatch(setCart(product));
+  };
+
   return (
     <div className="flex gap-x-8 flex-col w-60 border-2 rounded-xl shadow-xl hover:scale-105 duration-200 my-4">
       <Link
@@ -26,7 +34,7 @@ const ListCardCompound = ({ product }) => {
       <div className="w-full flex justify-between gap-x-0.5 h-10 items-center">
         <select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-bl-lg focus:ring-blue-500 focus:border-blue-500 block w-28 p-2.5 h-full">
           {/* size options will be added */}
-          <option value="" selected disabled>
+          <option selected disabled>
             Size
           </option>
           <option>XS</option>
@@ -35,7 +43,10 @@ const ListCardCompound = ({ product }) => {
           <option>L</option>
           <option>XL</option>
         </select>
-        <button className="flex-1 rounded-br-xl p-1 text-white bg-[#23A6F0]/95 font-bold h-full hover:bg-[#252B42]/95 transition-colors">
+        <button
+          onClick={addToCart}
+          className="flex-1 rounded-br-xl p-1 text-white bg-[#23A6F0]/95 font-bold h-full hover:bg-[#252B42]/95 transition-colors"
+        >
           Sepete Ekle
         </button>
       </div>

@@ -11,7 +11,10 @@ export const shoppingCartSlice = createSlice({
   initialState,
   reducers: {
     setCart: (state, action) => {
-      state.cart = action.payload;
+      return {
+        ...state,
+        cart: [...state.cart, action.payload],
+      };
     },
     setPayment: (state, action) => {
       state.payment = action.payload;

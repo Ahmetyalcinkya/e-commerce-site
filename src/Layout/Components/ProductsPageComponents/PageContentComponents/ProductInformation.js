@@ -7,8 +7,15 @@ import {
   faHeart,
   faStar,
 } from "@fortawesome/free-solid-svg-icons";
+import { setCart } from "../../../../redux/features/shoppingCart/shoppingCartSlice";
+import { useDispatch } from "react-redux";
 
 const ProductInformation = ({ Myproducts }) => {
+  const dispatch = useDispatch();
+
+  const addToCart = () => {
+    dispatch(setCart(Myproducts));
+  };
   return (
     <div className="w-full h-[62rem] iphone:h-[37.5rem] bg-secondary flex-col row-centered">
       <div className="w-full h-full iphone:w-[65.75rem] iphone:h-[34.5rem] flex flex-col iphone:flex-row justify-between">
@@ -50,8 +57,11 @@ const ProductInformation = ({ Myproducts }) => {
             <button className="w-8 h-8 bg-[#252B42] rounded-full mr-2"></button>
           </div>
           <div className="flex w-[18.75rem] h-11 justify-between items-center">
-            <button className="bg-primary py-2.5 px-5 rounded text-white">
-              Select Options
+            <button
+              onClick={addToCart}
+              className="bg-primary py-2.5 px-5 rounded text-white"
+            >
+              Sepete Ekle
             </button>
             <button className="product-setting-btn">
               <FontAwesomeIcon icon={faHeart} />

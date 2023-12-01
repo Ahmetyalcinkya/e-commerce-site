@@ -1,7 +1,14 @@
 import React from "react";
+import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
+import { setCart } from "../../../redux/features/shoppingCart/shoppingCartSlice";
 
 const ListCardListView = ({ product }) => {
+  const dispatch = useDispatch();
+
+  const addToCart = () => {
+    dispatch(setCart(product));
+  };
   return (
     <div className="w-[65rem] h-20 flex justify-between border-2 rounded-xl shadow-xl hover:scale-105 duration-200 items-center my-3">
       <Link
@@ -30,15 +37,21 @@ const ListCardListView = ({ product }) => {
         </div>
       </Link>
       <div className="w-52 flex justify-between gap-x-0.5 h-10 items-center px-2">
-        <Link
-          to={`/product/${product.id}/${product.name
-            .toLowerCase()
-            .replaceAll(" ", "-")}`}
-          className="rounded-md p-1 text-white bg-[#252B42]/95 font-bold h-full flex justify-center items-center hover:bg-[#23A6F0]/95 transition-colors"
+        <select className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-md focus:ring-blue-500 focus:border-blue-500 block w-20 p-2.5 h-full">
+          {/* size options will be added */}
+          <option value="" selected disabled>
+            Size
+          </option>
+          <option>XS</option>
+          <option>S</option>
+          <option>M</option>
+          <option>L</option>
+          <option>XL</option>
+        </select>
+        <button
+          onClick={addToCart}
+          className="rounded-md p-1 text-white bg-[#23A6F0]/95 font-bold h-full hover:bg-[#252B42]/95 transition-colors"
         >
-          Ürüne Git
-        </Link>
-        <button className="rounded-md p-1 text-white bg-[#23A6F0]/95 font-bold h-full hover:bg-[#252B42]/95 transition-colors">
           Sepete Ekle
         </button>
       </div>

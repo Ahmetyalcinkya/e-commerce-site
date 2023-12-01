@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { NavLink, Link } from "react-router-dom";
 import { AiOutlineSearch, AiOutlineHeart } from "react-icons/ai";
 import { BsCart2 } from "react-icons/bs";
@@ -10,6 +10,7 @@ import { MD5 } from "crypto-js";
 import { useSelector } from "react-redux";
 import { fetchStates } from "../../../redux/features/product/productSlice";
 import HeaderDropdown from "./HeaderDropdown";
+import ShoppingCartDropdown from "../../Compounds/HomePageCompounds/ShoppingCartDropdown";
 
 const Header = () => {
   const userFetched = useSelector(
@@ -66,10 +67,7 @@ const Header = () => {
             <div className="">
               <AiOutlineSearch size={28} color="#23A6F0" />
             </div>
-            <div className="flex banner-icon">
-              <BsCart2 size={28} color="#23A6F0" />
-              <p className="ml-1 primary">2</p>
-            </div>
+            <ShoppingCartDropdown />
             <div className="hidden iphone:flex banner-icon">
               <AiOutlineHeart size={28} color="#23A6F0" />
               <p className="ml-1 primary">2</p>

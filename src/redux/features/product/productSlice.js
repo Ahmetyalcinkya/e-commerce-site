@@ -34,9 +34,6 @@ export const productSlice = createSlice({
     setTotalProductCount: (state, action) => {
       return { ...state, totalProductCount: action.payload };
     },
-    addPageCount: (state) => {
-      state.pageCount += 1;
-    },
     changeFetchState: (state, action) => {
       state.fetchStates = action.payload;
     },
@@ -47,7 +44,6 @@ export const {
   setProducts,
   addProducts,
   setTotalProductCount,
-  addPageCount,
   changeFetchState,
 } = productSlice.actions;
 
