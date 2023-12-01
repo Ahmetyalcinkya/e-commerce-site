@@ -1,11 +1,12 @@
 import { Popover, Transition } from "@headlessui/react";
-import { Link } from "@mui/material";
 import React, { Fragment } from "react";
 import { BsCart2 } from "react-icons/bs";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const ShoppingCartDropdown = () => {
   const cart = useSelector((state) => state.shopping.cart);
+  const dispatch = useDispatch();
   return (
     <Popover className="relative">
       <Popover.Button>
@@ -21,8 +22,8 @@ const ShoppingCartDropdown = () => {
         leaveTo="opacity-0 translate-y-1"
       >
         <Popover.Panel className="absolute z-10 w-96">
-          <div className="overflow-hidden rounded-lg shadow-lg ring-1 ring-black/5">
-            <div className="relative grid gap-2 bg-white p-2 w-full">
+          <div className="overflow-hidden rounded-lg shadow-lg">
+            <div className="relative flex flex-col gap-2 bg-white p-2 w-full">
               {cart?.length === 0 ? (
                 <p>Sepetiniz boş.</p>
               ) : (
@@ -32,18 +33,44 @@ const ShoppingCartDropdown = () => {
                       .toLowerCase()
                       .replaceAll(" ", "-")}`}
                     key={product?.id}
-                    className="-m-3 flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-50 focus:outline-none focus-visible:ring focus-visible:ring-orange-500/50"
+                    className="w-full flex items-center rounded-lg p-2 transition duration-150 ease-in-out hover:bg-gray-50"
                   >
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center text-white iphone:h-12 iphone:w-12">
-                      {product?.images[0]?.url}
-                    </div>
-                    <div className="ml-4">
+                    <img
+                      src={product?.images[0]?.url}
+                      alt="product-pic"
+                      className="flex h-10 w-10 shrink-0 items-center justify-center text-white iphone:h-full iphone:w-16"
+                    />
+                    <div className="ml-3 flex flex-col gap-y-1.5 text-left">
                       <p className="text-sm font-medium text-gray-900">
                         {product?.name}
                       </p>
-                      <p className="text-sm text-gray-500">
+                      <p className="text-sm text-gray-500 line-clamp-1">
                         {product?.description}
                       </p>
+                      <div className="flex gap-x-3">
+                        <p>Beden : {product?.cartQuantity}</p>
+                        <p>Adet : {product?.cartQuantity}</p>
+                      </div>
+                      <div className="flex gap-x-2">
+                        <button
+                          onClick={() => dispatch(product.cartQuantity - 1)}
+                          className="px-2 bg-gray-200 hover:bg-gray-600 hover:text-white transition-colors duration-300 rounded-full text-black"
+                        >
+                          -
+                        </button>
+                        <p className="text-sm text-gray-500">
+                          {parseFloat(
+                            (product?.price * product?.cartQuantity).toFixed(2)
+                          )}{" "}
+                          <span>₺</span>
+                        </p>
+                        <button
+                          onClick={() => dispatch(product.cartQuantity + 1)}
+                          className="px-2 bg-gray-200 hover:bg-gray-600 hover:text-white transition-colors duration-300 rounded-full text-black"
+                        >
+                          +
+                        </button>
+                      </div>
                     </div>
                   </Link>
                 ))

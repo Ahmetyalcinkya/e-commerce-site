@@ -11,10 +11,15 @@ export const shoppingCartSlice = createSlice({
   initialState,
   reducers: {
     setCart: (state, action) => {
-      return {
-        ...state,
-        cart: [...state.cart, action.payload],
-      };
+      const itemIndex = state.cart.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      if (itemIndex >= 0) {
+        state.cart[itemIndex].cartQuantity += 1;
+      } else {
+        const tempProduct = { ...action.payload, cartQuantity: 1 };
+        state.cart.push(tempProduct);
+      }
     },
     setPayment: (state, action) => {
       state.payment = action.payload;
