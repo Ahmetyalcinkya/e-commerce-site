@@ -7,7 +7,7 @@ const TeamPageHeader = () => {
   return (
     <div className="w-full column-centered">
       <AboutPageHeader />
-      <div className="w-full h-[12.5rem] iphone:w-[54.5rem] iphone:h-72 column-centered">
+      <div className="w-full gap-y-2 iphone:gap-y-0 iphone:w-[54.5rem] iphone:h-72 column-centered">
         <h5 className="font-bold text-base leading-6 text-secondary">
           WHAT WE DO
         </h5>

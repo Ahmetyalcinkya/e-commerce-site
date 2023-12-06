@@ -17,7 +17,7 @@ const ProductListFooter = () => {
           <FontAwesomeIcon icon={faTwitter} size="xl" color="#23A6F0" />
         </div>
       </div>
-      <div className="flex justify-between items-center w-full iphone:w-[65.625rem] iphone:h-64">
+      <div className="-ml-16 iphone:ml-0 flex justify-between items-center w-full iphone:w-[65.625rem] iphone:h-64">
         <div className="iphone:h-72 w-full flex justify-center items-center text-secondary">
           <div className="w-60 flex-col iphone:flex-row iphone:w-[65rem] iphone:h-[10.625rem] flex justify-between gap-y-8 iphone:gap-y-0">
             <div className="footer-div">
@@ -79,7 +79,7 @@ const ProductListFooter = () => {
       </div>
       <footer className="w-full bg-secondary h-20 flex justify-center items-center">
         <div className="w-full iphone:w-[65.625rem] flex justify-start">
-          <h6 className="text-secondary font-bold text-sm">
+          <h6 className="px-2 text-secondary font-bold text-sm">
             Made With Love By Finland All Right Reserved
           </h6>
         </div>

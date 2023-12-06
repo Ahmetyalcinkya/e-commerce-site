@@ -3,7 +3,7 @@ import React, { Fragment } from "react";
 import { BsCart2 } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
+// QUANTITY SAYISINI DÜZENLE DISPATCH ILE
 const ShoppingCartDropdown = () => {
   const cart = useSelector((state) => state.shopping.cart);
   const dispatch = useDispatch();
@@ -23,7 +23,7 @@ const ShoppingCartDropdown = () => {
       >
         <Popover.Panel className="absolute z-10 w-96">
           <div className="overflow-hidden rounded-lg shadow-lg">
-            <div className="relative flex flex-col gap-2 bg-white p-2 w-full">
+            <div className="relative flex flex-col gap-2 bg-white p-2 w-full h-[24.5rem] overflow-y-scroll">
               {cart?.length === 0 ? (
                 <p>Sepetiniz boş.</p>
               ) : (

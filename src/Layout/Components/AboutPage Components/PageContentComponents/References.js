@@ -10,12 +10,12 @@ const References = () => {
         alt=""
         className="hidden iphone:absolute right-0 h-[40rem]"
       />
-      <div className="w-[65.625rem] h-[32rem] flex flex-col text-left justify-around text-white">
+      <div className="px-2 iphone:px-0 iphone:w-[65.625rem] h-[32rem] flex flex-col text-left justify-around text-white">
         <h5 className="font-bold text-base leading-6">WORK WITH US</h5>
         <h2 className="font-bold text-4xl leading-[3rem]">
           Now Let’s grow Yours
         </h2>
-        <p className="text-sm leading-5 w-[27.5rem] h-10">
+        <p className="text-sm leading-5 w-full iphone:w-[27.5rem] h-10">
           The gradual accumulation of information about atomic and small-scale
           behavior during the first quarter of the 20th{" "}
         </p>

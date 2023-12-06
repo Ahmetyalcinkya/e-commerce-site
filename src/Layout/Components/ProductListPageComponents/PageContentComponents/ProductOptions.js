@@ -47,7 +47,7 @@ const ProductOptions = ({ setView }) => {
     dispatch(fetchProducts({ ...queryParams, category: categoryId }));
   }, [queryParams, categoryId]);
   return (
-    <div className="w-full h-56 iphone:h-24 row-centered">
+    <div className="w-full h-96 iphone:h-24 row-centered">
       <div className="iphone:w-[65.625rem] flex-col iphone:flex-row justify-around h-full flex items-center iphone:justify-between">
         <h6 className="font-bold text-sm text-[#737373]">
           Showing all {countOfProducts} results
@@ -69,7 +69,10 @@ const ProductOptions = ({ setView }) => {
             </button>
           </div>
         </div>
-        <form onSubmit={submitHandler} className="flex gap-x-4 items-center">
+        <form
+          onSubmit={submitHandler}
+          className="flex flex-col iphone:flex-row h-48 iphone:h-full justify-around gap-x-4 items-center"
+        >
           <ProductSearch changeHandler={changeHandler} />
           <FilterDropdown filterHandler={filterHandler} />
           <button
