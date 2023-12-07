@@ -16,8 +16,13 @@ export const shoppingCartSlice = createSlice({
       );
       if (itemIndex >= 0) {
         state.cart[itemIndex].cartQuantity += 1;
+        state.cart[itemIndex].checked = true;
       } else {
-        const tempProduct = { ...action.payload, cartQuantity: 1 };
+        const tempProduct = {
+          ...action.payload,
+          cartQuantity: 1,
+          checked: true,
+        };
         state.cart.push(tempProduct);
       }
     },
@@ -40,6 +45,16 @@ export const shoppingCartSlice = createSlice({
         state.cart.splice(itemIndex, 1);
       }
     },
+    productChecked: (state, action) => {
+      const itemIndex = state.cart.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      if (state.cart[itemIndex].checked === true) {
+        state.cart[itemIndex].checked = false;
+      } else {
+        state.cart[itemIndex].checked = true;
+      }
+    },
     setPayment: (state, action) => {
       state.payment = action.payload;
     },
@@ -49,7 +64,13 @@ export const shoppingCartSlice = createSlice({
   },
 });
 
-export const { setCart, setPayment, setAddress, deleteFromCart, resetCart } =
-  shoppingCartSlice.actions;
+export const {
+  setCart,
+  setPayment,
+  setAddress,
+  deleteFromCart,
+  resetCart,
+  productChecked,
+} = shoppingCartSlice.actions;
 
 export default shoppingCartSlice.reducer;

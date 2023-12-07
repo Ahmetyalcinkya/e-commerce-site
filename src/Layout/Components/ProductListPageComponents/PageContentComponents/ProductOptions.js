@@ -15,6 +15,7 @@ const ProductOptions = ({ setView }) => {
   const dispatch = useDispatch();
   const products = useSelector((state) => state.product.productList);
   const categories = useSelector((state) => state.global.categories);
+  const { totalProductCount } = useSelector((state) => state.product);
 
   const [filteredParams, setFilteredParams] = useState(filteredParamsInitial);
 
@@ -49,8 +50,9 @@ const ProductOptions = ({ setView }) => {
   return (
     <div className="w-full h-96 iphone:h-24 row-centered">
       <div className="iphone:w-[65.625rem] flex-col iphone:flex-row justify-around h-full flex items-center iphone:justify-between">
-        <h6 className="font-bold text-sm text-[#737373]">
-          Showing all {countOfProducts} results
+        <h6 className="font-bold text-sm text-[#737373] w-48">
+          Showing all {countOfProducts} products of {totalProductCount}{" "}
+          products.
         </h6>
         <div className="flex items-center gap-x-4">
           <h6 className="font-bold text-sm text-secondary">Views:</h6>

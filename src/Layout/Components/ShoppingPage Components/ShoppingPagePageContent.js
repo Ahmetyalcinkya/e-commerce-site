@@ -1,26 +1,30 @@
 import {
+  faAngleRight,
   faCartShopping,
-  faCube,
-  faTrashCan,
+  faPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import ListCardCompound from "../../Compounds/ProductListPageCompounds/ListCardCompound";
 import { fetchProducts } from "../../../redux/features/thunk/fetchProducts";
-import {
-  deleteFromCart,
-  resetCart,
-  setCart,
-} from "../../../redux/features/shoppingCart/shoppingCartSlice";
-import { toast } from "react-toastify";
+import ShoppingList from "../../Compounds/GlobalCompounds/ShoppingList";
+import ListCardCompound from "../../Compounds/ProductListPageCompounds/ListCardCompound";
 
 const ShoppingPagePageContent = () => {
   const products = useSelector((state) => state.product.productList);
   const cart = useSelector((state) => state.shopping.cart);
 
   const dispatch = useDispatch();
+
+  const cartSum = (cart) => {
+    let totalPrice = 0;
+    cart?.map((product) => {
+      return (totalPrice += product.price * product.cartQuantity);
+    });
+    return Number(totalPrice.toFixed(2));
+  };
+
   console.log(cart);
 
   useEffect(() => {
@@ -55,78 +59,62 @@ const ShoppingPagePageContent = () => {
           </div>
         </div>
       ) : (
-        <div className="flex flex-col gap-y-4 text-left">
-          <p className="text-xl">Sepetim ( {cart?.length} Ürün )</p>
-          <hr />
-          {cart?.map((product) => (
-            <div className="border rounded-xl">
-              {product?.price * product?.cartQuantity > 150 && (
-                <div className="w-full bg-green-200 flex gap-x-2 items-center justify-center py-1 rounded-t-xl">
-                  <span className=" text-green-600">
-                    <FontAwesomeIcon icon={faCube} />
-                  </span>
-                  <span className="text-black">Kargo Bedava!</span>
+        <div className="flex gap-x-8">
+          <div className="flex flex-col gap-y-4 text-left flex-1">
+            <p className="text-xl">Sepetim ( {cart?.length} Ürün )</p>
+            <hr />
+            {cart?.map((product, index) => (
+              <ShoppingList product={product} key={index} />
+            ))}
+          </div>
+          <div className="flex flex-col gap-y-2 my-10">
+            <button className="border bg-primary text-white py-2 rounded-lg flex justify-center items-center gap-x-1">
+              Sepeti Onayla
+              <FontAwesomeIcon icon={faAngleRight} />
+            </button>
+            <div className="border flex flex-col text-left px-6 rounded-xl">
+              <h4 className="text-xl">Sipariş Özeti</h4>
+              <div className="flex flex-col justify-center items-center">
+                <div className="flex justify-between my-1 w-full">
+                  <p>Ürün Toplamı</p>
+                  <p>{cartSum(cart)}₺</p>
                 </div>
-              )}
-              <div className="flex items-center justify-around ">
-                <input
-                  type="checkbox"
-                  className="w-6 h-6 rounded-md checked:bg-green-400"
-                />
-                <img
-                  src={product.images[0].url}
-                  alt=""
-                  className="w-24 h-full p-3"
-                />
-                <div className="flex flex-col text-left gap-y-1">
-                  <h4 className="text-[.75rem] line-clamp-1 w-96">
-                    <span className="font-bold">{product?.name}</span> /{" "}
-                    <span>{product?.description}</span>
-                  </h4>
-                  <h4 className="text-[0.75rem] line-clamp-1 w-96">
-                    Yarın kargoda
-                  </h4>
+                <div className="flex justify-between my-1 w-full">
+                  <p>Kargo Toplam</p>
+                  <p>49.99₺</p>
                 </div>
-                <div className="flex gap-x-3 bg-gray-100 border rounded-md items-center">
-                  <button
-                    onClick={() => {
-                      dispatch(deleteFromCart(product));
-                      if (product?.cartQuantity > 1) {
-                        toast.error("Ürün sepetinizden çıkarıldı.");
-                      } else {
-                        toast("Ürün sepetinizden kaldırıldı.");
-                      }
-                    }}
-                    className="bg-gray-300 px-2 py-1 rounded-l-md"
-                  >
-                    -
-                  </button>
-                  {product?.cartQuantity}
-                  <button
-                    onClick={() => {
-                      dispatch(setCart(product));
-                      toast.success("Ürün sepetinize eklendi.");
-                    }}
-                    className="bg-gray-300 px-2 py-1 rounded-r-md"
-                  >
-                    +
-                  </button>
+                <div className="flex my-1 w-full">
+                  {cartSum(cart) > 150 && (
+                    <div className="flex justify-between w-full items-center">
+                      <p className="text-[.75rem] w-28">
+                        150₺ üzeri kargo bedava
+                      </p>
+                      <p className="primary">-49.99₺</p>
+                    </div>
+                  )}
                 </div>
-                <h3 className="font-bold">
-                  {(product?.price * product?.cartQuantity).toFixed(2)} ₺
-                </h3>
-                <button
-                  onClick={() => {
-                    dispatch(resetCart(product));
-                    toast("Ürün sepetinizden kaldırıldı.");
-                  }}
-                  className="text-white bg-green-300 p-1 px-2 rounded-full hover:bg-red-200 hover:text-red-500 transition-colors duration-300"
-                >
-                  <FontAwesomeIcon icon={faTrashCan} />
-                </button>
+              </div>
+              <hr />
+              <div className="flex justify-between my-1">
+                <p>Toplam</p>
+                {cartSum(cart) > 150 ? (
+                  <p>{cartSum(cart)}₺</p>
+                ) : (
+                  <p>{(cartSum(cart) + 49.99).toFixed(2)}₺</p>
+                )}
               </div>
             </div>
-          ))}
+            <button className="border text-sm bg-gray-200 text-black py-2 px-10 rounded-lg flex justify-center items-center gap-x-1">
+              <span className="primary">
+                <FontAwesomeIcon icon={faPlus} />
+              </span>
+              <span className="text-sm">INDIRIM KODU GIR</span>
+            </button>
+            <button className="border bg-primary text-white py-2 rounded-lg flex justify-center items-center gap-x-1">
+              Sepeti Onayla
+              <FontAwesomeIcon icon={faAngleRight} />
+            </button>
+          </div>
         </div>
       )}
     </div>
