@@ -11,8 +11,10 @@ import ListCardCompound from "../../Compounds/ProductListPageCompounds/ListCardC
 import { fetchProducts } from "../../../redux/features/thunk/fetchProducts";
 import {
   deleteFromCart,
+  resetCart,
   setCart,
 } from "../../../redux/features/shoppingCart/shoppingCartSlice";
+import { toast } from "react-toastify";
 
 const ShoppingPagePageContent = () => {
   const products = useSelector((state) => state.product.productList);
@@ -89,6 +91,11 @@ const ShoppingPagePageContent = () => {
                   <button
                     onClick={() => {
                       dispatch(deleteFromCart(product));
+                      if (product?.cartQuantity > 1) {
+                        toast.error("Ürün sepetinizden çıkarıldı.");
+                      } else {
+                        toast("Ürün sepetinizden kaldırıldı.");
+                      }
                     }}
                     className="bg-gray-300 px-2 py-1 rounded-l-md"
                   >
@@ -98,6 +105,7 @@ const ShoppingPagePageContent = () => {
                   <button
                     onClick={() => {
                       dispatch(setCart(product));
+                      toast.success("Ürün sepetinize eklendi.");
                     }}
                     className="bg-gray-300 px-2 py-1 rounded-r-md"
                   >
@@ -107,7 +115,13 @@ const ShoppingPagePageContent = () => {
                 <h3 className="font-bold">
                   {(product?.price * product?.cartQuantity).toFixed(2)} ₺
                 </h3>
-                <button className="text-white bg-green-300 p-1 px-2 rounded-full hover:bg-red-200 hover:text-red-500 transition-colors duration-300">
+                <button
+                  onClick={() => {
+                    dispatch(resetCart(product));
+                    toast("Ürün sepetinizden kaldırıldı.");
+                  }}
+                  className="text-white bg-green-300 p-1 px-2 rounded-full hover:bg-red-200 hover:text-red-500 transition-colors duration-300"
+                >
                   <FontAwesomeIcon icon={faTrashCan} />
                 </button>
               </div>

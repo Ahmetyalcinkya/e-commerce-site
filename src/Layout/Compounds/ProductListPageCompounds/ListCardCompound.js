@@ -2,6 +2,7 @@ import React from "react";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { setCart } from "../../../redux/features/shoppingCart/shoppingCartSlice";
+import { toast } from "react-toastify";
 
 const ListCardCompound = ({ product }) => {
   const dispatch = useDispatch();
@@ -44,7 +45,10 @@ const ListCardCompound = ({ product }) => {
           <option>XL</option>
         </select>
         <button
-          onClick={addToCart}
+          onClick={() => {
+            addToCart();
+            toast.success("Ürün sepetinize eklendi.");
+          }}
           className="flex-1 rounded-br-xl p-1 text-white bg-[#23A6F0]/95 font-bold h-full hover:bg-[#252B42]/95 transition-colors"
         >
           Sepete Ekle

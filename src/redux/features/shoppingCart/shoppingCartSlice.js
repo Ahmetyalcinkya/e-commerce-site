@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { toast } from "react-toastify";
 
 const initialState = {
   cart: [],
@@ -33,6 +32,14 @@ export const shoppingCartSlice = createSlice({
         state.cart.splice(itemIndex, 1);
       }
     },
+    resetCart: (state, action) => {
+      const itemIndex = state.cart.findIndex(
+        (item) => item.id === action.payload.id
+      );
+      if (itemIndex >= 0) {
+        state.cart.splice(itemIndex, 1);
+      }
+    },
     setPayment: (state, action) => {
       state.payment = action.payload;
     },
@@ -42,7 +49,7 @@ export const shoppingCartSlice = createSlice({
   },
 });
 
-export const { setCart, setPayment, setAddress, deleteFromCart } =
+export const { setCart, setPayment, setAddress, deleteFromCart, resetCart } =
   shoppingCartSlice.actions;
 
 export default shoppingCartSlice.reducer;
