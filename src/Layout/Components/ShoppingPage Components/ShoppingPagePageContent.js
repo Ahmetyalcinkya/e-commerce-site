@@ -9,6 +9,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import ListCardCompound from "../../Compounds/ProductListPageCompounds/ListCardCompound";
 import { fetchProducts } from "../../../redux/features/thunk/fetchProducts";
+import {
+  deleteFromCart,
+  setCart,
+} from "../../../redux/features/shoppingCart/shoppingCartSlice";
 
 const ShoppingPagePageContent = () => {
   const products = useSelector((state) => state.product.productList);
@@ -82,11 +86,21 @@ const ShoppingPagePageContent = () => {
                   </h4>
                 </div>
                 <div className="flex gap-x-3 bg-gray-100 border rounded-md items-center">
-                  <button className="bg-gray-300 px-2 py-1 rounded-l-md">
+                  <button
+                    onClick={() => {
+                      dispatch(deleteFromCart(product));
+                    }}
+                    className="bg-gray-300 px-2 py-1 rounded-l-md"
+                  >
                     -
                   </button>
                   {product?.cartQuantity}
-                  <button className="bg-gray-300 px-2 py-1 rounded-r-md">
+                  <button
+                    onClick={() => {
+                      dispatch(setCart(product));
+                    }}
+                    className="bg-gray-300 px-2 py-1 rounded-r-md"
+                  >
                     +
                   </button>
                 </div>

@@ -3,7 +3,11 @@ import React, { Fragment } from "react";
 import { BsCart2 } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-// QUANTITY SAYISINI DÜZENLE DISPATCH ILE
+import {
+  deleteFromCart,
+  setCart,
+} from "../../../redux/features/shoppingCart/shoppingCartSlice";
+
 const ShoppingCartDropdown = () => {
   const cart = useSelector((state) => state.shopping.cart);
   const dispatch = useDispatch();
@@ -25,7 +29,9 @@ const ShoppingCartDropdown = () => {
           <div className="overflow-hidden rounded-lg shadow-lg">
             <div className="relative flex flex-col gap-2 bg-white p-2 w-full h-[24.5rem] overflow-y-scroll">
               {cart?.length === 0 ? (
-                <p>Sepetiniz boş.</p>
+                <p className="m-auto w-48 flex items-center justify-center">
+                  Sepetinizde ürün bulunmamaktadır.
+                </p>
               ) : (
                 cart?.map((product) => (
                   <Link
@@ -53,7 +59,9 @@ const ShoppingCartDropdown = () => {
                       </div>
                       <div className="flex gap-x-2">
                         <button
-                          onClick={() => dispatch(product.cartQuantity - 1)}
+                          onClick={() => {
+                            dispatch(deleteFromCart(product));
+                          }}
                           className="px-2 bg-gray-200 hover:bg-gray-600 hover:text-white transition-colors duration-300 rounded-full text-black"
                         >
                           -
@@ -65,7 +73,9 @@ const ShoppingCartDropdown = () => {
                           <span>₺</span>
                         </p>
                         <button
-                          onClick={() => dispatch(product.cartQuantity + 1)}
+                          onClick={() => {
+                            dispatch(setCart(product));
+                          }}
                           className="px-2 bg-gray-200 hover:bg-gray-600 hover:text-white transition-colors duration-300 rounded-full text-black"
                         >
                           +
