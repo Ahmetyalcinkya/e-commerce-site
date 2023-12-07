@@ -80,9 +80,12 @@ const ShoppingCartDropdown = () => {
               <button className="flex-1 hover:bg-gray-300 p-2 rounded-md ">
                 Ödemeye Geç
               </button>
-              <button className="flex-1 hover:bg-gray-300 p-2 rounded-md ">
+              <Link
+                to="/cart"
+                className="flex-1 hover:bg-gray-300 p-2 rounded-md "
+              >
                 Sepeti Görüntüle
-              </button>
+              </Link>
             </div>
           </div>
         </Popover.Panel>

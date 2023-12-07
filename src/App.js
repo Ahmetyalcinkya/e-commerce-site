@@ -16,6 +16,7 @@ import TeamPage from "./Layout/Pages/TeamPage";
 import { fetchCategory } from "./redux/features/thunk/fetchCategory";
 import { fetchProducts } from "./redux/features/thunk/fetchProducts";
 import { fetchUserLogin } from "./redux/features/thunk/fetchUserLogin";
+import ShoppingPage from "./Layout/Pages/ShoppingPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -46,6 +47,9 @@ function App() {
         </Route>
         <Route exact path="/product/:productId/:productNameSlug">
           <ProductsPage />
+        </Route>
+        <Route exact path="/cart">
+          <ShoppingPage />
         </Route>
         <Route path="/about">
           <AboutPage />
