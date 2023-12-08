@@ -68,6 +68,7 @@ const ShoppingList = ({ product, index }) => {
           <button
             onClick={() => {
               dispatch(setCart(product));
+              setChecked(true);
               toast.success("Ürün sepetinize eklendi.");
             }}
             className="bg-gray-300 px-2 py-1 rounded-r-md"

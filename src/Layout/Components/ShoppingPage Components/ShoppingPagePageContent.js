@@ -20,7 +20,9 @@ const ShoppingPagePageContent = () => {
   const cartSum = (cart) => {
     let totalPrice = 0;
     cart?.map((product) => {
-      return (totalPrice += product.price * product.cartQuantity);
+      if (product.checked) {
+        return (totalPrice += product.price * product.cartQuantity);
+      }
     });
     return Number(totalPrice.toFixed(2));
   };
@@ -77,11 +79,11 @@ const ShoppingPagePageContent = () => {
               <div className="flex flex-col justify-center items-center">
                 <div className="flex justify-between my-1 w-full">
                   <p>Ürün Toplamı</p>
-                  <p>{cartSum(cart)}₺</p>
+                  {cartSum(cart) === 0 ? <p>0.00₺</p> : <p>{cartSum(cart)}₺</p>}
                 </div>
                 <div className="flex justify-between my-1 w-full">
                   <p>Kargo Toplam</p>
-                  <p>49.99₺</p>
+                  {cartSum(cart) === 0 ? <p>0.00₺</p> : <p>49.99₺</p>}
                 </div>
                 <div className="flex my-1 w-full">
                   {cartSum(cart) > 150 && (
@@ -97,7 +99,9 @@ const ShoppingPagePageContent = () => {
               <hr />
               <div className="flex justify-between my-1">
                 <p>Toplam</p>
-                {cartSum(cart) > 150 ? (
+                {cartSum(cart) === 0 ? (
+                  <p>0.00₺</p>
+                ) : cartSum(cart) > 150 ? (
                   <p>{cartSum(cart)}₺</p>
                 ) : (
                   <p>{(cartSum(cart) + 49.99).toFixed(2)}₺</p>
