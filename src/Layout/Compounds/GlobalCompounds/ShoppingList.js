@@ -26,7 +26,7 @@ const ShoppingList = ({ product, index }) => {
           <span className="text-black">Kargo Bedava!</span>
         </div>
       )}
-      <div className="flex items-center justify-around ">
+      <div className="flex items-center justify-around flex-col iphone:flex-row gap-y-2 iphone:gap-y-0 py-3 iphone:py-0">
         <input
           type="checkbox"
           className="w-6 h-6 rounded-md checked:bg-green-400"
@@ -36,19 +36,24 @@ const ShoppingList = ({ product, index }) => {
           }}
           checked={isChecked}
         />
-        <img src={product?.images[0].url} alt="" className="w-24 h-full p-3" />
+        <img
+          src={product?.images[0].url}
+          alt=""
+          className="w-48 iphone:w-24 h-full p-3"
+        />
         <Link
           to={`/product/${product.id}/${product.name
             .toLowerCase()
             .replaceAll(" ", "-")}`}
           key={product?.id}
-          className="flex flex-col text-left gap-y-1"
+          className="w-full iphone:w-96 flex flex-col text-center iphone:text-left gap-y-2 iphone:gap-y-1"
         >
-          <h4 className="text-[.75rem] line-clamp-1 w-96">
+          <h4 className="text-[.75rem] line-clamp-1 w-full iphone:w-96">
             <span className="font-bold">{product?.name}</span> /{" "}
             <span>{product?.description}</span>
           </h4>
-          <h4 className="text-[0.75rem] line-clamp-1 w-96">Yarın kargoda</h4>
+          <h4>Beden : {product?.size}</h4>
+          <h4 className="text-[0.75rem] line-clamp-1">Yarın kargoda</h4>
         </Link>
         <div className="flex gap-x-3 bg-gray-100 border rounded-md items-center">
           <button

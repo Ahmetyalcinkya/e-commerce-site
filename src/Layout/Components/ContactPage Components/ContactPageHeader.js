@@ -15,11 +15,11 @@ const ContactPageHeader = () => {
     <div className="w-full flex flex-col justify-between items-center">
       <Header />
       <div className="w-full flex-col iphone:flex-row h-[67.5rem] iphone:w-[65.625rem] iphone:h-[46.5rem] flex justify-between items-center">
-        <div className="w-full h-[37rem] iphone:w-[37.5rem] iphone:h-[32.5rem] flex flex-col text-left justify-between items-center iphone:items-start">
+        <div className="w-full gap-y-2 iphone:w-[37.5rem] iphone:h-[32.5rem] flex flex-col text-left justify-between items-center iphone:items-start">
           <h5 className="font-bold text-center iphone:text-left text-base leading-6 text-quaternary">
             CONTACT US
           </h5>
-          <h1 className="w-full iphone:w-96 h-40 text-center iphone:text-left font-bold text-6xl leading-[5rem] text-quaternary">
+          <h1 className="w-full iphone:w-96 text-center iphone:text-left font-bold text-6xl leading-[5rem] text-quaternary">
             Get in touch today!
           </h1>
           <h4 className="text-xl leading-8 text-center iphone:text-left text-secondary w-[17.5rem] iphone:w-[23.5rem] iphone:h-[3.75rem]">

@@ -25,7 +25,7 @@ const ShoppingCartDropdown = () => {
         leaveFrom="opacity-100 translate-y-0"
         leaveTo="opacity-0 translate-y-1"
       >
-        <Popover.Panel className="absolute z-10 w-96">
+        <Popover.Panel className="absolute -right-20 iphone:left-0 mt-5 iphone:mt-0 z-10 w-80 iphone:w-96">
           <div className="overflow-hidden rounded-lg shadow-lg">
             <div className="relative flex flex-col gap-2 bg-white p-2 w-full h-[24.5rem] overflow-y-scroll">
               {cart?.length === 0 ? (
@@ -54,7 +54,7 @@ const ShoppingCartDropdown = () => {
                         {product?.description}
                       </p>
                       <div className="flex gap-x-3">
-                        <p>Beden : {product?.cartQuantity}</p>
+                        <p>Beden : {product?.size}</p>
                         <p>Adet : {product?.cartQuantity}</p>
                       </div>
                       <div className="flex gap-x-2">

@@ -56,7 +56,7 @@ const ProductInformation = ({ Myproducts }) => {
             <button className="w-8 h-8 bg-[#E77C40] rounded-full mr-2"></button>
             <button className="w-8 h-8 bg-[#252B42] rounded-full mr-2"></button>
           </div>
-          <div className="flex w-[18.75rem] h-11 justify-between items-center">
+          <div className="flex iphone:w-[18.75rem] h-11 justify-between items-center">
             <button
               onClick={addToCart}
               className="bg-primary py-2.5 px-5 rounded text-white"

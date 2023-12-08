@@ -10,11 +10,11 @@ import React from "react";
 const StartTrialCompound = () => {
   return (
     <div className="w-full h-[36.5rem] row-centered">
-      <div className="w-[38rem] h-72 flex flex-col items-center justify-between">
+      <div className="w-full iphone:w-[38rem] h-72 flex flex-col items-center justify-between">
         <h2 className="font-bold text-4xl leading-[3rem] text-quaternary">
           Start your 14 days free trial
         </h2>
-        <p className="w-[25.75rem] h-10 text-sm leading-5 text-secondary">
+        <p className="w-full iphone:w-[25.75rem] h-10 text-sm leading-5 text-secondary">
           Met minim Mollie non desert Alamo est sit cliquey dolor do met sent.
           RELIT official consequent.
         </p>

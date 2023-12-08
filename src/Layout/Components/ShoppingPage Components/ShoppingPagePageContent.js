@@ -36,7 +36,7 @@ const ShoppingPagePageContent = () => {
     <div className="w-full iphone:w-[65.625rem] m-auto">
       {cart.length == 0 ? (
         <div className="flex flex-col justify-around gap-y-12 pt-8 px-2 iphone:px-0">
-          <div className="flex items-center justify-between w-full border-2 gap-x-4 iphone:gap-x-0 py-3 px-6 iphone:px-8 rounded-xl">
+          <div className="flex items-center justify-around iphone:justify-between w-full border-2 gap-x-1 iphone:gap-x-0 py-3 px-4 iphone:px-8 rounded-xl">
             <div className="flex justify-center items-center gap-x-4">
               <div className="bg-primary p-4 rounded-full flex items-center justify-center text-white">
                 <FontAwesomeIcon icon={faCartShopping} size="2xl" />
@@ -61,15 +61,15 @@ const ShoppingPagePageContent = () => {
           </div>
         </div>
       ) : (
-        <div className="flex gap-x-8">
-          <div className="flex flex-col gap-y-4 text-left flex-1">
+        <div className="flex flex-col iphone:flex-row gap-x-8">
+          <div className="flex flex-col gap-y-4 text-left flex-1 px-3 iphone:px-0">
             <p className="text-xl">Sepetim ( {cart?.length} Ürün )</p>
             <hr />
             {cart?.map((product, index) => (
               <ShoppingList product={product} key={index} />
             ))}
           </div>
-          <div className="flex flex-col gap-y-2 my-10">
+          <div className="flex flex-col px-10 iphone:px-0 gap-y-2 my-10">
             <button className="border bg-primary text-white py-2 rounded-lg flex justify-center items-center gap-x-1">
               Sepeti Onayla
               <FontAwesomeIcon icon={faAngleRight} />
