@@ -1,9 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { fetchStates } from "../product/productSlice";
 
 const initialState = {
   cart: [],
   payment: {},
   address: {},
+  fetchStates: fetchStates.not_fetched,
 };
 
 export const shoppingCartSlice = createSlice({
@@ -58,8 +60,14 @@ export const shoppingCartSlice = createSlice({
     setPayment: (state, action) => {
       state.payment = action.payload;
     },
-    setAddress: (state, action) => {
+    getUserAddress: (state, action) => {
       state.address = action.payload;
+    },
+    setAddress: (state, action) => {
+      return { ...state, address: { ...action.payload } };
+    },
+    changeFetchState: (state, action) => {
+      state.fetchStates = action.payload;
     },
   },
 });
@@ -67,10 +75,12 @@ export const shoppingCartSlice = createSlice({
 export const {
   setCart,
   setPayment,
+  getUserAddress,
   setAddress,
   deleteFromCart,
   resetCart,
   productChecked,
+  changeFetchState,
 } = shoppingCartSlice.actions;
 
 export default shoppingCartSlice.reducer;

@@ -17,6 +17,8 @@ import { fetchCategory } from "./redux/features/thunk/fetchCategory";
 import { fetchProducts } from "./redux/features/thunk/fetchProducts";
 import { fetchUserLogin } from "./redux/features/thunk/fetchUserLogin";
 import ShoppingPage from "./Layout/Pages/ShoppingPage";
+import AddressPage from "./Layout/Pages/AddressPage";
+import ProtectedPage from "./Layout/Pages/ProtectedPage";
 
 function App() {
   const dispatch = useDispatch();
@@ -50,6 +52,9 @@ function App() {
         </Route>
         <Route exact path="/cart">
           <ShoppingPage />
+        </Route>
+        <Route exact path="/adress">
+          <ProtectedPage PageComponent={AddressPage} fromURL={"/login"} />
         </Route>
         <Route path="/about">
           <AboutPage />

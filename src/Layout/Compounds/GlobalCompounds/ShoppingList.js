@@ -29,7 +29,7 @@ const ShoppingList = ({ product, index }) => {
       <div className="flex items-center justify-around flex-col iphone:flex-row gap-y-2 iphone:gap-y-0 py-3 iphone:py-0">
         <input
           type="checkbox"
-          className="w-6 h-6 rounded-md checked:bg-green-400"
+          className="w-6 h-6 rounded-md checked:bg-green-400 cursor-pointer"
           onChange={() => {
             setChecked(!isChecked);
             dispatch(productChecked(product));
