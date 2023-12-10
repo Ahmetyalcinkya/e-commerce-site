@@ -88,7 +88,7 @@ const Footer = () => {
       </div>
       <div className="flex flex-col iphone:flex-row w-60 h-32 iphone:w-[65.625rem] iphone:h-[4.75rem] items-center justify-between mt-16 iphone:mt-0 text-left">
         <h6 className="font-bold text-sm leading-8 tracking-wider text-white">
-          Made With Love By Finland All Right Reserved
+          Copyright © 2023 by Ahmet Can Yalçınkaya
         </h6>
         <div className="flex gap-x-5">
           <span className="w-[1.438rem] h-[1.438rem] text-[#23A6F0]">

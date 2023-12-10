@@ -80,7 +80,7 @@ const ProductListFooter = () => {
       <footer className="w-full bg-secondary h-20 flex justify-center items-center">
         <div className="w-full iphone:w-[65.625rem] flex justify-start">
           <h6 className="px-2 text-secondary font-bold text-sm">
-            Made With Love By Finland All Right Reserved
+            Copyright © 2023 by Ahmet Can Yalçınkaya
           </h6>
         </div>
       </footer>

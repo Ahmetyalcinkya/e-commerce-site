@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from "react";
 import ShoppingInfo from "../../Compounds/GlobalCompounds/ShoppingInfo";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleExclamation, faPlus } from "@fortawesome/free-solid-svg-icons";
+import AddAddress from "../../Compounds/GlobalCompounds/AddAddress";
 
 const AddressPagePageContent = () => {
+  const [addressComp, setAddressComp] = useState(false);
+
+  const addressHandler = () => {
+    setAddressComp(!addressComp);
+  };
+
   return (
     <div className="w-full iphone:w-[65.625rem] m-auto flex flex-col iphone:flex-row gap-x-8">
       <div className="flex flex-col gap-y-4 text-left flex-1 px-3 iphone:px-0">
@@ -29,13 +36,17 @@ const AddressPagePageContent = () => {
               <h4>Faturamı aynı adrese gönder.</h4>
             </div>
           </div>
-          <button className="flex flex-col items-center flex-1 border gap-y-2 p-2 rounded-lg hover:bg-gray-100 duration-200 transition-colors">
+          <button
+            onClick={addressHandler}
+            className="flex flex-col items-center flex-1 border gap-y-2 p-2 rounded-lg hover:bg-gray-100 duration-200 transition-colors"
+          >
             <span className="primary">
               <FontAwesomeIcon icon={faPlus} />
             </span>
             <h4>Yeni Adres Ekle</h4>
+            {/* adres verisi buraya çekilmeli */}
           </button>
-          {/* address info will be added */}
+          {addressComp && <AddAddress addressHandler={addressHandler} />}
         </div>
       </div>
       <ShoppingInfo />

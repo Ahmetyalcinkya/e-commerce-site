@@ -130,3 +130,14 @@
 .login-span {
   @apply mt-2 text-sm text-red-600 dark:text-red-500;
 }
+
+.modal,
+.overlay {
+  @apply w-full h-screen top-0 left-0 right-0 bottom-0 fixed;
+}
+.overlay {
+  @apply bg-black opacity-40;
+}
+.modal-content {
+  @apply absolute top-[40%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 bg-[#f1f1f1] py-3.5 px-5 rounded-xl max-w-2xl min-w-min;
+}
