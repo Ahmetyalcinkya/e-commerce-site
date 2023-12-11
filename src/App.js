@@ -53,7 +53,7 @@ function App() {
         <Route exact path="/cart">
           <ShoppingPage />
         </Route>
-        <Route exact path="/adress">
+        <Route exact path="/address">
           <ProtectedPage PageComponent={AddressPage} fromURL={"/login"} />
         </Route>
         <Route path="/about">

@@ -1,5 +1,5 @@
 import { Popover, Transition } from "@headlessui/react";
-import React, { Fragment } from "react";
+import React, { Fragment, useState } from "react";
 import { BsCart2 } from "react-icons/bs";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -7,10 +7,17 @@ import {
   deleteFromCart,
   setCart,
 } from "../../../redux/features/shoppingCart/shoppingCartSlice";
+import { useHistory } from "react-router-dom";
 
 const ShoppingCartDropdown = () => {
   const cart = useSelector((state) => state.shopping.cart);
   const dispatch = useDispatch();
+
+  const history = useHistory();
+
+  const redirectToAddress = () => {
+    history.push("/address");
+  };
   return (
     <Popover className="relative">
       <Popover.Button>
@@ -87,7 +94,10 @@ const ShoppingCartDropdown = () => {
               )}
             </div>
             <div className="bg-gray-50 p-2 flex w-full h-full justify-around">
-              <button className="flex-1 hover:bg-gray-300 p-2 rounded-md ">
+              <button
+                onClick={redirectToAddress}
+                className="flex-1 hover:bg-gray-300 p-2 rounded-md "
+              >
                 Ödemeye Geç
               </button>
               <Link

@@ -19,7 +19,7 @@ const ShoppingInfo = () => {
   };
 
   const redirectToAddress = () => {
-    history.push("/adress");
+    history.push("/address");
   };
   return (
     <div className="flex flex-col px-10 iphone:px-0 gap-y-2 my-10">

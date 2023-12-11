@@ -13,12 +13,12 @@ const AddAddress = ({ addressHandler }) => {
     defaultValues: {
       name: "",
       surname: "",
-      address: "",
+      addressTitle: "",
       phone: "",
       city: "",
       district: "",
       neighborhood: "",
-      addressExp: "",
+      address: "",
     },
     mode: "all",
   });
@@ -71,7 +71,7 @@ const AddAddress = ({ addressHandler }) => {
               <input
                 className="login-input"
                 placeholder="Adres başlığınızı giriniz..."
-                {...register("address", {
+                {...register("addressTitle", {
                   required: "Adres başlığı girilmek zorundadır.",
                   minLength: {
                     value: 2,
@@ -79,8 +79,10 @@ const AddAddress = ({ addressHandler }) => {
                   },
                 })}
               />
-              {errors.address && (
-                <span className="login-span">* {errors.address.message}</span>
+              {errors.addressTitle && (
+                <span className="login-span">
+                  * {errors.addressTitle.message}
+                </span>
               )}
             </label>
           </div>
@@ -218,7 +220,7 @@ const AddAddress = ({ addressHandler }) => {
               <input
                 className="login-input"
                 placeholder="Adresinizi giriniz..."
-                {...register("addressExp", {
+                {...register("address", {
                   required: "Adres alanı doldurulmak zorundadır.",
                   minLength: {
                     value: 20,
@@ -226,10 +228,8 @@ const AddAddress = ({ addressHandler }) => {
                   },
                 })}
               />
-              {errors.addressExp && (
-                <span className="login-span">
-                  * {errors.addressExp.message}
-                </span>
+              {errors.address && (
+                <span className="login-span">* {errors.address.message}</span>
               )}
             </label>
           </div>
