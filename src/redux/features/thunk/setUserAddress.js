@@ -6,16 +6,16 @@ import {
 } from "../shoppingCart/shoppingCartSlice";
 
 export const setUserAddress = (userAddress) => (dispatch, getState) => {
-  if (getState().user.fetchStates === fetchStates.not_fetched) {
-    dispatch(changeFetchState(fetchStates.fetching));
-    AxiosWithAuth()
-      .post("user/address", userAddress)
-      .then((res) => {
-        dispatch(setAddress(res.data));
-        dispatch(changeFetchState(fetchStates.fetched));
-      })
-      .catch((err) => {
-        dispatch(changeFetchState(fetchStates.fetch_failed));
-      });
-  }
+  // if (getState().shopping.fetchStates === fetchStates.not_fetched) {
+  // dispatch(changeFetchState(fetchStates.fetching));
+  AxiosWithAuth()
+    .post("user/address", userAddress)
+    .then((res) => {
+      dispatch(setAddress(res.data));
+      // dispatch(changeFetchState(fetchStates.fetched));
+    })
+    .catch((err) => {
+      // dispatch(changeFetchState(fetchStates.fetch_failed));
+    });
+  // }
 };

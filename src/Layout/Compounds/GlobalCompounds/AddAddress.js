@@ -3,6 +3,11 @@ import { useForm } from "react-hook-form";
 import { toast } from "react-toastify";
 import { Spinner } from "@material-tailwind/react";
 import { AxiosWithAuth } from "../../../utilities/axiosWithAuth";
+import {
+  getCityCodes,
+  getCityNames,
+  getDistrictsOfEachCity,
+} from "turkey-neighbourhoods";
 
 const AddAddress = ({ addressHandler }) => {
   const {
@@ -24,7 +29,40 @@ const AddAddress = ({ addressHandler }) => {
   });
 
   //şehir seçimi
-  const [city, setCity] = useState("");
+  const [city, setCity] = useState("Adana");
+
+  const citiesFunc = () => {
+    const combined = [];
+    const cityNames = getCityNames();
+    const cityCodes = getCityCodes();
+    for (let i = 0; i < cityNames.length; i++) {
+      let cities = {
+        cityCodes: cityCodes[i],
+        cityNames: cityNames[i],
+      };
+      combined.push(cities);
+    }
+    return combined;
+  };
+
+  const cities = citiesFunc();
+
+  const findKeyByCity = (obj, value) => {
+    for (let i = 0; i < obj.length; i++) {
+      const current = obj[i];
+      const foundItem = Object.keys(current).find((key) => {
+        return current[key] === value;
+      });
+
+      if (foundItem) {
+        return current;
+      }
+    }
+    return null;
+  };
+
+  const selectedCity = findKeyByCity(cities, city);
+  console.log(selectedCity);
 
   const changeCity = (e) => {
     const selectedValue = e.target.value;
@@ -33,6 +71,17 @@ const AddAddress = ({ addressHandler }) => {
 
   // ilçe seçimi
   const [district, setDistrict] = useState("");
+
+  const allDistricts = getDistrictsOfEachCity();
+  console.log(allDistricts);
+
+  const findSpecificDistrict = (districts, cityCode) => {
+    if (districts.hasOwnProperty(cityCode)) {
+      return districts[cityCode];
+    }
+  };
+
+  const districts = findSpecificDistrict(allDistricts, selectedCity.cityCodes);
 
   const changeDistrict = (e) => {
     const selectedValue = e.target.value;
@@ -58,7 +107,6 @@ const AddAddress = ({ addressHandler }) => {
       setLoad(false);
     }, 2000);
   };
-
   return (
     <form onSubmit={handleSubmit(onSubmit)} className="modal">
       <div className="overlay"></div>
@@ -182,15 +230,16 @@ const AddAddress = ({ addressHandler }) => {
               <label className="login-label">
                 Şehir Seçiniz :
                 <select
+                  required
                   className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-32 p-2.5"
                   {...register("city")}
                   onChange={changeCity}
                 >
-                  {/* {cities?.map((city) => (
-            <option key={city.id} value={city.id}>
-              {city.name}
-            </option>
-          ))} */}
+                  {cities?.map((city) => (
+                    <option key={city.cityCodes} value={city.cityNames}>
+                      {city.cityNames}
+                    </option>
+                  ))}
                 </select>
               </label>
             </div>
@@ -203,11 +252,11 @@ const AddAddress = ({ addressHandler }) => {
                   {...register("district")}
                   onChange={changeDistrict}
                 >
-                  {/* {districts?.map((district) => (
-            <option key={district.id} value={district.id}>
-              {district.name}
-            </option>
-          ))} */}
+                  {districts?.map((district) => (
+                    <option key={district.id} value={district.id}>
+                      {district}
+                    </option>
+                  ))}
                 </select>
               </label>
             </div>
