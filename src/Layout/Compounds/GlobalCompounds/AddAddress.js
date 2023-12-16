@@ -1,15 +1,16 @@
+import { Spinner } from "@material-tailwind/react";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { toast } from "react-toastify";
-import { Spinner } from "@material-tailwind/react";
-import { AxiosWithAuth } from "../../../utilities/axiosWithAuth";
+import { useDispatch } from "react-redux";
 import {
   getCityCodes,
   getCityNames,
   getDistrictsOfEachCity,
 } from "turkey-neighbourhoods";
+import { fetchUserAddress } from "../../../redux/features/thunk/fetchUserAddress";
+import { setUserAddress } from "../../../redux/features/thunk/setUserAddress";
 
-const AddAddress = ({ addressHandler }) => {
+const AddAddress = ({ addressHandler, setAddressComp }) => {
   const {
     register,
     handleSubmit,
@@ -18,7 +19,7 @@ const AddAddress = ({ addressHandler }) => {
     defaultValues: {
       name: "",
       surname: "",
-      addressTitle: "",
+      title: "",
       phone: "",
       city: "",
       district: "",
@@ -62,7 +63,6 @@ const AddAddress = ({ addressHandler }) => {
   };
 
   const selectedCity = findKeyByCity(cities, city);
-  console.log(selectedCity);
 
   const changeCity = (e) => {
     const selectedValue = e.target.value;
@@ -73,7 +73,6 @@ const AddAddress = ({ addressHandler }) => {
   const [district, setDistrict] = useState("");
 
   const allDistricts = getDistrictsOfEachCity();
-  console.log(allDistricts);
 
   const findSpecificDistrict = (districts, cityCode) => {
     if (districts.hasOwnProperty(cityCode)) {
@@ -91,20 +90,15 @@ const AddAddress = ({ addressHandler }) => {
   // onsubmit
   const [load, setLoad] = useState(false);
 
+  const dispatch = useDispatch();
+
   const onSubmit = (addressData) => {
     setLoad(true);
     setTimeout(() => {
-      AxiosWithAuth()
-        .post("user/address", addressData) // adres verisi düzgün gitmiyor
-        .then((res) => {
-          toast.success("Adres başarılı bir şekilde kaydedildi!");
-          addressHandler(); // pop-up kapatılacak
-        })
-        .catch((err) => {
-          console.log(err.response.data);
-          toast.error("Something went wrong! Try again please.");
-        });
+      dispatch(setUserAddress(addressData));
       setLoad(false);
+      setAddressComp(false);
+      dispatch(fetchUserAddress());
     }, 2000);
   };
   return (
@@ -119,7 +113,7 @@ const AddAddress = ({ addressHandler }) => {
               <input
                 className="login-input"
                 placeholder="Adres başlığınızı giriniz..."
-                {...register("addressTitle", {
+                {...register("title", {
                   required: "Adres başlığı girilmek zorundadır.",
                   minLength: {
                     value: 2,
@@ -127,10 +121,8 @@ const AddAddress = ({ addressHandler }) => {
                   },
                 })}
               />
-              {errors.addressTitle && (
-                <span className="login-span">
-                  * {errors.addressTitle.message}
-                </span>
+              {errors.title && (
+                <span className="login-span">* {errors.title.message}</span>
               )}
             </label>
           </div>
@@ -202,7 +194,7 @@ const AddAddress = ({ addressHandler }) => {
             </label>
           </div>
         </div>
-        <div className="flex gap-x-4 items-center">
+        <div className="flex gap-x-4 items-center flex-row-reverse">
           <div className="login-div">
             <label className="login-label">
               Mahalle :
@@ -224,7 +216,6 @@ const AddAddress = ({ addressHandler }) => {
               )}
             </label>
           </div>
-          {/* düzenle !!! */}
           <div className="flex flex-1 justify-around -mt-6">
             <div className="flex flex-col items-center justify-around">
               <label className="login-label">
@@ -243,7 +234,6 @@ const AddAddress = ({ addressHandler }) => {
                 </select>
               </label>
             </div>
-            {/* düzenle !!! */}
             <div className="flex items-center justify-around">
               <label className="login-label">
                 İlçe Seçiniz :

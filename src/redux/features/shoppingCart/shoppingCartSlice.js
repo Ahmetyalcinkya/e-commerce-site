@@ -64,7 +64,10 @@ export const shoppingCartSlice = createSlice({
       state.address = action.payload;
     },
     setAddress: (state, action) => {
-      return { ...state, address: { ...action.payload } };
+      return {
+        ...state,
+        address: { ...state.address, ...action.payload },
+      };
     },
     changeFetchState: (state, action) => {
       state.fetchStates = action.payload;

@@ -5,8 +5,7 @@ export const fetchUserAddress = () => (dispatch) => {
   AxiosWithAuth()
     .get("user/address")
     .then((res) => {
-      //   dispatch(getUserAddress(res.data));
-      console.log(res.data);
+      dispatch(getUserAddress(res.data));
     })
     .catch((err) => console.log(err));
 };

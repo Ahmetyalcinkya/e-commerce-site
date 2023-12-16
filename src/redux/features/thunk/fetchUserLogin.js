@@ -8,7 +8,6 @@ export const fetchUserLogin = () => (dispatch) => {
   AxiosWithAuth()
     .get("verify")
     .then((res) => {
-      console.log(res);
       dispatch(changeFetchState(fetchStates.fetched));
       dispatch(setUser(res.data));
       renewAPI(res.token);

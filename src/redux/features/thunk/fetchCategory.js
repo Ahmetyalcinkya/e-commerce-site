@@ -6,7 +6,6 @@ export const fetchCategory = () => (dispatch) => {
   AxiosWithAuth()
     .get("categories")
     .then((res) => {
-      console.log(res);
       dispatch(setCategory(res.data));
     })
     .catch((err) => {
