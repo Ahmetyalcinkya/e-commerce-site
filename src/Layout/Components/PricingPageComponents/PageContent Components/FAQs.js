@@ -16,10 +16,10 @@ const FAQs = () => {
           </h4>
         </div>
         <div className="w-full h-[84rem] iphone:h-[33.75rem] flex flex-col items-center justify-center">
-          <div className="w-[30.75rem] h-[29rem] iphone:h-40 flex flex-wrap iphone:flex-nowrap justify-center">
+          <div className="w-full iphone:w-[30.75rem] h-[29rem] iphone:h-40 flex flex-wrap iphone:flex-nowrap justify-center">
             <div className="flex justify-between gap-x-2">
               <FontAwesomeIcon icon={faChevronRight} color="#23A6F0" />
-              <div className="w-[27.5rem] h-28 flex flex-col justify-between">
+              <div className="w-full iphone:w-[27.5rem] h-28 flex flex-col justify-between">
                 <h5 className="font-bold text-base leading-7 text-quaternary text-left">
                   the quick fox jumps over the lazy dog
                 </h5>
@@ -32,7 +32,7 @@ const FAQs = () => {
             </div>
             <div className="flex justify-between gap-x-2 ">
               <FontAwesomeIcon icon={faChevronRight} color="#23A6F0" />
-              <div className="w-[27.5rem] h-28 flex flex-col justify-between">
+              <div className="w-full iphone:w-[27.5rem] h-28 flex flex-col justify-between">
                 <h5 className="font-bold text-base leading-7 text-quaternary text-left">
                   the quick fox jumps over the lazy dog
                 </h5>
@@ -44,10 +44,10 @@ const FAQs = () => {
               </div>
             </div>
           </div>
-          <div className="w-[30.75rem] h-[29rem] iphone:h-40 flex flex-wrap iphone:flex-nowrap justify-center">
+          <div className="w-full iphone:w-[30.75rem] h-[29rem] iphone:h-40 flex flex-wrap iphone:flex-nowrap justify-center">
             <div className="flex justify-between gap-x-2">
               <FontAwesomeIcon icon={faChevronRight} color="#23A6F0" />
-              <div className="w-[27.5rem] h-28 flex flex-col justify-between">
+              <div className="w-full iphone:w-[27.5rem] h-28 flex flex-col justify-between">
                 <h5 className="font-bold text-base leading-7 text-quaternary text-left">
                   the quick fox jumps over the lazy dog
                 </h5>
@@ -60,7 +60,7 @@ const FAQs = () => {
             </div>
             <div className="flex justify-between gap-x-2 ">
               <FontAwesomeIcon icon={faChevronRight} color="#23A6F0" />
-              <div className="w-[27.5rem] h-28 flex flex-col justify-between">
+              <div className="w-full iphone:w-[27.5rem] h-28 flex flex-col justify-between">
                 <h5 className="font-bold text-base leading-7 text-quaternary text-left">
                   the quick fox jumps over the lazy dog
                 </h5>
@@ -72,10 +72,10 @@ const FAQs = () => {
               </div>
             </div>
           </div>
-          <div className="w-[30.75rem] h-[29rem] iphone:h-40 flex flex-wrap iphone:flex-nowrap justify-center">
+          <div className="w-full iphone:w-[30.75rem] h-[29rem] iphone:h-40 flex flex-wrap iphone:flex-nowrap justify-center">
             <div className="flex justify-between gap-x-2">
               <FontAwesomeIcon icon={faChevronRight} color="#23A6F0" />
-              <div className="w-[27.5rem] h-28 flex flex-col justify-between">
+              <div className="w-full iphone:w-[27.5rem] h-28 flex flex-col justify-between">
                 <h5 className="font-bold text-base leading-7 text-quaternary text-left">
                   the quick fox jumps over the lazy dog
                 </h5>
@@ -88,7 +88,7 @@ const FAQs = () => {
             </div>
             <div className="flex justify-between gap-x-2 ">
               <FontAwesomeIcon icon={faChevronRight} color="#23A6F0" />
-              <div className="w-[27.5rem] h-28 flex flex-col justify-between">
+              <div className="w-full iphone:w-[27.5rem] h-28 flex flex-col justify-between">
                 <h5 className="font-bold text-base leading-7 text-quaternary text-left">
                   the quick fox jumps over the lazy dog
                 </h5>

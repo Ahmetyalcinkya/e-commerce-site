@@ -14,9 +14,9 @@ const PricingPagePageContent = () => {
   return (
     <div>
       <div className="w-full h-[160rem] iphone:h-[72.75rem] flex flex-col items-center justify-around bg-secondary">
-        <div className="w-[40rem] h-24 flex flex-col justify-around items-center">
+        <div className="w-full iphone:w-[40rem] h-24 flex flex-col justify-around items-center">
           <h2 className="font-bold text-quaternary text-4xl">Pricing</h2>
-          <p className="text-sm text-secondary w-[29rem] h-10">
+          <p className="text-sm text-secondary w-full iphone:w-[29rem] h-10">
             Problems trying to resolve the conflict between the two major realms
             of Classical physics: Newtonian mechanics
           </p>

@@ -5,9 +5,9 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
 const PricingPageHeader = () => {
   return (
-    <div className="w-full h-[22rem] flex flex-col justify-between items-center">
+    <div className="w-full flex flex-col justify-between items-center">
       <AboutPageHeader />
-      <div className="w-[26.75rem] h-44 flex flex-col justify-between items-center">
+      <div className="w-full iphone:w-[26.75rem] h-44 flex flex-col justify-between items-center">
         <h5 className="font-bold text-base text-secondary leading-6">
           PRICING
         </h5>

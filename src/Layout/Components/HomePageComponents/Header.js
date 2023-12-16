@@ -36,7 +36,7 @@ const Header = () => {
             <HeaderDropdown />
           </NavLink>
           <NavLink to="/about">About</NavLink>
-          <NavLink to="/blog">Blog</NavLink>
+          <NavLink to="/pricing">Pricing</NavLink>
           <NavLink to="/contact">Contact</NavLink>
           <NavLink to="/team">Team</NavLink>
         </nav>
