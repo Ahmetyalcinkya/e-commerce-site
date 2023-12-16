@@ -3,6 +3,7 @@ import { faAngleRight, faPlus } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useHistory } from "react-router-dom";
 import { useSelector } from "react-redux";
+import DiscountCode from "./DiscountCode";
 
 const ShoppingInfo = () => {
   const cart = useSelector((state) => state.shopping.cart);
@@ -21,17 +22,32 @@ const ShoppingInfo = () => {
   const redirectToAddress = () => {
     history.push("/address");
   };
+  const redirectToPayment = () => {
+    history.push("/payment");
+  };
+
+  const path = window.location.pathname;
   return (
     <div className="flex flex-col px-10 iphone:px-0 gap-y-2 my-10">
-      <button
-        disabled={cartSum(cart) === 0}
-        onClick={redirectToAddress}
-        className="border bg-primary text-white py-2 rounded-lg flex justify-center items-center gap-x-1"
-      >
-        {/* Behavior must fixed for two different components. */}
-        Sepeti Onayla
-        <FontAwesomeIcon icon={faAngleRight} />
-      </button>
+      {path === "/cart" && (
+        <button
+          disabled={cartSum(cart) === 0}
+          onClick={redirectToAddress}
+          className="border bg-primary text-white py-2 rounded-lg flex justify-center items-center gap-x-1"
+        >
+          Sepeti Onayla
+          <FontAwesomeIcon icon={faAngleRight} />
+        </button>
+      )}
+      {path === "/address" && (
+        <button
+          onClick={redirectToPayment}
+          className="border bg-primary text-white py-2 rounded-lg flex justify-center items-center gap-x-1"
+        >
+          Kaydet ve Devam Et
+          <FontAwesomeIcon icon={faAngleRight} />
+        </button>
+      )}
       <div className="border flex flex-col text-left px-6 rounded-xl">
         <h4 className="text-xl">Sipariş Özeti</h4>
         <div className="flex flex-col justify-center items-center">
@@ -64,20 +80,26 @@ const ShoppingInfo = () => {
           )}
         </div>
       </div>
-      <button className="border text-sm bg-gray-200 text-black py-2 px-10 rounded-lg flex justify-center items-center gap-x-1">
-        <span className="primary">
-          <FontAwesomeIcon icon={faPlus} />
-        </span>
-        <span className="text-sm">INDIRIM KODU GIR</span>
-      </button>
-      <button
-        disabled={cartSum(cart) === 0}
-        onClick={redirectToAddress}
-        className="border bg-primary text-white py-2 rounded-lg flex justify-center items-center gap-x-1"
-      >
-        Sepeti Onayla
-        <FontAwesomeIcon icon={faAngleRight} />
-      </button>
+      <DiscountCode />
+      {path === "/cart" && (
+        <button
+          disabled={cartSum(cart) === 0}
+          onClick={redirectToAddress}
+          className="border bg-primary text-white py-2 rounded-lg flex justify-center items-center gap-x-1"
+        >
+          Sepeti Onayla
+          <FontAwesomeIcon icon={faAngleRight} />
+        </button>
+      )}
+      {path === "/address" && (
+        <button
+          onClick={redirectToPayment}
+          className="border bg-primary text-white py-2 rounded-lg flex justify-center items-center gap-x-1"
+        >
+          Kaydet ve Devam Et
+          <FontAwesomeIcon icon={faAngleRight} />
+        </button>
+      )}
     </div>
   );
 };

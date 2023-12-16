@@ -95,6 +95,7 @@ const ShoppingCartDropdown = () => {
             </div>
             <div className="bg-gray-50 p-2 flex w-full h-full justify-around">
               <button
+                disabled={cart?.length === 0 ? true : false}
                 onClick={redirectToAddress}
                 className="flex-1 hover:bg-gray-300 p-2 rounded-md "
               >
