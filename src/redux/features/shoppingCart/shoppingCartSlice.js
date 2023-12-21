@@ -5,6 +5,7 @@ const initialState = {
   cart: [],
   payment: {},
   address: {},
+  billing_address: [],
   fetchStates: fetchStates.not_fetched,
 };
 
@@ -69,6 +70,12 @@ export const shoppingCartSlice = createSlice({
         address: { ...state.address, ...action.payload },
       };
     },
+    setBillingAddress: (state, action) => {
+      return {
+        ...state,
+        billing_address: [...state.billing_address, action.payload],
+      };
+    },
     changeFetchState: (state, action) => {
       state.fetchStates = action.payload;
     },
@@ -84,6 +91,7 @@ export const {
   resetCart,
   productChecked,
   changeFetchState,
+  setBillingAddress,
 } = shoppingCartSlice.actions;
 
 export default shoppingCartSlice.reducer;

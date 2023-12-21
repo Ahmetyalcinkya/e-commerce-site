@@ -7,10 +7,9 @@ import {
   getCityNames,
   getDistrictsOfEachCity,
 } from "turkey-neighbourhoods";
-import { fetchUserAddress } from "../../../redux/features/thunk/fetchUserAddress";
-import { setUserAddress } from "../../../redux/features/thunk/setUserAddress";
+import { setBillingAddress } from "../../../redux/features/shoppingCart/shoppingCartSlice";
 
-const AddAddress = ({ addressHandler, setAddressComp }) => {
+const AddBillingAddress = ({ billingAddressHandler, setAddressBillComp }) => {
   const {
     register,
     handleSubmit,
@@ -92,13 +91,12 @@ const AddAddress = ({ addressHandler, setAddressComp }) => {
 
   const dispatch = useDispatch();
 
-  const onSubmit = (addressData) => {
+  const onSubmit = (billingAddress) => {
     setLoad(true);
     setTimeout(() => {
-      dispatch(setUserAddress(addressData));
+      dispatch(setBillingAddress(billingAddress));
       setLoad(false);
-      setAddressComp(false);
-      dispatch(fetchUserAddress());
+      setAddressBillComp(false);
     }, 2000);
   };
   return (
@@ -276,7 +274,7 @@ const AddAddress = ({ addressHandler, setAddressComp }) => {
         <div className="flex justify-end">
           <button
             className="bg-gray-300 text-black hover:text-white border hover:bg-black focus:ring-4 focus:outline-none font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 transition-colors duration-300"
-            onClick={addressHandler}
+            onClick={billingAddressHandler}
           >
             İptal Et
           </button>
@@ -292,4 +290,4 @@ const AddAddress = ({ addressHandler, setAddressComp }) => {
   );
 };
 
-export default AddAddress;
+export default AddBillingAddress;
