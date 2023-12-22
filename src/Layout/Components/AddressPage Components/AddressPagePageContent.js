@@ -4,23 +4,36 @@ import {
   faTrashCan,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { AxiosWithAuth } from "../../../utilities/axiosWithAuth";
 import AddAddress from "../../Compounds/GlobalCompounds/AddAddress";
 import ShoppingInfo from "../../Compounds/GlobalCompounds/ShoppingInfo";
 import { toast } from "react-toastify";
 import AddBillingAddress from "../../Compounds/GlobalCompounds/AddBillingAddress";
+import {
+  changeSelectedAddress,
+  changeSelectedBillingAddress,
+} from "../../../redux/features/shoppingCart/shoppingCartSlice";
 
 const AddressPagePageContent = () => {
   const address = useSelector((state) => state.shopping.address);
   const billing = useSelector((state) => state.shopping.billing_address);
-  console.log(billing);
   const [addressComp, setAddressComp] = useState(false);
   const [addressBillComp, setAddressBillComp] = useState(false);
   const [checked, setChecked] = useState(true);
+  const [selectedUserAddress, setSelectedUserAddress] = useState("");
+  const [selectedBillingAddress, setSelectedBillingAddress] = useState("");
+  const dispatch = useDispatch();
+
   const addressHandler = () => {
     setAddressComp(!addressComp);
+  };
+  const selectAddress = (value) => {
+    setSelectedUserAddress(value);
+  };
+  const selectBillingAddress = (value) => {
+    setSelectedBillingAddress(value);
   };
   const billingAddressHandler = () => {
     setAddressBillComp(!addressBillComp);
@@ -40,6 +53,11 @@ const AddressPagePageContent = () => {
         toast.error("Adres silinemedi!");
       });
   }; // delete çalışmıyor
+
+  useEffect(() => {
+    dispatch(changeSelectedAddress(selectedUserAddress));
+    dispatch(changeSelectedBillingAddress(selectedBillingAddress));
+  }, [selectedUserAddress, selectedBillingAddress]);
 
   return (
     <div className="w-full iphone:w-[65.625rem] m-auto flex flex-col iphone:flex-row gap-x-8">
@@ -87,10 +105,20 @@ const AddressPagePageContent = () => {
                   className="flex flex-col justify-start items-center border gap-y-2 p-2 rounded-lg hover:bg-gray-100 duration-200 transition-colors w-[23rem]"
                 >
                   <div className="flex w-full items-center justify-between">
-                    <div className="flex gap-x-2 items-center">
-                      <input type="checkbox" className="cursor-pointer" />
+                    <label
+                      htmlFor={address.id}
+                      className="flex gap-x-2 items-center"
+                    >
+                      <input
+                        type="radio"
+                        className="cursor-pointer"
+                        id={address.id}
+                        name="address"
+                        value={address}
+                        onChange={() => selectAddress(address)}
+                      />
                       <h4>{address.title}</h4>
-                    </div>
+                    </label>
                     <button
                       // onClick={deleteUserAddress(address.id)}
                       className="text-white bg-primary p-1 px-2 rounded-full hover:bg-red-200 hover:text-red-500 transition-colors duration-300"
@@ -147,10 +175,20 @@ const AddressPagePageContent = () => {
                     className="flex flex-col justify-start items-center border gap-y-2 p-2 rounded-lg hover:bg-gray-100 duration-200 transition-colors w-[23rem]"
                   >
                     <div className="flex w-full items-center justify-between">
-                      <div className="flex gap-x-2 items-center">
-                        <input type="checkbox" className="cursor-pointer" />
+                      <label
+                        htmlFor={billingAddress.id}
+                        className="flex gap-x-2 items-center"
+                      >
+                        <input
+                          type="radio"
+                          className="cursor-pointer"
+                          id={billingAddress.id}
+                          name="billing"
+                          value={billingAddress}
+                          onChange={() => selectBillingAddress(billingAddress)}
+                        />
                         <h4>{billingAddress.title}</h4>
-                      </div>
+                      </label>
                       <button
                         // onClick={deleteUserAddress(address.id)}
                         className="text-white bg-primary p-1 px-2 rounded-full hover:bg-red-200 hover:text-red-500 transition-colors duration-300"

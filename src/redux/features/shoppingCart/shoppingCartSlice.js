@@ -6,6 +6,8 @@ const initialState = {
   payment: {},
   address: {},
   billing_address: [],
+  selected_address: [],
+  selected_billing_address: [],
   fetchStates: fetchStates.not_fetched,
 };
 
@@ -76,6 +78,12 @@ export const shoppingCartSlice = createSlice({
         billing_address: [...state.billing_address, action.payload],
       };
     },
+    changeSelectedAddress: (state, action) => {
+      state.selected_address = action.payload;
+    },
+    changeSelectedBillingAddress: (state, action) => {
+      state.selected_billing_address = action.payload;
+    },
     changeFetchState: (state, action) => {
       state.fetchStates = action.payload;
     },
@@ -92,6 +100,8 @@ export const {
   productChecked,
   changeFetchState,
   setBillingAddress,
+  changeSelectedAddress,
+  changeSelectedBillingAddress,
 } = shoppingCartSlice.actions;
 
 export default shoppingCartSlice.reducer;
