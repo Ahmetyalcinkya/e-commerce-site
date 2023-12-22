@@ -25,6 +25,9 @@ const ShoppingInfo = () => {
   const redirectToPayment = () => {
     history.push("/payment");
   };
+  const redirectToSuccess = () => {
+    history.push("/successful");
+  };
 
   const path = window.location.pathname;
   return (
@@ -46,6 +49,15 @@ const ShoppingInfo = () => {
         >
           Kaydet ve Devam Et
           <FontAwesomeIcon icon={faAngleRight} />
+        </button>
+      )}
+      {path === "/payment" && (
+        <button
+          onClick={redirectToSuccess}
+          disabled={cartSum(cart) === 0 ? true : false}
+          className="border bg-primary text-white py-2 rounded-lg flex justify-center items-center gap-x-1"
+        >
+          Ödeme Yap
         </button>
       )}
       <div className="border flex flex-col text-left px-6 rounded-xl">
@@ -98,6 +110,15 @@ const ShoppingInfo = () => {
         >
           Kaydet ve Devam Et
           <FontAwesomeIcon icon={faAngleRight} />
+        </button>
+      )}
+      {path === "/payment" && (
+        <button
+          onClick={redirectToSuccess}
+          disabled={cartSum(cart) === 0 ? true : false}
+          className="border bg-primary text-white py-2 rounded-lg flex justify-center items-center gap-x-1"
+        >
+          Ödeme Yap
         </button>
       )}
     </div>
